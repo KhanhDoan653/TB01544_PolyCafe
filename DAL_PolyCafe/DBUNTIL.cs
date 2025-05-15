@@ -12,22 +12,20 @@ namespace DAL_PolyCafe
 {
     public class DBUNTIL
     {
-        public static string connString = @"Data Source=DESKTOP-A3S4JGC\SQLEXPRESS;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;Trust Server Certificate=True";
+        public static string connString = @"Data Source=DESKTOP-A3S4JGC\SQLEXPRESS;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;TrustServerCertificate=True;";
 
         public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
         {
-            using (SqlConnection conn = new SqlConnection(connString)) // Dùng "using" để tự động giải phóng tài nguyên
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.CommandType = cmdType;
+
+            for (int i = 0; i < args.Count; i++)
             {
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.CommandType = cmdType;
-
-                for (int i = 0; i < args.Count; i++)
-                {
-                    cmd.Parameters.AddWithValue($"@{i}", args[i]);
-                }
-
-                return cmd;
+                cmd.Parameters.AddWithValue($"@{i}", args[i]);
             }
+
+            return cmd;
         }
 
         public static void Update(string sql, List<Object> args, CommandType cmdType = CommandType.Text)

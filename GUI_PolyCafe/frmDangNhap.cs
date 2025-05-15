@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL_PolyCafe;
+using DTO_PolyCafe;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,7 @@ namespace GUI_PolyCafe
 {
     public partial class frmDangNhap : Form
     {
-        
+        BLLNhanVien bllNhanVien = new BLLNhanVien();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -20,10 +22,21 @@ namespace GUI_PolyCafe
 
         private void btDangNhap_Click(object sender, EventArgs e)
         {
+            string email = txtEmail.Text;
+            string password = txtMK.Text;
+            NhanVien nv = bllNhanVien.DangNhap(email, password);
+            if(nv == null)
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+            else
+            {
+                frmChinh main = new frmChinh(nv);
+                main.Show();
+                this.Hide();
+            }    
         }
-
-
 
         private void chkHienMK_CheckedChanged(object sender, EventArgs e)
         {

@@ -351,7 +351,7 @@
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(1057, 468);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
+            tabPage3.Text = "Đổi mật khẩu";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4

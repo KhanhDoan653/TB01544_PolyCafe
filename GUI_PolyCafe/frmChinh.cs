@@ -12,7 +12,7 @@ namespace GUI_PolyCafe
 {
     public partial class frmChinh: Form
     {
-        public frmChinh()
+        public frmChinh(DTO_PolyCafe.NhanVien nv)
         {
             InitializeComponent();
         }
