@@ -27,7 +27,7 @@ namespace GUI_PolyCafe
             NhanVien nv = bllNhanVien.DangNhap(email, password);
             if(nv == null)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản hoặc mật khẩu của bạn không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else
@@ -40,14 +40,18 @@ namespace GUI_PolyCafe
 
         private void chkHienMK_CheckedChanged(object sender, EventArgs e)
         {
-            txtMK.PasswordChar = chkHienMK.Checked ? '\0' : '*';
+            txtMK.UseSystemPasswordChar = !chkHienMK.Checked;
         }
 
 
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)

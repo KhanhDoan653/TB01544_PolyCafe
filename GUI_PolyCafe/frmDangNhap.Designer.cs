@@ -110,6 +110,7 @@
             txtMK.Name = "txtMK";
             txtMK.Size = new Size(298, 23);
             txtMK.TabIndex = 3;
+            txtMK.UseSystemPasswordChar = true;
             // 
             // chkHienMK
             // 
@@ -173,7 +174,7 @@
             tableLayoutPanel2.Controls.Add(btDangNhap, 0, 0);
             tableLayoutPanel2.Controls.Add(btThoat, 1, 0);
             tableLayoutPanel2.ForeColor = Color.Sienna;
-            tableLayoutPanel2.Location = new Point(336, 280);
+            tableLayoutPanel2.Location = new Point(330, 280);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -188,7 +189,7 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Orange;
-            label1.Location = new Point(402, 23);
+            label1.Location = new Point(396, 23);
             label1.Name = "label1";
             label1.Size = new Size(178, 31);
             label1.TabIndex = 13;
@@ -200,12 +201,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Tan;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(663, 368);
+            ClientSize = new Size(650, 368);
             Controls.Add(label1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(pictureBox2);
             ForeColor = Color.SaddleBrown;
+            MaximumSize = new Size(666, 407);
+            MinimumSize = new Size(666, 407);
             Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDangNhap";
