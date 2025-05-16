@@ -18,5 +18,22 @@ namespace DAL_PolyCafe
             NhanVien nv = DBUNTIL.Value<NhanVien>(sql, thamSo);
             return nv;
         }
+
+        public void ResetPassword(string email, string password)
+        {
+            try
+            {
+                string sql = "UPDATE NhanVien SET MatKhau = @0 WHERE Email = @1";
+                List<object> thamSo = new List<object>();
+                thamSo.Add(password);
+                thamSo.Add(email);
+                DBUNTIL.Update(sql, thamSo);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Lỗi hệ thống: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

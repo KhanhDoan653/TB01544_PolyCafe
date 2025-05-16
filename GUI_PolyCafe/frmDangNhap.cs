@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ULTIL_PolyCafe;
 
 namespace GUI_PolyCafe
 {
@@ -25,17 +26,17 @@ namespace GUI_PolyCafe
             string email = txtEmail.Text;
             string password = txtMK.Text;
             NhanVien nv = bllNhanVien.DangNhap(email, password);
-            if(nv == null)
+            //nhập tài khoản cứng
+            if (nv == null)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu của bạn không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            else
-            {
+            }
+                AuthUtil.user = nv;
+
                 frmChinh main = new frmChinh(nv);
                 main.Show();
                 this.Hide();
-            }    
         }
 
         private void chkHienMK_CheckedChanged(object sender, EventArgs e)

@@ -211,7 +211,7 @@
             MinimumSize = new Size(666, 407);
             Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmDangNhap";
+            Text = "PolyCafe-Đăng nhập";
             FormClosing += frmDangNhap_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel1.ResumeLayout(false);

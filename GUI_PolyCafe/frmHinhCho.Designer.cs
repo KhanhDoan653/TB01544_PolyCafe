@@ -50,7 +50,7 @@
             MinimumSize = new Size(945, 494);
             Name = "frmHinhCho";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Welcom to PolyCafe";
             FormClosing += frmHinhCho_FormClosing;
             Load += frmHinhCho_Load;
             ResumeLayout(false);
