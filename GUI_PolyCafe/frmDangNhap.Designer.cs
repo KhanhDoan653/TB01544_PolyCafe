@@ -50,7 +50,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(12, 79);
+            pictureBox2.Location = new Point(88, 157);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(298, 133);
             pictureBox2.TabIndex = 12;
@@ -67,7 +67,7 @@
             tableLayoutPanel1.Controls.Add(chkHienMK, 0, 4);
             tableLayoutPanel1.Controls.Add(txtEmail, 0, 1);
             tableLayoutPanel1.ForeColor = SystemColors.ScrollBar;
-            tableLayoutPanel1.Location = new Point(326, 51);
+            tableLayoutPanel1.Location = new Point(490, 110);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
@@ -75,7 +75,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(304, 199);
+            tableLayoutPanel1.Size = new Size(304, 203);
             tableLayoutPanel1.TabIndex = 14;
             // 
             // label2
@@ -96,7 +96,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label3.ForeColor = Color.Chocolate;
-            label3.Location = new Point(3, 100);
+            label3.Location = new Point(3, 102);
             label3.Name = "label3";
             label3.Size = new Size(75, 20);
             label3.TabIndex = 2;
@@ -106,7 +106,7 @@
             // 
             txtMK.BackColor = Color.AntiqueWhite;
             txtMK.BorderStyle = BorderStyle.FixedSingle;
-            txtMK.Location = new Point(3, 135);
+            txtMK.Location = new Point(3, 138);
             txtMK.Name = "txtMK";
             txtMK.Size = new Size(298, 23);
             txtMK.TabIndex = 3;
@@ -116,8 +116,8 @@
             // 
             chkHienMK.AutoSize = true;
             chkHienMK.BackColor = Color.Transparent;
-            chkHienMK.ForeColor = Color.Black;
-            chkHienMK.Location = new Point(3, 179);
+            chkHienMK.ForeColor = Color.White;
+            chkHienMK.Location = new Point(3, 183);
             chkHienMK.Name = "chkHienMK";
             chkHienMK.Size = new Size(104, 17);
             chkHienMK.TabIndex = 16;
@@ -129,7 +129,7 @@
             // 
             txtEmail.BackColor = Color.AntiqueWhite;
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
-            txtEmail.Location = new Point(3, 47);
+            txtEmail.Location = new Point(3, 48);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(298, 23);
             txtEmail.TabIndex = 4;
@@ -174,7 +174,7 @@
             tableLayoutPanel2.Controls.Add(btDangNhap, 0, 0);
             tableLayoutPanel2.Controls.Add(btThoat, 1, 0);
             tableLayoutPanel2.ForeColor = Color.Sienna;
-            tableLayoutPanel2.Location = new Point(330, 280);
+            tableLayoutPanel2.Location = new Point(490, 335);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -185,11 +185,11 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.BackColor = Color.WhiteSmoke;
+            label1.BackColor = Color.Transparent;
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Orange;
-            label1.Location = new Point(396, 23);
+            label1.Location = new Point(555, 76);
             label1.Name = "label1";
             label1.Size = new Size(178, 31);
             label1.TabIndex = 13;
@@ -201,14 +201,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Tan;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(650, 368);
+            ClientSize = new Size(971, 439);
             Controls.Add(label1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(pictureBox2);
             ForeColor = Color.SaddleBrown;
-            MaximumSize = new Size(666, 407);
-            MinimumSize = new Size(666, 407);
+            MaximumSize = new Size(987, 478);
+            MinimumSize = new Size(987, 478);
             Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PolyCafe-Đăng nhập";

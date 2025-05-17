@@ -71,7 +71,7 @@
             menuStrip2.LayoutStyle = ToolStripLayoutStyle.Flow;
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(1069, 27);
+            menuStrip2.Size = new Size(983, 27);
             menuStrip2.TabIndex = 13;
             menuStrip2.Text = "menuStrip1";
             // 
@@ -118,13 +118,13 @@
             // loaiSanPhamToolStripMenuItem
             // 
             loaiSanPhamToolStripMenuItem.Name = "loaiSanPhamToolStripMenuItem";
-            loaiSanPhamToolStripMenuItem.Size = new Size(180, 24);
+            loaiSanPhamToolStripMenuItem.Size = new Size(175, 24);
             loaiSanPhamToolStripMenuItem.Text = "Loại sản phẩm";
             // 
             // sanPhamToolStripMenuItem
             // 
             sanPhamToolStripMenuItem.Name = "sanPhamToolStripMenuItem";
-            sanPhamToolStripMenuItem.Size = new Size(180, 24);
+            sanPhamToolStripMenuItem.Size = new Size(175, 24);
             sanPhamToolStripMenuItem.Text = "Sản phẩm";
             // 
             // banHangToolStripMenuItem
@@ -194,17 +194,19 @@
             // pnMain
             // 
             pnMain.Controls.Add(statusStrip1);
-            pnMain.Location = new Point(1, 30);
+            pnMain.Location = new Point(0, 30);
+            pnMain.MaximumSize = new Size(987, 478);
+            pnMain.MinimumSize = new Size(987, 478);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(1068, 490);
+            pnMain.Size = new Size(987, 478);
             pnMain.TabIndex = 14;
             // 
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripTimer, toolStripUserName });
-            statusStrip1.Location = new Point(0, 468);
+            statusStrip1.Location = new Point(0, 456);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1068, 22);
+            statusStrip1.Size = new Size(987, 22);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -218,7 +220,7 @@
             // 
             toolStripUserName.ImageAlign = ContentAlignment.MiddleRight;
             toolStripUserName.Name = "toolStripUserName";
-            toolStripUserName.Size = new Size(996, 17);
+            toolStripUserName.Size = new Size(915, 17);
             toolStripUserName.Spring = true;
             toolStripUserName.Text = "UserName";
             toolStripUserName.TextAlign = ContentAlignment.MiddleRight;
@@ -227,10 +229,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1069, 518);
+            ClientSize = new Size(983, 509);
             Controls.Add(pnMain);
             Controls.Add(menuStrip2);
             Name = "frmChinh";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PolyCafe";
             Load += frmChinh_Load;
             menuStrip2.ResumeLayout(false);
