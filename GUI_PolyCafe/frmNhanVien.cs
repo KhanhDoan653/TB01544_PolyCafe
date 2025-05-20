@@ -19,7 +19,7 @@ namespace GUI_PolyCafe
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
