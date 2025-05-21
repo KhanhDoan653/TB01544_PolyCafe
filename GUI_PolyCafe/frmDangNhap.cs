@@ -23,20 +23,28 @@ namespace GUI_PolyCafe
 
         private void btDangNhap_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            string username = txtEmail.Text;
             string password = txtMK.Text;
-            NhanVien nv = bllNhanVien.DangNhap(email, password);
-            //nhập tài khoản cứng
+            //NhanVien nv = BUSNhanVien.DangNhap("admin@gmail.com", "admin123");
+            //NhanVien nv = BUSNhanVien.DangNhap("hung.pham@gmail.vn", "hashed_hung789");
+            NhanVien nv = bllNhanVien.DangNhap(username, password);
             if (nv == null)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu của bạn không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(this, "Tài khoản hoặc mật khẩu không chính xác");
             }
+            else
+            {
+                if (nv.TrangThai == false)
+                {
+                    MessageBox.Show(this, "Tài khoản đang tạm khóa, vui lòng viên hệ QTV!!!");
+                    return;
+                }
                 AuthUtil.user = nv;
 
-                frmChinh main = new frmChinh(nv);
+                frmChinh main = new frmChinh();
                 main.Show();
                 this.Hide();
+            }
         }
 
         private void chkHienMK_CheckedChanged(object sender, EventArgs e)

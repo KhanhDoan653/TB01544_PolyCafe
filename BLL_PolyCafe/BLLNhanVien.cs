@@ -17,7 +17,7 @@ namespace BLL_PolyCafe
             {
                 return null;
             }
-            return dalNhanVien.getNhanVien(email, password);
+            return dalNhanVien.GetNhanVien(email, password);
         }
         public bool ResetPassword(string email, string password)
         {
@@ -37,21 +37,21 @@ namespace BLL_PolyCafe
             }
         }
 
-       public List<NhanVien> GetNhanViens()
+        public List<NhanVien> GetNhanViens()
         {
             return dalNhanVien.selectAll();
-        } 
+        }
 
         public string InsertNhanVien(NhanVien nv)
         {
             try
             {
                 nv.MaNhanVien = dalNhanVien.generateMaNhanVien();
-                if(string.IsNullOrEmpty(nv.MaNhanVien))
+                if (string.IsNullOrEmpty(nv.MaNhanVien))
                 {
                     return "Mã nhân viên không hợp lệ";
                 }
-                if(dalNhanVien.checkEmailExists(nv.Email))
+                if (dalNhanVien.checkEmailExists(nv.Email))
                 {
                     return "Email đã tồn tại";
                 }
@@ -60,6 +60,42 @@ namespace BLL_PolyCafe
             }
             catch (Exception ex)
             {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        public string UpdateNhanVien(NhanVien nv)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(nv.MaNhanVien))
+                {
+                    return "Mã nhân viên không hợp lệ.";
+                }
+
+                dalNhanVien.Update(nv);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                //return "Cập nhật không thành công.";
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        public string DeleteNhanVien(string maNV)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maNV))
+                {
+                    return "Mã nhân viên không hợp lệ.";
+                }
+
+                dalNhanVien.deleteNhanVien(maNV);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                //return "Xóa không thành công.";
                 return "Lỗi: " + ex.Message;
             }
         }

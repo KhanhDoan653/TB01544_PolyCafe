@@ -63,7 +63,7 @@
             // 
             // btDoiMK
             // 
-            btDoiMK.Location = new Point(285, 357);
+            btDoiMK.Location = new Point(305, 357);
             btDoiMK.Name = "btDoiMK";
             btDoiMK.Size = new Size(110, 37);
             btDoiMK.TabIndex = 16;
@@ -76,7 +76,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Peru;
-            label5.Location = new Point(325, 47);
+            label5.Location = new Point(399, 41);
             label5.Name = "label5";
             label5.Size = new Size(194, 32);
             label5.TabIndex = 14;
@@ -87,7 +87,7 @@
             groupBox4.Anchor = AnchorStyles.None;
             groupBox4.BackColor = Color.FloralWhite;
             groupBox4.Controls.Add(tableLayoutPanel5);
-            groupBox4.Location = new Point(126, 82);
+            groupBox4.Location = new Point(211, 76);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(549, 278);
             groupBox4.TabIndex = 15;
@@ -254,18 +254,19 @@
             // 
             // btThoat
             // 
-            btThoat.Location = new Point(453, 357);
+            btThoat.Location = new Point(603, 357);
             btThoat.Name = "btThoat";
             btThoat.Size = new Size(110, 37);
             btThoat.TabIndex = 17;
             btThoat.Text = "Thoát";
             btThoat.UseVisualStyleBackColor = true;
+            btThoat.Click += btThoat_Click;
             // 
             // frmResetPassWord
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(971, 439);
             Controls.Add(btThoat);
             Controls.Add(btDoiMK);
             Controls.Add(label5);

@@ -12,23 +12,21 @@ namespace DAL_PolyCafe
 {
     public class DBUNTIL
     {
-        public static string connString = @"Data Source=DESKTOP-A3S4JGC\SQLEXPRESS;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;TrustServerCertificate=True;";
+        public static string connString = @"Data Source=DESKTOP-A3S4JGC\SQLEXPRESS;Initial Catalog=PolyCafe;Integrated Security=True;Trust Server Certificate=True";
 
         public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.CommandType = cmdType;
-
             for (int i = 0; i < args.Count; i++)
             {
                 cmd.Parameters.AddWithValue($"@{i}", args[i]);
             }
-
             return cmd;
         }
 
-        public static void Update(string sql, List<Object> args, CommandType cmdType = CommandType.Text)
+        public static void Update(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             SqlCommand cmd = GetCommand(sql, args, cmdType);
             cmd.Connection.Open();
@@ -53,12 +51,12 @@ namespace DAL_PolyCafe
                 cmd.Connection.Open();
                 return cmd.ExecuteScalar();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Lỗi hệ thống: {ex.Message}");
                 throw;
             }
         }
+
         public static SqlDataReader Query(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             try
@@ -67,11 +65,10 @@ namespace DAL_PolyCafe
                 cmd.Connection.Open();
                 return cmd.ExecuteReader();
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 throw;
             }
-            
         }
 
         public static T Value<T>(string sql, List<object> args, CommandType cmdType = CommandType.Text) where T : new()

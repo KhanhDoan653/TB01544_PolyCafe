@@ -11,7 +11,7 @@ namespace DAL_PolyCafe
 {
     public class DALNhanVien
     {
-        public NhanVien getNhanVien(string email, string password)
+        public NhanVien GetNhanVien(string email, string password)
         {
             string sql = "SELECT * FROM NhanVien WHERE Email = @0 AND MatKhau = @1";
             List<object> thamSo = new List<object>();
@@ -62,7 +62,21 @@ namespace DAL_PolyCafe
             thamSo.Add(entity.MaNhanVien);
             DBUNTIL.Update(sql, thamSo);
         }
+        public void deleteNhanVien(string maNv)
+        {
+            try
+            {
+                string sql = "DELETE FROM NhanVien WHERE MaNhanVien = @0";
+                List<object> thamSo = new List<object>();
+                thamSo.Add(maNv);
+                DBUNTIL.Update(sql, thamSo);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
 
+        }
         public List<NhanVien> selectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             List<NhanVien> list = new List<NhanVien>();
@@ -128,5 +142,7 @@ namespace DAL_PolyCafe
             object result = DBUNTIL.ScalarQuery(sql, thamSo);
             return Convert.ToInt32(result) > 0;
         }
+
+
     }
 }

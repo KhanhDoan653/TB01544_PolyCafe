@@ -59,5 +59,137 @@ namespace GUI_PolyCafe.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _148764_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("148764-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _360_F_738760043_gtdfSF1vMevJ4fiYY4t7H1I6FK8EbwYp {
+            get {
+                object obj = ResourceManager.GetObject("360_F_738760043_gtdfSF1vMevJ4fiYY4t7H1I6FK8EbwYp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _484619 {
+            get {
+                object obj = ResourceManager.GetObject("484619", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4866984_200_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("4866984-200-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_1_icon__flatastic_1_iconset__custom_icon_design_0_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("add-1-icon--flatastic-1-iconset--custom-icon-design-0-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("download-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("download-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("images-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_icon_template_black_color_editable_log_out_icon_symbol_flat_illustration_for_graphic_and_web_design_free_vector_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("logout-icon-template-black-color-editable-log-out-icon-symbol-flat-illustration-f" +
+                        "or-graphic-and-web-design-free-vector-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money_in_hand_icon_money_in_hand_sign_and_symbol_free_vector_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("money-in-hand-icon-money-in-hand-sign-and-symbol-free-vector-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_abstract_mockup_scene_podium_for_product_presentation_3d_render_3d_illustration_image_402459 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-abstract-mockup-scene-podium-for-product-presentation-3d-render-3d-illust" +
+                        "ration-image_402459", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signs_close_icon_png_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("signs-close-icon-png-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table_Of_Content {
+            get {
+                object obj = ResourceManager.GetObject("Table Of Content", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

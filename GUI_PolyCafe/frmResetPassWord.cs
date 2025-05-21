@@ -29,32 +29,33 @@ namespace GUI_PolyCafe
         {
             if (!AuthUtil.user.MatKhau.Equals(txtMKCu.Text))
             {
-                MessageBox.Show("Mật khẩu cũ không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show(this, "Mật khẩu cũ chưa đúng!!!");
             }
             else
             {
                 if (!txtMKMoi.Text.Equals(txtXacNhanMK.Text))
                 {
-                    MessageBox.Show("Mật khẩu mới không khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show(this, "Xác nhận mật khẩu mới chưa trùng khớp!!!");
                 }
                 else
                 {
                     if (bllNhanVien.ResetPassword(AuthUtil.user.Email, txtMKMoi.Text))
                     {
-                        MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cập nhật mật khẩu thành công!!!");
                         AuthUtil.user.MatKhau = txtMKMoi.Text;
-                        this.Close();
+                        Clear();
                     }
-                    else
-                    {
-                        MessageBox.Show("Đổi mật khẩu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    else MessageBox.Show("Đổi mật khẩu thất bại, vui lòng kiểm tra lại!!!");
                 }
             }
         }
 
+        private void Clear()
+        {
+            txtMKCu.Clear();
+            txtMKMoi.Clear();
+            txtXacNhanMK.Clear();
+        }
         private void chbHienthiMKCU_CheckedChanged(object sender, EventArgs e)
         {
             txtMKCu.UseSystemPasswordChar = !chkHienthiMKCU.Checked;
@@ -68,6 +69,11 @@ namespace GUI_PolyCafe
         private void chbHienthiXacNhanMK_CheckedChanged(object sender, EventArgs e)
         {
             txtXacNhanMK.UseSystemPasswordChar = !chkHienthiXacNhanMK.Checked;
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
