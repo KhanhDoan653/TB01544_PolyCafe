@@ -76,5 +76,10 @@ namespace GUI_PolyCafe
         {
             openChildForm(new frmNhanVien());
         }
+
+        private void theLuuDongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTheLuuDong());
+        }
     }
 }

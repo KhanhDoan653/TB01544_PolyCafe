@@ -51,7 +51,7 @@ namespace DAL_PolyCafe
             {
                 SqlCommand cmd = GetCommand(sql, args, cmdType);
                 cmd.Connection.Open();
-                return cmd.ExecuteScalar;
+                return cmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
@@ -61,35 +61,17 @@ namespace DAL_PolyCafe
         }
         public static SqlDataReader Query(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.CommandType = cmdType;
-
-                    // Thêm tham số vào câu lệnh SQL
-                    for (int i = 0; i < args.Count; i++)
-                    {
-                        cmd.Parameters.AddWithValue($"@{i}", args[i]);
-                    }
-
-                    try
-                    {
-                        conn.Open();
-                        return cmd.ExecuteReader(CommandBehavior.CloseConnection); // Đảm bảo kết nối đóng sau khi đọc xong
-                    }
-                    catch (SqlException ex)
-                    {
-                        Console.WriteLine($"Lỗi SQL: {ex.Message}");
-                        throw;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Lỗi hệ thống: {ex.Message}");
-                        throw;
-                    }
-                }
+                SqlCommand cmd = GetCommand(sql, args, cmdType);
+                cmd.Connection.Open();
+                return cmd.ExecuteReader();
             }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public static T Value<T>(string sql, List<object> args, CommandType cmdType = CommandType.Text) where T : new()

@@ -137,13 +137,14 @@
             // theLuuDongToolStripMenuItem
             // 
             theLuuDongToolStripMenuItem.Name = "theLuuDongToolStripMenuItem";
-            theLuuDongToolStripMenuItem.Size = new Size(179, 24);
+            theLuuDongToolStripMenuItem.Size = new Size(180, 24);
             theLuuDongToolStripMenuItem.Text = "Thẻ lưu động";
+            theLuuDongToolStripMenuItem.Click += theLuuDongToolStripMenuItem_Click;
             // 
             // phieuBanHangToolStripMenuItem
             // 
             phieuBanHangToolStripMenuItem.Name = "phieuBanHangToolStripMenuItem";
-            phieuBanHangToolStripMenuItem.Size = new Size(179, 24);
+            phieuBanHangToolStripMenuItem.Size = new Size(180, 24);
             phieuBanHangToolStripMenuItem.Text = "Phiếu bán hàng";
             // 
             // nhanVienToolStripMenuItem
@@ -232,6 +233,8 @@
             ClientSize = new Size(983, 509);
             Controls.Add(pnMain);
             Controls.Add(menuStrip2);
+            MaximumSize = new Size(999, 548);
+            MinimumSize = new Size(999, 548);
             Name = "frmChinh";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PolyCafe";
