@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham));
             groupBox1 = new GroupBox();
-            txtHinhAnh = new MaskedTextBox();
+            txtHinhAnh = new TextBox();
             label8 = new Label();
             rdNgungBan = new RadioButton();
             label2 = new Label();
@@ -54,11 +54,13 @@
             txtTimKiemSP = new TextBox();
             dgvDanhSachSP = new DataGridView();
             label1 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             groupBox1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbHinhAnh).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachSP).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -91,10 +93,9 @@
             // 
             // txtHinhAnh
             // 
-            txtHinhAnh.Font = new Font("Segoe UI", 12F);
-            txtHinhAnh.Location = new Point(247, 298);
+            txtHinhAnh.Location = new Point(249, 304);
             txtHinhAnh.Name = "txtHinhAnh";
-            txtHinhAnh.Size = new Size(126, 29);
+            txtHinhAnh.Size = new Size(93, 23);
             txtHinhAnh.TabIndex = 37;
             // 
             // label8
@@ -305,7 +306,7 @@
             // 
             btUpAnh.BackColor = SystemColors.Window;
             btUpAnh.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btUpAnh.Location = new Point(376, 300);
+            btUpAnh.Location = new Point(348, 301);
             btUpAnh.Name = "btUpAnh";
             btUpAnh.Size = new Size(75, 26);
             btUpAnh.TabIndex = 23;
@@ -366,16 +367,29 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(391, 9);
+            label1.Location = new Point(389, 2);
             label1.Name = "label1";
             label1.Size = new Size(162, 37);
             label1.TabIndex = 7;
             label1.Text = "SẢN PHẨM";
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.Transparent;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Location = new Point(18, 2);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(941, 42);
+            tableLayoutPanel1.TabIndex = 8;
             // 
             // frmSanPham
             // 
@@ -383,7 +397,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(977, 439);
-            Controls.Add(label1);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmSanPham";
@@ -396,8 +410,9 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachSP).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -422,10 +437,11 @@
         private PictureBox pbHinhAnh;
         private Button btUpAnh;
         private Label label1;
-        private MaskedTextBox txtHinhAnh;
         private Button btThem;
         private Button btSua;
         private Button btXoa;
         private Button btLamMoi;
+        private TextBox txtHinhAnh;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

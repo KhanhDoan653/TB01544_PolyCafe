@@ -108,18 +108,49 @@ namespace GUI_PolyCafe
             BLLSanPham bllSanPham = new BLLSanPham();
             dgvDanhSachSP.DataSource = null;
             List<SanPham> lstSP = bllSanPham.GetSanPhamList();
-            dgvDanhSachSP.DataSource = lstSP;
-            dgvDanhSachSP.Columns["MaSanPham"].HeaderText = "Mã Sản Phẩm";
-            dgvDanhSachSP.Columns["TenSanPham"].HeaderText = "Tên Sản Phẩm";
-            dgvDanhSachSP.Columns["DonGia"].HeaderText = "Đơn Giá";
-            dgvDanhSachSP.Columns["MaLoai"].HeaderText = "Mã Loại";
-            dgvDanhSachSP.Columns["HinhAnh"].Visible = true;
-            dgvDanhSachSP.Columns["HinhAnh"].HeaderText = "Đường Dẫn Ảnh";
-            dgvDanhSachSP.Columns["HinhAnh"].Width = 200;
-            dgvDanhSachSP.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
-            dgvDanhSachSP.Columns["TrangThai"].Visible = false;
 
+            var dataWithImage = lstSP.Select(sp => new
+            {
+                sp.MaSanPham,
+                sp.TenSanPham,
+                sp.DonGia,
+                sp.MaLoai,
+                sp.TrangThai,
+                TrangThaiText = sp.TrangThai ? "Hoạt động" : "Ngừng bán",
+                HinhAnh = LoadImage(sp.HinhAnh)
+            }).ToList();
+
+            dgvDanhSachSP.DataSource = dataWithImage;
+
+            dgvDanhSachSP.Columns["MaSanPham"].HeaderText = "Mã SP";
+            dgvDanhSachSP.Columns["TenSanPham"].HeaderText = "Tên SP";
+            dgvDanhSachSP.Columns["DonGia"].HeaderText = "Đơn giá";
+            dgvDanhSachSP.Columns["MaLoai"].HeaderText = "Mã loại";
+            dgvDanhSachSP.Columns["TrangThaiText"].HeaderText = "Trạng thái";
+
+            dgvDanhSachSP.Columns["TrangThai"].Visible = false;
+            dgvDanhSachSP.Columns["HinhAnh"].HeaderText = "Hình ảnh";
+            dgvDanhSachSP.Columns["HinhAnh"].Width = 100;
+            ((DataGridViewImageColumn)dgvDanhSachSP.Columns["HinhAnh"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
+        private Image LoadImage(string imagePath)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+                {
+                    using (var img = Image.FromFile(imagePath))
+                    {
+                        return new Bitmap(img);
+                    }
+                }
+            }
+            catch { }
+
+            // Trả về ảnh trống nếu không tồn tại
+            return new Bitmap(1, 1);
+        }
+
 
         private void btSua_Click(object sender, EventArgs e)
         {

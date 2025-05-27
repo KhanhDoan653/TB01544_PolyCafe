@@ -81,6 +81,8 @@
             // 
             // dgrSanPham
             // 
+            dgrSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgrSanPham.BackgroundColor = SystemColors.ButtonHighlight;
             dgrSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgrSanPham.Location = new Point(588, 104);
             dgrSanPham.Margin = new Padding(3, 2, 3, 2);
@@ -206,6 +208,8 @@
             // 
             // dgrChiTiet
             // 
+            dgrChiTiet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgrChiTiet.BackgroundColor = SystemColors.ButtonHighlight;
             dgrChiTiet.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgrChiTiet.Location = new Point(59, 88);
             dgrChiTiet.Margin = new Padding(3, 2, 3, 2);
