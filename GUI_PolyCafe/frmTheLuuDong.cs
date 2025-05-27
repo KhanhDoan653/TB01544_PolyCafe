@@ -83,7 +83,6 @@ namespace GUI_PolyCafe
             btSua.Enabled = false;
             btXoa.Enabled = true;
             txtChuSoHuu.Clear();
-            txtChuSoHuu.Clear();
             cbkHoatDong.Checked = true;
         }
 

@@ -66,14 +66,14 @@ namespace GUI_PolyCafe
             txtMKMoi.UseSystemPasswordChar = !chkHienthiMKMoi.Checked;
         }
 
-        private void chbHienthiXacNhanMK_CheckedChanged(object sender, EventArgs e)
-        {
-            txtXacNhanMK.UseSystemPasswordChar = !chkHienthiXacNhanMK.Checked;
-        }
-
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chkHienthiXacNhanMK_CheckedChanged(object sender, EventArgs e)
+        {
+            txtXacNhanMK.UseSystemPasswordChar = !chkHienthiXacNhanMK.Checked;
         }
     }
 }

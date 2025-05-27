@@ -72,7 +72,7 @@
             menuStrip2.LayoutStyle = ToolStripLayoutStyle.Flow;
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(1031, 28);
+            menuStrip2.Size = new Size(1212, 28);
             menuStrip2.TabIndex = 13;
             menuStrip2.Text = "menuStrip1";
             // 
@@ -178,14 +178,15 @@
             // loaiHangToolStripMenuItem
             // 
             loaiHangToolStripMenuItem.Name = "loaiHangToolStripMenuItem";
-            loaiHangToolStripMenuItem.Size = new Size(145, 24);
+            loaiHangToolStripMenuItem.Size = new Size(180, 24);
             loaiHangToolStripMenuItem.Text = "Loại hàng";
             // 
             // tkNhanVienToolStripMenuItem
             // 
             tkNhanVienToolStripMenuItem.Name = "tkNhanVienToolStripMenuItem";
-            tkNhanVienToolStripMenuItem.Size = new Size(145, 24);
+            tkNhanVienToolStripMenuItem.Size = new Size(180, 24);
             tkNhanVienToolStripMenuItem.Text = "Nhân viên";
+            tkNhanVienToolStripMenuItem.Click += tkNhanVienToolStripMenuItem_Click;
             // 
             // huongDanToolStripMenuItem
             // 
@@ -212,15 +213,15 @@
             pnMain.Controls.Add(statusStrip1);
             pnMain.Location = new Point(0, 30);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(1031, 517);
+            pnMain.Size = new Size(1212, 593);
             pnMain.TabIndex = 14;
             // 
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripTimer, toolStripUserName });
-            statusStrip1.Location = new Point(0, 495);
+            statusStrip1.Location = new Point(0, 571);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1031, 22);
+            statusStrip1.Size = new Size(1212, 22);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -234,7 +235,7 @@
             // 
             toolStripUserName.ImageAlign = ContentAlignment.MiddleRight;
             toolStripUserName.Name = "toolStripUserName";
-            toolStripUserName.Size = new Size(959, 17);
+            toolStripUserName.Size = new Size(1140, 17);
             toolStripUserName.Spring = true;
             toolStripUserName.Text = "UserName";
             toolStripUserName.TextAlign = ContentAlignment.MiddleRight;
@@ -243,7 +244,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1031, 548);
+            ClientSize = new Size(1212, 623);
             Controls.Add(pnMain);
             Controls.Add(menuStrip2);
             Name = "frmChinh";

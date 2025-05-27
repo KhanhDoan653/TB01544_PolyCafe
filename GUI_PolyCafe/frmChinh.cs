@@ -49,7 +49,8 @@ namespace GUI_PolyCafe
 
         private void doiMatKhauToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new frmResetPassWord());
+            frmResetPassWord resetPassword = new frmResetPassWord();
+            resetPassword.ShowDialog();
         }
 
         private void thoatToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -150,6 +151,11 @@ namespace GUI_PolyCafe
         private void loaiSanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frmLoaiSanPham());
+        }
+
+        private void tkNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmDoanhThuNhanVien());
         }
     }
 }

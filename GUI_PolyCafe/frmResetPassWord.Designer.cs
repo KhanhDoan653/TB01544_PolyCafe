@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label6 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResetPassWord));
             btDoiMK = new Button();
-            label5 = new Label();
-            groupBox4 = new GroupBox();
+            btThoat = new Button();
             tableLayoutPanel5 = new TableLayoutPanel();
             txtCPMaNV = new TextBox();
             chkHienthiMKMoi = new CheckBox();
@@ -39,31 +38,24 @@
             txtXacNhanMK = new TextBox();
             txtMKMoi = new TextBox();
             label9 = new Label();
+            label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label10 = new Label();
             chkHienthiMKCU = new CheckBox();
             chkHienthiXacNhanMK = new CheckBox();
             txtCPTenNv = new TextBox();
-            btThoat = new Button();
-            groupBox4.SuspendLayout();
+            tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Left;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11.25F);
-            label6.Location = new Point(3, 14);
-            label6.Name = "label6";
-            label6.Size = new Size(97, 20);
-            label6.TabIndex = 1;
-            label6.Text = "Mã nhân viên";
             // 
             // btDoiMK
             // 
-            btDoiMK.Location = new Point(305, 357);
+            btDoiMK.Anchor = AnchorStyles.None;
+            btDoiMK.FlatStyle = FlatStyle.Flat;
+            btDoiMK.ForeColor = Color.DarkCyan;
+            btDoiMK.Location = new Point(79, 8);
             btDoiMK.Name = "btDoiMK";
             btDoiMK.Size = new Size(110, 37);
             btDoiMK.TabIndex = 16;
@@ -71,31 +63,22 @@
             btDoiMK.UseVisualStyleBackColor = true;
             btDoiMK.Click += btDoiMK_Click;
             // 
-            // label5
+            // btThoat
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Peru;
-            label5.Location = new Point(399, 41);
-            label5.Name = "label5";
-            label5.Size = new Size(194, 32);
-            label5.TabIndex = 14;
-            label5.Text = "ĐỔI MẬT KHẨU";
-            // 
-            // groupBox4
-            // 
-            groupBox4.Anchor = AnchorStyles.None;
-            groupBox4.BackColor = Color.FloralWhite;
-            groupBox4.Controls.Add(tableLayoutPanel5);
-            groupBox4.Location = new Point(211, 76);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(549, 278);
-            groupBox4.TabIndex = 15;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Thông tin";
+            btThoat.Anchor = AnchorStyles.None;
+            btThoat.FlatStyle = FlatStyle.Flat;
+            btThoat.ForeColor = Color.Red;
+            btThoat.Location = new Point(347, 8);
+            btThoat.Name = "btThoat";
+            btThoat.Size = new Size(110, 37);
+            btThoat.TabIndex = 17;
+            btThoat.Text = "Thoát";
+            btThoat.UseVisualStyleBackColor = true;
+            btThoat.Click += btThoat_Click;
             // 
             // tableLayoutPanel5
             // 
+            tableLayoutPanel5.BackColor = Color.Transparent;
             tableLayoutPanel5.ColumnCount = 3;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34.40594F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.59406F));
@@ -113,7 +96,7 @@
             tableLayoutPanel5.Controls.Add(chkHienthiMKCU, 2, 2);
             tableLayoutPanel5.Controls.Add(chkHienthiXacNhanMK, 2, 4);
             tableLayoutPanel5.Controls.Add(txtCPTenNv, 1, 1);
-            tableLayoutPanel5.Location = new Point(6, 22);
+            tableLayoutPanel5.Location = new Point(31, 161);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 5;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -122,7 +105,7 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel5.Size = new Size(536, 247);
-            tableLayoutPanel5.TabIndex = 4;
+            tableLayoutPanel5.TabIndex = 18;
             // 
             // txtCPMaNV
             // 
@@ -143,7 +126,6 @@
             chkHienthiMKMoi.TabIndex = 13;
             chkHienthiMKMoi.Text = "Hiển thị";
             chkHienthiMKMoi.UseVisualStyleBackColor = true;
-            chkHienthiMKMoi.CheckedChanged += chbHienthiMKMoi_CheckedChanged;
             // 
             // txtMKCu
             // 
@@ -185,6 +167,17 @@
             label9.Size = new Size(100, 20);
             label9.TabIndex = 7;
             label9.Text = "Mật khẩu mới";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11.25F);
+            label6.Location = new Point(3, 14);
+            label6.Name = "label6";
+            label6.Size = new Size(97, 20);
+            label6.TabIndex = 1;
+            label6.Text = "Mã nhân viên";
             // 
             // label7
             // 
@@ -229,7 +222,6 @@
             chkHienthiMKCU.TabIndex = 12;
             chkHienthiMKCU.Text = "Hiển thị";
             chkHienthiMKCU.UseVisualStyleBackColor = true;
-            chkHienthiMKCU.CheckedChanged += chbHienthiMKCU_CheckedChanged;
             // 
             // chkHienthiXacNhanMK
             // 
@@ -241,7 +233,7 @@
             chkHienthiXacNhanMK.TabIndex = 14;
             chkHienthiXacNhanMK.Text = "Hiển thị";
             chkHienthiXacNhanMK.UseVisualStyleBackColor = true;
-            chkHienthiXacNhanMK.CheckedChanged += chbHienthiXacNhanMK_CheckedChanged;
+            chkHienthiXacNhanMK.CheckedChanged += chkHienthiXacNhanMK_CheckedChanged;
             // 
             // txtCPTenNv
             // 
@@ -252,54 +244,55 @@
             txtCPTenNv.Size = new Size(278, 29);
             txtCPTenNv.TabIndex = 15;
             // 
-            // btThoat
+            // tableLayoutPanel1
             // 
-            btThoat.Location = new Point(603, 357);
-            btThoat.Name = "btThoat";
-            btThoat.Size = new Size(110, 37);
-            btThoat.TabIndex = 17;
-            btThoat.Text = "Thoát";
-            btThoat.UseVisualStyleBackColor = true;
-            btThoat.Click += btThoat_Click;
+            tableLayoutPanel1.BackColor = Color.Transparent;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(btThoat, 1, 0);
+            tableLayoutPanel1.Controls.Add(btDoiMK, 0, 0);
+            tableLayoutPanel1.Location = new Point(31, 441);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(536, 53);
+            tableLayoutPanel1.TabIndex = 19;
             // 
             // frmResetPassWord
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(971, 439);
-            Controls.Add(btThoat);
-            Controls.Add(btDoiMK);
-            Controls.Add(label5);
-            Controls.Add(groupBox4);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(594, 495);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tableLayoutPanel5);
             Name = "frmResetPassWord";
             Text = "PolyCafe-Đổi mật khẩu";
             Load += frmResetPassWord_Load;
-            groupBox4.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label6;
         private Button btDoiMK;
-        private Label label5;
-        private GroupBox groupBox4;
+        private Button btThoat;
         private TableLayoutPanel tableLayoutPanel5;
+        private TextBox txtCPMaNV;
         private CheckBox chkHienthiMKMoi;
         private TextBox txtMKCu;
         private TextBox txtXacNhanMK;
         private TextBox txtMKMoi;
         private Label label9;
+        private Label label6;
         private Label label7;
         private Label label8;
         private Label label10;
         private CheckBox chkHienthiMKCU;
         private CheckBox chkHienthiXacNhanMK;
-        private Button btThoat;
-        private TextBox txtCPMaNV;
         private TextBox txtCPTenNv;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

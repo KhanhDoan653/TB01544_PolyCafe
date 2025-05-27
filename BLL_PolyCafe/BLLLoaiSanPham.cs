@@ -75,5 +75,15 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+        public List<LoaiSanPham> TimKiemLoaiSanPham(string tuKhoa)
+        {
+            List<LoaiSanPham> ds = GetLoaiSanPhamList(); // hoặc gọi từ DAL
+            return ds.Where(lsp =>
+                lsp.MaLoai.ToLower().Contains(tuKhoa.ToLower()) ||
+                lsp.TenLoai.ToLower().Contains(tuKhoa.ToLower()) ||
+                (lsp.GhiChu != null && lsp.GhiChu.ToLower().Contains(tuKhoa.ToLower()))
+            ).ToList();
+        }
+
     }
 }

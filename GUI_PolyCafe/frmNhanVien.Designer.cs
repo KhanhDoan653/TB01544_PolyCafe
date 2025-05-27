@@ -79,11 +79,11 @@
             dgvDanhSachNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDanhSachNV.BackgroundColor = Color.White;
             dgvDanhSachNV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDanhSachNV.Location = new Point(41, 271);
+            dgvDanhSachNV.Location = new Point(18, 278);
             dgvDanhSachNV.Name = "dgvDanhSachNV";
             dgvDanhSachNV.RowHeadersWidth = 51;
             dgvDanhSachNV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDanhSachNV.Size = new Size(894, 176);
+            dgvDanhSachNV.Size = new Size(1160, 258);
             dgvDanhSachNV.TabIndex = 9;
             dgvDanhSachNV.CellMouseDoubleClick += dgvDanhSachNV_CellMouseDoubleClick;
             // 
@@ -91,12 +91,12 @@
             // 
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
-            label7.BackColor = SystemColors.Control;
-            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Gold;
-            label7.Location = new Point(378, 0);
+            label7.Location = new Point(502, 0);
             label7.Name = "label7";
-            label7.Size = new Size(150, 30);
+            label7.Size = new Size(168, 33);
             label7.TabIndex = 8;
             label7.Text = "NHÂN VIÊN";
             // 
@@ -111,7 +111,7 @@
             tableLayoutPanel3.Controls.Add(btThem, 0, 0);
             tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
             tableLayoutPanel3.Controls.Add(btLamMoi, 3, 0);
-            tableLayoutPanel3.Location = new Point(484, 62);
+            tableLayoutPanel3.Location = new Point(750, 62);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -177,7 +177,7 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel4.Controls.Add(txtTim, 0, 0);
             tableLayoutPanel4.Controls.Add(btTim, 1, 0);
-            tableLayoutPanel4.Location = new Point(484, 17);
+            tableLayoutPanel4.Location = new Point(750, 17);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -188,9 +188,10 @@
             // 
             txtTim.Anchor = AnchorStyles.None;
             txtTim.BackColor = Color.White;
-            txtTim.Location = new Point(21, 9);
+            txtTim.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTim.Location = new Point(3, 8);
             txtTim.Name = "txtTim";
-            txtTim.Size = new Size(270, 23);
+            txtTim.Size = new Size(306, 25);
             txtTim.TabIndex = 0;
             // 
             // btTim
@@ -210,9 +211,9 @@
             // 
             groupBox2.BackColor = Color.NavajoWhite;
             groupBox2.ForeColor = Color.Black;
-            groupBox2.Location = new Point(35, 252);
+            groupBox2.Location = new Point(12, 263);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(906, 207);
+            groupBox2.Size = new Size(1172, 279);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách";
@@ -224,7 +225,7 @@
             panel1.Controls.Add(rbtNgungHD);
             panel1.Location = new Point(37, 179);
             panel1.Name = "panel1";
-            panel1.Size = new Size(441, 28);
+            panel1.Size = new Size(649, 28);
             panel1.TabIndex = 10;
             // 
             // label8
@@ -243,7 +244,7 @@
             rbtHoatDong.AutoSize = true;
             rbtHoatDong.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             rbtHoatDong.ForeColor = Color.Goldenrod;
-            rbtHoatDong.Location = new Point(143, 4);
+            rbtHoatDong.Location = new Point(218, 2);
             rbtHoatDong.Name = "rbtHoatDong";
             rbtHoatDong.Size = new Size(92, 21);
             rbtHoatDong.TabIndex = 9;
@@ -256,7 +257,7 @@
             rbtNgungHD.AutoSize = true;
             rbtNgungHD.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             rbtNgungHD.ForeColor = Color.Goldenrod;
-            rbtNgungHD.Location = new Point(284, 4);
+            rbtNgungHD.Location = new Point(458, 4);
             rbtNgungHD.Name = "rbtNgungHD";
             rbtNgungHD.Size = new Size(137, 21);
             rbtNgungHD.TabIndex = 8;
@@ -274,9 +275,9 @@
             groupBox1.Controls.Add(tableLayoutPanel2);
             groupBox1.Controls.Add(tableLayoutPanel1);
             groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(35, 36);
+            groupBox1.Location = new Point(12, 36);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(906, 210);
+            groupBox1.Size = new Size(1172, 221);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin";
@@ -284,9 +285,9 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.97279F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.1995468F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.05442F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.1278877F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.97997F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.8921413F));
             tableLayoutPanel2.Controls.Add(label6, 0, 0);
             tableLayoutPanel2.Controls.Add(rbtNhanVien, 2, 0);
             tableLayoutPanel2.Controls.Add(rbtQuanLy, 1, 0);
@@ -294,7 +295,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 48.2142868F));
-            tableLayoutPanel2.Size = new Size(441, 31);
+            tableLayoutPanel2.Size = new Size(649, 31);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // label6
@@ -313,7 +314,7 @@
             rbtNhanVien.AutoSize = true;
             rbtNhanVien.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             rbtNhanVien.ForeColor = Color.Goldenrod;
-            rbtNhanVien.Location = new Point(284, 3);
+            rbtNhanVien.Location = new Point(458, 3);
             rbtNhanVien.Name = "rbtNhanVien";
             rbtNhanVien.Size = new Size(89, 21);
             rbtNhanVien.TabIndex = 2;
@@ -326,7 +327,7 @@
             rbtQuanLy.AutoSize = true;
             rbtQuanLy.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             rbtQuanLy.ForeColor = Color.Goldenrod;
-            rbtQuanLy.Location = new Point(143, 3);
+            rbtQuanLy.Location = new Point(218, 3);
             rbtQuanLy.Name = "rbtQuanLy";
             rbtQuanLy.Size = new Size(74, 21);
             rbtQuanLy.TabIndex = 3;
@@ -360,7 +361,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new Size(441, 134);
+            tableLayoutPanel1.Size = new Size(649, 134);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label5
@@ -422,36 +423,36 @@
             // 
             txtMaNhanVien.Anchor = AnchorStyles.Left;
             txtMaNhanVien.BackColor = Color.White;
-            txtMaNhanVien.Location = new Point(149, 3);
+            txtMaNhanVien.Location = new Point(218, 3);
             txtMaNhanVien.Name = "txtMaNhanVien";
-            txtMaNhanVien.Size = new Size(157, 23);
+            txtMaNhanVien.Size = new Size(234, 23);
             txtMaNhanVien.TabIndex = 5;
             // 
             // txtHoTen
             // 
             txtHoTen.Anchor = AnchorStyles.Left;
             txtHoTen.BackColor = Color.White;
-            txtHoTen.Location = new Point(149, 29);
+            txtHoTen.Location = new Point(218, 29);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(157, 23);
+            txtHoTen.Size = new Size(234, 23);
             txtHoTen.TabIndex = 6;
             // 
             // txtEmail
             // 
             txtEmail.Anchor = AnchorStyles.Left;
             txtEmail.BackColor = Color.White;
-            txtEmail.Location = new Point(149, 55);
+            txtEmail.Location = new Point(218, 55);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(157, 23);
+            txtEmail.Size = new Size(234, 23);
             txtEmail.TabIndex = 7;
             // 
             // txtXacNhanMK
             // 
             txtXacNhanMK.Anchor = AnchorStyles.Left;
             txtXacNhanMK.BackColor = Color.White;
-            txtXacNhanMK.Location = new Point(149, 107);
+            txtXacNhanMK.Location = new Point(218, 107);
             txtXacNhanMK.Name = "txtXacNhanMK";
-            txtXacNhanMK.Size = new Size(157, 23);
+            txtXacNhanMK.Size = new Size(234, 23);
             txtXacNhanMK.TabIndex = 8;
             txtXacNhanMK.UseSystemPasswordChar = true;
             // 
@@ -459,9 +460,9 @@
             // 
             txtMatKhau.Anchor = AnchorStyles.Left;
             txtMatKhau.BackColor = Color.White;
-            txtMatKhau.Location = new Point(149, 81);
+            txtMatKhau.Location = new Point(218, 81);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(157, 23);
+            txtMatKhau.Size = new Size(234, 23);
             txtMatKhau.TabIndex = 9;
             txtMatKhau.UseSystemPasswordChar = true;
             // 
@@ -470,7 +471,7 @@
             chkHienMK.AutoSize = true;
             chkHienMK.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             chkHienMK.ForeColor = Color.Goldenrod;
-            chkHienMK.Location = new Point(312, 81);
+            chkHienMK.Location = new Point(458, 81);
             chkHienMK.Name = "chkHienMK";
             chkHienMK.Size = new Size(119, 20);
             chkHienMK.TabIndex = 10;
@@ -483,7 +484,7 @@
             chkHienMK2.AutoSize = true;
             chkHienMK2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             chkHienMK2.ForeColor = Color.Goldenrod;
-            chkHienMK2.Location = new Point(312, 107);
+            chkHienMK2.Location = new Point(458, 107);
             chkHienMK2.Name = "chkHienMK2";
             chkHienMK2.Size = new Size(119, 21);
             chkHienMK2.TabIndex = 11;
@@ -497,11 +498,12 @@
             tableLayoutPanel5.ColumnCount = 1;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.Controls.Add(label7, 0, 0);
-            tableLayoutPanel5.Location = new Point(35, 0);
+            tableLayoutPanel5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tableLayoutPanel5.Location = new Point(12, -3);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Size = new Size(906, 30);
+            tableLayoutPanel5.Size = new Size(1172, 33);
             tableLayoutPanel5.TabIndex = 10;
             // 
             // frmNhanVien
@@ -509,7 +511,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(989, 478);
+            ClientSize = new Size(1196, 554);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(groupBox1);
             Controls.Add(dgvDanhSachNV);

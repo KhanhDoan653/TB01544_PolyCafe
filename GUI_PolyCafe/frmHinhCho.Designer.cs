@@ -34,9 +34,9 @@
             // 
             // progressBarwelcome
             // 
-            progressBarwelcome.Location = new Point(32, 419);
+            progressBarwelcome.Location = new Point(12, 427);
             progressBarwelcome.Name = "progressBarwelcome";
-            progressBarwelcome.Size = new Size(870, 24);
+            progressBarwelcome.Size = new Size(936, 34);
             progressBarwelcome.TabIndex = 0;
             // 
             // frmHinhCho
@@ -44,10 +44,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(929, 455);
+            ClientSize = new Size(960, 473);
             Controls.Add(progressBarwelcome);
-            MaximumSize = new Size(945, 494);
-            MinimumSize = new Size(945, 494);
             Name = "frmHinhCho";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcom to PolyCafe";

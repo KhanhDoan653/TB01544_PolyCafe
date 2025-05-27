@@ -47,6 +47,8 @@
             dgrDanhSachLoaiSP = new DataGridView();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            btTim = new Button();
+            txtTim = new TextBox();
             groupBox1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -58,7 +60,7 @@
             // 
             btnSuaLoaiSP.Anchor = AnchorStyles.None;
             btnSuaLoaiSP.BackColor = SystemColors.Window;
-            btnSuaLoaiSP.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSuaLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnSuaLoaiSP.ForeColor = Color.DarkOrange;
             btnSuaLoaiSP.Location = new Point(105, 6);
             btnSuaLoaiSP.Name = "btnSuaLoaiSP";
@@ -73,7 +75,7 @@
             // 
             btnThemLoaiSP.Anchor = AnchorStyles.None;
             btnThemLoaiSP.BackColor = SystemColors.Window;
-            btnThemLoaiSP.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThemLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnThemLoaiSP.ForeColor = Color.Green;
             btnThemLoaiSP.Location = new Point(7, 6);
             btnThemLoaiSP.Name = "btnThemLoaiSP";
@@ -86,11 +88,11 @@
             // 
             // txtGhiChuSP
             // 
-            txtGhiChuSP.Font = new Font("Segoe UI", 12F);
+            txtGhiChuSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtGhiChuSP.Location = new Point(93, 150);
             txtGhiChuSP.Multiline = true;
             txtGhiChuSP.Name = "txtGhiChuSP";
-            txtGhiChuSP.Size = new Size(278, 93);
+            txtGhiChuSP.Size = new Size(278, 149);
             txtGhiChuSP.TabIndex = 2;
             // 
             // groupBox1
@@ -108,7 +110,7 @@
             groupBox1.ForeColor = SystemColors.HotTrack;
             groupBox1.Location = new Point(12, 119);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(395, 347);
+            groupBox1.Size = new Size(396, 423);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Loại ";
@@ -124,7 +126,7 @@
             tableLayoutPanel2.Controls.Add(btnMoiLoaiSP, 3, 0);
             tableLayoutPanel2.Controls.Add(btnSuaLoaiSP, 1, 0);
             tableLayoutPanel2.Controls.Add(btnXoaLoaiSP, 2, 0);
-            tableLayoutPanel2.Location = new Point(6, 249);
+            tableLayoutPanel2.Location = new Point(6, 336);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -135,7 +137,7 @@
             // 
             btnMoiLoaiSP.Anchor = AnchorStyles.None;
             btnMoiLoaiSP.BackColor = SystemColors.Window;
-            btnMoiLoaiSP.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnMoiLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnMoiLoaiSP.ForeColor = Color.DarkCyan;
             btnMoiLoaiSP.Location = new Point(292, 6);
             btnMoiLoaiSP.Name = "btnMoiLoaiSP";
@@ -150,7 +152,7 @@
             // 
             btnXoaLoaiSP.Anchor = AnchorStyles.None;
             btnXoaLoaiSP.BackColor = SystemColors.Window;
-            btnXoaLoaiSP.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnXoaLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
             btnXoaLoaiSP.ForeColor = Color.Red;
             btnXoaLoaiSP.Location = new Point(197, 6);
             btnXoaLoaiSP.Name = "btnXoaLoaiSP";
@@ -164,11 +166,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F);
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F);
             label4.ForeColor = Color.Maroon;
             label4.Location = new Point(7, 158);
             label4.Name = "label4";
-            label4.Size = new Size(50, 15);
+            label4.Size = new Size(62, 18);
             label4.TabIndex = 0;
             label4.Text = "Ghi Chú";
             // 
@@ -183,11 +185,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F);
             label3.ForeColor = Color.Maroon;
             label3.Location = new Point(7, 105);
             label3.Name = "label3";
-            label3.Size = new Size(50, 15);
+            label3.Size = new Size(65, 18);
             label3.TabIndex = 0;
             label3.Text = "Tên Loại";
             // 
@@ -203,18 +205,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F);
+            label2.Font = new Font("Microsoft Sans Serif", 11.25F);
             label2.ForeColor = Color.Maroon;
             label2.Location = new Point(7, 51);
             label2.Name = "label2";
-            label2.Size = new Size(49, 15);
+            label2.Size = new Size(61, 18);
             label2.TabIndex = 0;
             label2.Text = "Mã Loại";
             // 
             // txtTimKiemLoaiSP
             // 
             txtTimKiemLoaiSP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            txtTimKiemLoaiSP.Location = new Point(876, 21);
+            txtTimKiemLoaiSP.Location = new Point(1068, 21);
             txtTimKiemLoaiSP.Name = "txtTimKiemLoaiSP";
             txtTimKiemLoaiSP.Size = new Size(213, 23);
             txtTimKiemLoaiSP.TabIndex = 3;
@@ -223,7 +225,7 @@
             // 
             btnTimKiemLoaiSP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnTimKiemLoaiSP.FlatStyle = FlatStyle.Flat;
-            btnTimKiemLoaiSP.Location = new Point(1090, 21);
+            btnTimKiemLoaiSP.Location = new Point(1282, 21);
             btnTimKiemLoaiSP.Name = "btnTimKiemLoaiSP";
             btnTimKiemLoaiSP.Size = new Size(37, 23);
             btnTimKiemLoaiSP.TabIndex = 5;
@@ -241,7 +243,7 @@
             groupBox2.ForeColor = SystemColors.HotTrack;
             groupBox2.Location = new Point(429, 119);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(563, 347);
+            groupBox2.Size = new Size(755, 423);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách Loại Sản Phẩm";
@@ -250,7 +252,7 @@
             // 
             btnTimKiemThe.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnTimKiemThe.FlatStyle = FlatStyle.Flat;
-            btnTimKiemThe.Location = new Point(1683, 21);
+            btnTimKiemThe.Location = new Point(1875, 21);
             btnTimKiemThe.Name = "btnTimKiemThe";
             btnTimKiemThe.Size = new Size(37, 24);
             btnTimKiemThe.TabIndex = 4;
@@ -267,7 +269,7 @@
             dgrDanhSachLoaiSP.ReadOnly = true;
             dgrDanhSachLoaiSP.RowHeadersWidth = 51;
             dgrDanhSachLoaiSP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgrDanhSachLoaiSP.Size = new Size(551, 319);
+            dgrDanhSachLoaiSP.Size = new Size(743, 395);
             dgrDanhSachLoaiSP.TabIndex = 0;
             dgrDanhSachLoaiSP.CellDoubleClick += dgrDanhSachLoaiSP_CellDoubleClick;
             // 
@@ -276,11 +278,11 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(409, 10);
+            label1.Location = new Point(448, 0);
             label1.Name = "label1";
-            label1.Size = new Size(162, 25);
+            label1.Size = new Size(275, 45);
             label1.TabIndex = 9;
             label1.Text = "LOẠI SẢN PHẨM";
             // 
@@ -290,18 +292,44 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Location = new Point(12, 37);
+            tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(980, 46);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(1172, 46);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btTim
+            // 
+            btTim.Anchor = AnchorStyles.None;
+            btTim.Font = new Font("Microsoft Sans Serif", 12F);
+            btTim.ForeColor = Color.Black;
+            btTim.Location = new Point(1078, 77);
+            btTim.Name = "btTim";
+            btTim.Size = new Size(100, 36);
+            btTim.TabIndex = 13;
+            btTim.Text = "Tìm";
+            btTim.UseVisualStyleBackColor = true;
+            btTim.Click += btTim_Click;
+            // 
+            // txtTim
+            // 
+            txtTim.Anchor = AnchorStyles.None;
+            txtTim.BackColor = Color.White;
+            txtTim.Font = new Font("Segoe UI", 11.25F);
+            txtTim.Location = new Point(435, 81);
+            txtTim.Name = "txtTim";
+            txtTim.Size = new Size(629, 27);
+            txtTim.TabIndex = 12;
             // 
             // frmLoaiSanPham
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1015, 478);
+            ClientSize = new Size(1196, 554);
+            Controls.Add(btTim);
+            Controls.Add(txtTim);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -317,6 +345,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -340,5 +369,7 @@
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
+        private Button btTim;
+        private TextBox txtTim;
     }
 }
