@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             cbxNhanVien = new ComboBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -150,7 +150,7 @@
             dtpTuNgay.Anchor = AnchorStyles.Left;
             dtpTuNgay.Checked = true;
             dtpTuNgay.CustomFormat = "dd/MM/yyyy";
-            dtpTuNgay.CustomizableEdges = customizableEdges1;
+            dtpTuNgay.CustomizableEdges = customizableEdges7;
             dtpTuNgay.FillColor = Color.DarkCyan;
             dtpTuNgay.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dtpTuNgay.ForeColor = Color.White;
@@ -159,7 +159,7 @@
             dtpTuNgay.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpTuNgay.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpTuNgay.Name = "dtpTuNgay";
-            dtpTuNgay.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            dtpTuNgay.ShadowDecoration.CustomizableEdges = customizableEdges8;
             dtpTuNgay.Size = new Size(159, 36);
             dtpTuNgay.TabIndex = 1;
             dtpTuNgay.Value = new DateTime(2025, 5, 28, 22, 15, 8, 170);
@@ -183,7 +183,7 @@
             dtpDenNgay.Anchor = AnchorStyles.Left;
             dtpDenNgay.Checked = true;
             dtpDenNgay.CustomFormat = "dd/MM/yyyy";
-            dtpDenNgay.CustomizableEdges = customizableEdges3;
+            dtpDenNgay.CustomizableEdges = customizableEdges9;
             dtpDenNgay.FillColor = Color.DarkCyan;
             dtpDenNgay.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dtpDenNgay.ForeColor = Color.White;
@@ -192,7 +192,7 @@
             dtpDenNgay.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDenNgay.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDenNgay.Name = "dtpDenNgay";
-            dtpDenNgay.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            dtpDenNgay.ShadowDecoration.CustomizableEdges = customizableEdges10;
             dtpDenNgay.Size = new Size(159, 36);
             dtpDenNgay.TabIndex = 2;
             dtpDenNgay.Value = new DateTime(2025, 5, 28, 22, 14, 54, 958);
@@ -222,7 +222,7 @@
             // btnThongKe
             // 
             btnThongKe.BorderRadius = 20;
-            btnThongKe.CustomizableEdges = customizableEdges5;
+            btnThongKe.CustomizableEdges = customizableEdges11;
             btnThongKe.DisabledState.BorderColor = Color.DarkGray;
             btnThongKe.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThongKe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -231,7 +231,7 @@
             btnThongKe.ForeColor = Color.White;
             btnThongKe.Location = new Point(1029, 26);
             btnThongKe.Name = "btnThongKe";
-            btnThongKe.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnThongKe.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnThongKe.Size = new Size(128, 36);
             btnThongKe.TabIndex = 5;
             btnThongKe.Text = "Thống kê";
@@ -239,26 +239,26 @@
             // 
             // dgrThongKeNhanVien
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgrThongKeNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgrThongKeNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgrThongKeNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgrThongKeNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgrThongKeNhanVien.ColumnHeadersHeight = 4;
             dgrThongKeNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgrThongKeNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgrThongKeNhanVien.DefaultCellStyle = dataGridViewCellStyle6;
             dgrThongKeNhanVien.GridColor = Color.FromArgb(231, 229, 255);
             dgrThongKeNhanVien.Location = new Point(12, 166);
             dgrThongKeNhanVien.Name = "dgrThongKeNhanVien";

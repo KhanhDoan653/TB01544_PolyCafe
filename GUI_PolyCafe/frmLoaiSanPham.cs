@@ -19,7 +19,69 @@ namespace GUI_PolyCafe
             InitializeComponent();
         }
 
-        private void btnThemLoaiSP_Click(object sender, EventArgs e)
+        private void frmLoaiSanPham_Load(object sender, EventArgs e)
+        {
+            ClearForm();
+            LoadDanhSachLoaiSP();
+        }
+
+        private void ClearForm()
+        {
+            btThem.Enabled = true;
+            btSua.Enabled = false;
+            btXoa.Enabled = true;
+            txtMaLoaiSP.Clear();
+            txtGhiChuSP.Clear();
+            txtTenLoaiSP.Clear();
+        }
+
+        private void LoadDanhSachLoaiSP()
+        {
+            BLLLoaiSanPham busLoaiSp = new BLLLoaiSanPham();
+            dgrDanhSachLoaiSP.DataSource = null;
+            dgrDanhSachLoaiSP.DataSource = busLoaiSp.GetLoaiSanPhamList();
+            dgrDanhSachLoaiSP.Columns["MaLoai"].HeaderText = "Mã Loại";
+            dgrDanhSachLoaiSP.Columns["TenLoai"].HeaderText = "Tên Loại";
+            dgrDanhSachLoaiSP.Columns["GhiChu"].HeaderText = "Ghi Chú";
+
+            dgrDanhSachLoaiSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTim.Text.Trim().ToLower();
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Lấy danh sách loại sản phẩm từ BLL
+            try
+            {
+                BLLLoaiSanPham bllLoaiSanPham = new BLLLoaiSanPham();
+                List<LoaiSanPham> danhSach = bllLoaiSanPham.GetLoaiSanPhamList();
+
+                // Nếu không nhập gì, trả về toàn bộ danh sách
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    dgrDanhSachLoaiSP.DataSource = danhSach;
+                    return;
+                }
+
+                // Tìm kiếm với bất kỳ ký tự nào
+                List<LoaiSanPham> ketQua = danhSach
+                    .Where(sp => sp.MaLoai.ToLower().Contains(keyword) || sp.TenLoai.ToLower().Contains(keyword) || sp.GhiChu.ToLower().Contains(keyword))
+                    .ToList();
+
+                dgrDanhSachLoaiSP.DataSource = ketQua;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
         {
             string maLoai = txtMaLoaiSP.Text.Trim();
             string tenLoai = txtTenLoaiSP.Text.Trim();
@@ -53,7 +115,7 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void btnSuaLoaiSP_Click(object sender, EventArgs e)
+        private void btSua_Click(object sender, EventArgs e)
         {
             string maLoai = txtMaLoaiSP.Text.Trim();
             string tenLoai = txtTenLoaiSP.Text.Trim();
@@ -86,7 +148,7 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void btnXoaLoaiSP_Click(object sender, EventArgs e)
+        private void btXoa_Click(object sender, EventArgs e)
         {
             string maLoai = txtMaLoaiSP.Text.Trim();
             string tenLoai = txtTenLoaiSP.Text.Trim();
@@ -136,38 +198,10 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void btnMoiLoaiSP_Click(object sender, EventArgs e)
+        private void btLamMoi_Click(object sender, EventArgs e)
         {
             ClearForm();
             LoadDanhSachLoaiSP();
-        }
-
-        private void frmLoaiSanPham_Load(object sender, EventArgs e)
-        {
-            ClearForm();
-            LoadDanhSachLoaiSP();
-        }
-
-        private void ClearForm()
-        {
-            btnThemLoaiSP.Enabled = true;
-            btnSuaLoaiSP.Enabled = false;
-            btnXoaLoaiSP.Enabled = true;
-            txtMaLoaiSP.Clear();
-            txtGhiChuSP.Clear();
-            txtTenLoaiSP.Clear();
-        }
-
-        private void LoadDanhSachLoaiSP()
-        {
-            BLLLoaiSanPham busLoaiSp = new BLLLoaiSanPham();
-            dgrDanhSachLoaiSP.DataSource = null;
-            dgrDanhSachLoaiSP.DataSource = busLoaiSp.GetLoaiSanPhamList();
-            dgrDanhSachLoaiSP.Columns["MaLoai"].HeaderText = "Mã Loại";
-            dgrDanhSachLoaiSP.Columns["TenLoai"].HeaderText = "Tên Loại";
-            dgrDanhSachLoaiSP.Columns["GhiChu"].HeaderText = "Ghi Chú";
-
-            dgrDanhSachLoaiSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void dgrDanhSachLoaiSP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -179,45 +213,11 @@ namespace GUI_PolyCafe
             txtGhiChuSP.Text = row.Cells["GhiChu"].Value.ToString();
 
             // Bật nút "Sửa"
-            btnThemLoaiSP.Enabled = false;
-            btnSuaLoaiSP.Enabled = true;
-            btnXoaLoaiSP.Enabled = true;
+            btThem.Enabled = false;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
             // Tắt chỉnh sửa mã thẻ
             txtMaLoaiSP.Enabled = false;
-        }
-
-        private void btTim_Click(object sender, EventArgs e)
-        {
-            string keyword = txtTim.Text.Trim().ToLower();
-            if(string.IsNullOrWhiteSpace(keyword))
-            {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            // Lấy danh sách loại sản phẩm từ BLL
-            try
-            {
-                BLLLoaiSanPham bllLoaiSanPham = new BLLLoaiSanPham();
-                List<LoaiSanPham> danhSach = bllLoaiSanPham.GetLoaiSanPhamList();
-
-                // Nếu không nhập gì, trả về toàn bộ danh sách
-                if (string.IsNullOrEmpty(keyword))
-                {
-                    dgrDanhSachLoaiSP.DataSource = danhSach;
-                    return;
-                }
-
-                // Tìm kiếm với bất kỳ ký tự nào
-                List<LoaiSanPham> ketQua = danhSach
-                    .Where(sp => sp.MaLoai.ToLower().Contains(keyword) || sp.TenLoai.ToLower().Contains(keyword) || sp.GhiChu.ToLower().Contains(keyword))
-                    .ToList();
-
-                dgrDanhSachLoaiSP.DataSource = ketQua;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

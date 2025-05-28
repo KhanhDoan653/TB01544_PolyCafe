@@ -262,6 +262,7 @@
             txtMaThe.Font = new Font("Microsoft Sans Serif", 11.25F);
             txtMaThe.Location = new Point(112, 3);
             txtMaThe.Name = "txtMaThe";
+            txtMaThe.ReadOnly = true;
             txtMaThe.Size = new Size(311, 24);
             txtMaThe.TabIndex = 5;
             // 

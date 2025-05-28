@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnSuaLoaiSP = new Button();
-            btnThemLoaiSP = new Button();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             txtGhiChuSP = new TextBox();
             groupBox1 = new GroupBox();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            btnMoiLoaiSP = new Button();
-            btnXoaLoaiSP = new Button();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btLamMoi = new Guna.UI2.WinForms.Guna2Button();
+            btThem = new Guna.UI2.WinForms.Guna2Button();
+            btSua = new Guna.UI2.WinForms.Guna2Button();
+            btXoa = new Guna.UI2.WinForms.Guna2Button();
             label4 = new Label();
             txtTenLoaiSP = new TextBox();
             label3 = new Label();
@@ -43,48 +54,18 @@
             txtTimKiemLoaiSP = new TextBox();
             btnTimKiemLoaiSP = new Button();
             groupBox2 = new GroupBox();
+            dgrDanhSachLoaiSP = new Guna.UI2.WinForms.Guna2DataGridView();
             btnTimKiemThe = new Button();
-            dgrDanhSachLoaiSP = new DataGridView();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             btTim = new Button();
             txtTim = new TextBox();
             groupBox1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrDanhSachLoaiSP).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnSuaLoaiSP
-            // 
-            btnSuaLoaiSP.Anchor = AnchorStyles.None;
-            btnSuaLoaiSP.BackColor = SystemColors.Window;
-            btnSuaLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnSuaLoaiSP.ForeColor = Color.DarkOrange;
-            btnSuaLoaiSP.Location = new Point(105, 6);
-            btnSuaLoaiSP.Name = "btnSuaLoaiSP";
-            btnSuaLoaiSP.Size = new Size(75, 41);
-            btnSuaLoaiSP.TabIndex = 5;
-            btnSuaLoaiSP.Text = "Sửa";
-            btnSuaLoaiSP.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSuaLoaiSP.UseVisualStyleBackColor = false;
-            btnSuaLoaiSP.Click += btnSuaLoaiSP_Click;
-            // 
-            // btnThemLoaiSP
-            // 
-            btnThemLoaiSP.Anchor = AnchorStyles.None;
-            btnThemLoaiSP.BackColor = SystemColors.Window;
-            btnThemLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnThemLoaiSP.ForeColor = Color.Green;
-            btnThemLoaiSP.Location = new Point(7, 6);
-            btnThemLoaiSP.Name = "btnThemLoaiSP";
-            btnThemLoaiSP.Size = new Size(81, 41);
-            btnThemLoaiSP.TabIndex = 4;
-            btnThemLoaiSP.Text = "Thêm";
-            btnThemLoaiSP.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnThemLoaiSP.UseVisualStyleBackColor = false;
-            btnThemLoaiSP.Click += btnThemLoaiSP_Click;
             // 
             // txtGhiChuSP
             // 
@@ -99,7 +80,7 @@
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             groupBox1.BackColor = Color.Transparent;
-            groupBox1.Controls.Add(tableLayoutPanel2);
+            groupBox1.Controls.Add(tableLayoutPanel3);
             groupBox1.Controls.Add(txtGhiChuSP);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtTenLoaiSP);
@@ -115,53 +96,107 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Loại ";
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanel3
             // 
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Controls.Add(btnThemLoaiSP, 0, 0);
-            tableLayoutPanel2.Controls.Add(btnMoiLoaiSP, 3, 0);
-            tableLayoutPanel2.Controls.Add(btnSuaLoaiSP, 1, 0);
-            tableLayoutPanel2.Controls.Add(btnXoaLoaiSP, 2, 0);
-            tableLayoutPanel2.Location = new Point(6, 336);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(383, 53);
-            tableLayoutPanel2.TabIndex = 8;
+            tableLayoutPanel3.ColumnCount = 4;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.Controls.Add(btLamMoi, 3, 0);
+            tableLayoutPanel3.Controls.Add(btThem, 0, 0);
+            tableLayoutPanel3.Controls.Add(btSua, 1, 0);
+            tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
+            tableLayoutPanel3.Location = new Point(6, 356);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(384, 61);
+            tableLayoutPanel3.TabIndex = 39;
             // 
-            // btnMoiLoaiSP
+            // btLamMoi
             // 
-            btnMoiLoaiSP.Anchor = AnchorStyles.None;
-            btnMoiLoaiSP.BackColor = SystemColors.Window;
-            btnMoiLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMoiLoaiSP.ForeColor = Color.DarkCyan;
-            btnMoiLoaiSP.Location = new Point(292, 6);
-            btnMoiLoaiSP.Name = "btnMoiLoaiSP";
-            btnMoiLoaiSP.Size = new Size(84, 41);
-            btnMoiLoaiSP.TabIndex = 7;
-            btnMoiLoaiSP.Text = "Mới";
-            btnMoiLoaiSP.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMoiLoaiSP.UseVisualStyleBackColor = false;
-            btnMoiLoaiSP.Click += btnMoiLoaiSP_Click;
+            btLamMoi.Anchor = AnchorStyles.None;
+            btLamMoi.BorderRadius = 5;
+            btLamMoi.CustomizableEdges = customizableEdges1;
+            btLamMoi.DisabledState.BorderColor = Color.DarkGray;
+            btLamMoi.DisabledState.CustomBorderColor = Color.DarkGray;
+            btLamMoi.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btLamMoi.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btLamMoi.FillColor = Color.White;
+            btLamMoi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btLamMoi.ForeColor = Color.DarkCyan;
+            btLamMoi.Image = Properties.Resources.icons8_refresh_50;
+            btLamMoi.Location = new Point(291, 12);
+            btLamMoi.Name = "btLamMoi";
+            btLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btLamMoi.Size = new Size(90, 36);
+            btLamMoi.TabIndex = 12;
+            btLamMoi.Text = "Làm mới";
+            btLamMoi.Click += btLamMoi_Click;
             // 
-            // btnXoaLoaiSP
+            // btThem
             // 
-            btnXoaLoaiSP.Anchor = AnchorStyles.None;
-            btnXoaLoaiSP.BackColor = SystemColors.Window;
-            btnXoaLoaiSP.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnXoaLoaiSP.ForeColor = Color.Red;
-            btnXoaLoaiSP.Location = new Point(197, 6);
-            btnXoaLoaiSP.Name = "btnXoaLoaiSP";
-            btnXoaLoaiSP.Size = new Size(80, 41);
-            btnXoaLoaiSP.TabIndex = 6;
-            btnXoaLoaiSP.Text = "Xóa";
-            btnXoaLoaiSP.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnXoaLoaiSP.UseVisualStyleBackColor = false;
-            btnXoaLoaiSP.Click += btnXoaLoaiSP_Click;
+            btThem.Anchor = AnchorStyles.None;
+            btThem.BorderRadius = 5;
+            btThem.CustomizableEdges = customizableEdges3;
+            btThem.DisabledState.BorderColor = Color.DarkGray;
+            btThem.DisabledState.CustomBorderColor = Color.DarkGray;
+            btThem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btThem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btThem.FillColor = Color.White;
+            btThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btThem.ForeColor = Color.Green;
+            btThem.Image = Properties.Resources.icons8_add_24;
+            btThem.Location = new Point(3, 12);
+            btThem.Name = "btThem";
+            btThem.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btThem.Size = new Size(90, 36);
+            btThem.TabIndex = 9;
+            btThem.Text = "Thêm";
+            btThem.Click += btThem_Click;
+            // 
+            // btSua
+            // 
+            btSua.Anchor = AnchorStyles.None;
+            btSua.BorderRadius = 5;
+            btSua.CustomizableEdges = customizableEdges5;
+            btSua.DisabledState.BorderColor = Color.DarkGray;
+            btSua.DisabledState.CustomBorderColor = Color.DarkGray;
+            btSua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btSua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btSua.FillColor = Color.White;
+            btSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btSua.ForeColor = Color.DarkOrange;
+            btSua.Image = Properties.Resources.icons8_fix_50__1_;
+            btSua.Location = new Point(99, 12);
+            btSua.Name = "btSua";
+            btSua.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btSua.Size = new Size(90, 36);
+            btSua.TabIndex = 10;
+            btSua.Text = "Sửa";
+            btSua.Click += btSua_Click;
+            // 
+            // btXoa
+            // 
+            btXoa.Anchor = AnchorStyles.None;
+            btXoa.BorderRadius = 5;
+            btXoa.CustomizableEdges = customizableEdges7;
+            btXoa.DisabledState.BorderColor = Color.DarkGray;
+            btXoa.DisabledState.CustomBorderColor = Color.DarkGray;
+            btXoa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btXoa.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btXoa.FillColor = Color.White;
+            btXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btXoa.ForeColor = Color.Red;
+            btXoa.Image = Properties.Resources.icons8_remove_30;
+            btXoa.Location = new Point(195, 12);
+            btXoa.Name = "btXoa";
+            btXoa.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btXoa.Size = new Size(90, 36);
+            btXoa.TabIndex = 11;
+            btXoa.Text = "Xóa";
+            btXoa.Click += btXoa_Click;
             // 
             // label4
             // 
@@ -235,10 +270,10 @@
             // 
             groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(dgrDanhSachLoaiSP);
             groupBox2.Controls.Add(btnTimKiemLoaiSP);
             groupBox2.Controls.Add(btnTimKiemThe);
             groupBox2.Controls.Add(txtTimKiemLoaiSP);
-            groupBox2.Controls.Add(dgrDanhSachLoaiSP);
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             groupBox2.ForeColor = SystemColors.HotTrack;
             groupBox2.Location = new Point(429, 119);
@@ -247,6 +282,57 @@
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách Loại Sản Phẩm";
+            // 
+            // dgrDanhSachLoaiSP
+            // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgrDanhSachLoaiSP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgrDanhSachLoaiSP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgrDanhSachLoaiSP.ColumnHeadersHeight = 4;
+            dgrDanhSachLoaiSP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgrDanhSachLoaiSP.DefaultCellStyle = dataGridViewCellStyle3;
+            dgrDanhSachLoaiSP.GridColor = Color.FromArgb(231, 229, 255);
+            dgrDanhSachLoaiSP.Location = new Point(12, 22);
+            dgrDanhSachLoaiSP.Name = "dgrDanhSachLoaiSP";
+            dgrDanhSachLoaiSP.RowHeadersVisible = false;
+            dgrDanhSachLoaiSP.Size = new Size(743, 387);
+            dgrDanhSachLoaiSP.TabIndex = 6;
+            dgrDanhSachLoaiSP.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgrDanhSachLoaiSP.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgrDanhSachLoaiSP.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgrDanhSachLoaiSP.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgrDanhSachLoaiSP.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgrDanhSachLoaiSP.ThemeStyle.BackColor = Color.White;
+            dgrDanhSachLoaiSP.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgrDanhSachLoaiSP.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgrDanhSachLoaiSP.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgrDanhSachLoaiSP.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dgrDanhSachLoaiSP.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgrDanhSachLoaiSP.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgrDanhSachLoaiSP.ThemeStyle.HeaderStyle.Height = 4;
+            dgrDanhSachLoaiSP.ThemeStyle.ReadOnly = false;
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.ForeColor = SystemColors.HotTrack;
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.Height = 25;
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgrDanhSachLoaiSP.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgrDanhSachLoaiSP.CellDoubleClick += dgrDanhSachLoaiSP_CellDoubleClick;
             // 
             // btnTimKiemThe
             // 
@@ -257,21 +343,6 @@
             btnTimKiemThe.Size = new Size(37, 24);
             btnTimKiemThe.TabIndex = 4;
             btnTimKiemThe.UseVisualStyleBackColor = true;
-            // 
-            // dgrDanhSachLoaiSP
-            // 
-            dgrDanhSachLoaiSP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgrDanhSachLoaiSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgrDanhSachLoaiSP.BackgroundColor = Color.White;
-            dgrDanhSachLoaiSP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrDanhSachLoaiSP.Location = new Point(6, 22);
-            dgrDanhSachLoaiSP.Name = "dgrDanhSachLoaiSP";
-            dgrDanhSachLoaiSP.ReadOnly = true;
-            dgrDanhSachLoaiSP.RowHeadersWidth = 51;
-            dgrDanhSachLoaiSP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgrDanhSachLoaiSP.Size = new Size(743, 395);
-            dgrDanhSachLoaiSP.TabIndex = 0;
-            dgrDanhSachLoaiSP.CellDoubleClick += dgrDanhSachLoaiSP_CellDoubleClick;
             // 
             // label1
             // 
@@ -338,7 +409,7 @@
             Load += frmLoaiSanPham_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgrDanhSachLoaiSP).EndInit();
@@ -349,13 +420,8 @@
         }
 
         #endregion
-
-        private Button btnSuaLoaiSP;
-        private Button btnThemLoaiSP;
         private TextBox txtGhiChuSP;
         private GroupBox groupBox1;
-        private Button btnMoiLoaiSP;
-        private Button btnXoaLoaiSP;
         private Label label4;
         private TextBox txtTenLoaiSP;
         private Label label3;
@@ -365,11 +431,15 @@
         private Button btnTimKiemLoaiSP;
         private GroupBox groupBox2;
         private Button btnTimKiemThe;
-        private DataGridView dgrDanhSachLoaiSP;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
         private Button btTim;
         private TextBox txtTim;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Guna.UI2.WinForms.Guna2Button btLamMoi;
+        private Guna.UI2.WinForms.Guna2Button btThem;
+        private Guna.UI2.WinForms.Guna2Button btSua;
+        private Guna.UI2.WinForms.Guna2Button btXoa;
+        private Guna.UI2.WinForms.Guna2DataGridView dgrDanhSachLoaiSP;
     }
 }

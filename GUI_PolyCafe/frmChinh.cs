@@ -157,5 +157,15 @@ namespace GUI_PolyCafe
         {
             openChildForm(new frmDoanhThuNhanVien());
         }
+
+        private void KhuyenMaiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KhuyenMaiToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new frmKhuyenMai());
+        }
     }
 }
