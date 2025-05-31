@@ -418,6 +418,7 @@
             dgvDanhSachSP.ThemeStyle.RowsStyle.Height = 25;
             dgvDanhSachSP.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvDanhSachSP.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvDanhSachSP.CellContentClick += dgvDanhSachSP_CellContentClick;
             dgvDanhSachSP.CellDoubleClick += dgvDanhSachSP_CellDoubleClick;
             // 
             // btTim

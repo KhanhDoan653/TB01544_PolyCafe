@@ -40,7 +40,7 @@ namespace GUI_PolyCafe
             dtpNgayTao.Enabled = true;
             dtpNgayTao.Value = DateTime.Now;
             rdChoXacNhan.Enabled = true;
-            rdChuaThanhToan.Enabled = true;
+            rdDaThanhToan.Enabled = true;
             dtpNgayTao.Value = DateTime.Now;
             rdChoXacNhan.Checked = true;
         }
@@ -302,8 +302,8 @@ namespace GUI_PolyCafe
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
             if (trangThai)
             {
-                rdChuaThanhToan.Checked = true;
-                rdChuaThanhToan.Enabled = false;
+                rdDaThanhToan.Checked = true;
+                rdDaThanhToan.Enabled = false;
                 rdChoXacNhan.Enabled = false;
                 cboNhanVien.Enabled = false;
                 dtpNgayTao.Enabled = false;
@@ -314,8 +314,8 @@ namespace GUI_PolyCafe
             }
             else
             {
-                rdChuaThanhToan.Checked = false;
-                rdChuaThanhToan.Enabled = true;
+                rdDaThanhToan.Checked = false;
+                rdDaThanhToan.Enabled = true;
                 rdChoXacNhan.Enabled = true;
                 cboNhanVien.Enabled = true;
                 rdChoXacNhan.Checked = true;
@@ -366,6 +366,11 @@ namespace GUI_PolyCafe
         }
 
         private void dgvDanhSachPhieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void rdDaThanhToan_CheckedChanged(object sender, EventArgs e)
         {
 
         }

@@ -17,6 +17,7 @@ namespace GUI_PolyCafe
         public frmDoanhThuNhanVien()
         {
             InitializeComponent();
+            LoadNhanVien();
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)

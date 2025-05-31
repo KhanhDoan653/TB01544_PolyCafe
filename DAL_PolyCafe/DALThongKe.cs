@@ -42,9 +42,12 @@ namespace DAL_PolyCafe
         {
             string sql = "TKDoanhThuTheoNhanVien";
             List<object> thamSo = new List<object>();
+
+            // Giữ nguyên chuỗi rỗng nếu chọn "--Tất Cả--"
             thamSo.Add(maNV);
             thamSo.Add(tuNgay);
             thamSo.Add(denNgay);
+
             List<ThongKeTheoNhanVien> result = new List<ThongKeTheoNhanVien>();
             SqlDataReader reader = DBUNTIL.Query(sql, thamSo, CommandType.StoredProcedure);
             if (reader.HasRows)
@@ -57,12 +60,13 @@ namespace DAL_PolyCafe
                     tk.SoLy = int.Parse(reader["SoLy"].ToString());
                     tk.SoLuongPhieu = int.Parse(reader["SoLuongPhieu"].ToString());
                     tk.NgayBan = DateTime.Parse(reader["NgayBan"].ToString()).ToString("dd/MM/yyyy");
-                    tk.TongTien = decimal.Parse(reader["TongTien"].ToString()).ToString("#,0"); ;
+                    tk.TongTien = decimal.Parse(reader["TongTien"].ToString()).ToString("#,0");
                     tk.DaThanhToan = bool.Parse(reader["TrangThai"].ToString()) ? "Đã Thanh Toán" : "Chưa Thanh Toán";
                     result.Add(tk);
                 }
             }
             return result;
         }
+
     }
 }

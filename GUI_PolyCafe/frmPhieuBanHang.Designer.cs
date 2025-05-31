@@ -45,19 +45,19 @@
             cboMaTheLuuDong = new ComboBox();
             btSua = new Button();
             rdChoXacNhan = new RadioButton();
-            rdChuaThanhToan = new RadioButton();
+            rdDaThanhToan = new RadioButton();
             txtTim = new TextBox();
             btTim = new Button();
             groupBox1 = new GroupBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            tableLayoutPanel3 = new TableLayoutPanel();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachPhieu).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox2
@@ -257,17 +257,18 @@
             rdChoXacNhan.Text = "Chờ xác nhận";
             rdChoXacNhan.UseVisualStyleBackColor = true;
             // 
-            // rdChuaThanhToan
+            // rdDaThanhToan
             // 
-            rdChuaThanhToan.AutoSize = true;
-            rdChuaThanhToan.Font = new Font("Microsoft Sans Serif", 12F);
-            rdChuaThanhToan.Location = new Point(339, 174);
-            rdChuaThanhToan.Name = "rdChuaThanhToan";
-            rdChuaThanhToan.Size = new Size(129, 24);
-            rdChuaThanhToan.TabIndex = 11;
-            rdChuaThanhToan.TabStop = true;
-            rdChuaThanhToan.Text = "Đã thanh toán";
-            rdChuaThanhToan.UseVisualStyleBackColor = true;
+            rdDaThanhToan.AutoSize = true;
+            rdDaThanhToan.Font = new Font("Microsoft Sans Serif", 12F);
+            rdDaThanhToan.Location = new Point(339, 174);
+            rdDaThanhToan.Name = "rdDaThanhToan";
+            rdDaThanhToan.Size = new Size(129, 24);
+            rdDaThanhToan.TabIndex = 11;
+            rdDaThanhToan.TabStop = true;
+            rdDaThanhToan.Text = "Đã thanh toán";
+            rdDaThanhToan.UseVisualStyleBackColor = true;
+            rdDaThanhToan.CheckedChanged += rdDaThanhToan_CheckedChanged;
             // 
             // txtTim
             // 
@@ -298,7 +299,7 @@
             groupBox1.Controls.Add(tableLayoutPanel3);
             groupBox1.Controls.Add(btTim);
             groupBox1.Controls.Add(txtTim);
-            groupBox1.Controls.Add(rdChuaThanhToan);
+            groupBox1.Controls.Add(rdDaThanhToan);
             groupBox1.Controls.Add(rdChoXacNhan);
             groupBox1.Controls.Add(tableLayoutPanel1);
             groupBox1.Controls.Add(label5);
@@ -308,6 +309,24 @@
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin";
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 4;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.Controls.Add(btLamMoi, 3, 0);
+            tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
+            tableLayoutPanel3.Controls.Add(btSua, 1, 0);
+            tableLayoutPanel3.Controls.Add(btThem, 0, 0);
+            tableLayoutPanel3.Location = new Point(584, 115);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(526, 58);
+            tableLayoutPanel3.TabIndex = 15;
             // 
             // label6
             // 
@@ -334,24 +353,6 @@
             tableLayoutPanel2.Size = new Size(1134, 27);
             tableLayoutPanel2.TabIndex = 12;
             // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 4;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Controls.Add(btLamMoi, 3, 0);
-            tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
-            tableLayoutPanel3.Controls.Add(btSua, 1, 0);
-            tableLayoutPanel3.Controls.Add(btThem, 0, 0);
-            tableLayoutPanel3.Location = new Point(584, 115);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(526, 58);
-            tableLayoutPanel3.TabIndex = 15;
-            // 
             // frmPhieuBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -370,9 +371,9 @@
             tableLayoutPanel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -392,7 +393,7 @@
         private DateTimePicker dtpNgayTao;
         private Button btSua;
         private RadioButton rdChoXacNhan;
-        private RadioButton rdChuaThanhToan;
+        private RadioButton rdDaThanhToan;
         private TextBox txtTim;
         private Button btTim;
         private GroupBox groupBox1;

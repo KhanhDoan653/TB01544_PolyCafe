@@ -392,5 +392,10 @@ namespace GUI_PolyCafe
             btSua.Enabled = true;
             btXoa.Enabled = true;
         }
+
+        private void dgvDanhSachSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

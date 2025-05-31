@@ -398,6 +398,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1196, 554);
             Controls.Add(btTim);
             Controls.Add(txtTim);
