@@ -74,5 +74,18 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+        public string UpdatePhanTramGiam(PhieuBanHang phieu)
+        {
+            try
+            {
+                return new DALPhieuBanHang().UpdatePhanTramGiam(phieu);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+
     }
 }

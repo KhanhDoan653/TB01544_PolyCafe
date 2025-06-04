@@ -19,6 +19,34 @@ namespace GUI_PolyCafe
             InitializeComponent();
         }
 
+
+        private void frmTheLuuDong_Load(object sender, EventArgs e)
+        {
+            ClearForm();
+            LoadDanhSachThe();
+        }
+        private void LoadDanhSachThe()
+        {
+            BLLTheLuuDong bUSTheLuuDong = new BLLTheLuuDong();
+            dgvDanhSachTheLuuDong.DataSource = null;
+            dgvDanhSachTheLuuDong.DataSource = bUSTheLuuDong.GetTheLuuDongList();
+            dgvDanhSachTheLuuDong.Columns["MaThe"].HeaderText = "Mã thẻ lưu động";
+            dgvDanhSachTheLuuDong.Columns["ChuSoHuu"].HeaderText = "Chủ sở hữu";
+            dgvDanhSachTheLuuDong.Columns["TrangThaiText"].HeaderText = "Trạng thái";
+            dgvDanhSachTheLuuDong.Columns["TrangThai"].Visible = false;
+        }
+
+        private void ClearForm()
+        {
+            btThem.Enabled = true;
+            btSua.Enabled = false;
+            btXoa.Enabled = true;
+            txtChuSoHuu.Clear();
+            cbkHoatDong.Checked = true;
+        }
+
+
+
         private void btThem_Click(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
@@ -59,49 +87,6 @@ namespace GUI_PolyCafe
             {
                 MessageBox.Show(result);
             }
-        }
-
-        private void frmTheLuuDong_Load(object sender, EventArgs e)
-        {
-            ClearForm();
-            LoadDanhSachThe();
-        }
-        private void LoadDanhSachThe()
-        {
-            BLLTheLuuDong bUSTheLuuDong = new BLLTheLuuDong();
-            dgvDanhSachTheLuuDong.DataSource = null;
-            dgvDanhSachTheLuuDong.DataSource = bUSTheLuuDong.GetTheLuuDongList();
-            dgvDanhSachTheLuuDong.Columns["MaThe"].HeaderText = "Mã thẻ lưu động";
-            dgvDanhSachTheLuuDong.Columns["ChuSoHuu"].HeaderText = "Chủ sở hữu";
-            dgvDanhSachTheLuuDong.Columns["TrangThaiText"].HeaderText = "Trạng thái";
-            dgvDanhSachTheLuuDong.Columns["TrangThai"].Visible = false;
-        }
-
-        private void ClearForm()
-        {
-            btThem.Enabled = true;
-            btSua.Enabled = false;
-            btXoa.Enabled = true;
-            txtChuSoHuu.Clear();
-            cbkHoatDong.Checked = true;
-        }
-
-        private void dgvDanhSachTheLuuDong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvDanhSachTheLuuDong.Rows[e.RowIndex];
-            // Đổ dữ liệu vào các ô nhập liệu trên form
-            txtMaThe.Text = row.Cells["MaThe"].Value.ToString();
-            txtChuSoHuu.Text = row.Cells["ChuSoHuu"].Value.ToString();
-
-            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-            cbkHoatDong.Checked = trangThai;
-
-            // Bật nút "Sửa"
-            btThem.Enabled = false;
-            btSua.Enabled = true;
-            btXoa.Enabled = true;
-            // Tắt chỉnh sửa mã thẻ
-            txtMaThe.Enabled = false;
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -197,6 +182,24 @@ namespace GUI_PolyCafe
         {
             ClearForm();
             LoadDanhSachThe();
+        }
+
+        private void dgvDanhSachTheLuuDong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvDanhSachTheLuuDong.Rows[e.RowIndex];
+            // Đổ dữ liệu vào các ô nhập liệu trên form
+            txtMaThe.Text = row.Cells["MaThe"].Value.ToString();
+            txtChuSoHuu.Text = row.Cells["ChuSoHuu"].Value.ToString();
+
+            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+            cbkHoatDong.Checked = trangThai;
+
+            // Bật nút "Sửa"
+            btThem.Enabled = false;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
+            // Tắt chỉnh sửa mã thẻ
+            txtMaThe.Enabled = false;
         }
 
         private void btTim_Click(object sender, EventArgs e)

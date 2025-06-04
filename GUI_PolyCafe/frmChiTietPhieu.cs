@@ -260,8 +260,9 @@ namespace GUI_PolyCafe
             decimal dichVu = 0;
             decimal thanhTien = 0;
 
-            decimal.TryParse(txtPhanTram.Text, out phanTram);
-            decimal.TryParse(txtDichVu.Text, out dichVu);
+            // Gán 0 nếu text trống
+            decimal.TryParse(string.IsNullOrWhiteSpace(txtPhanTram.Text) ? "0" : txtPhanTram.Text, out phanTram);
+            decimal.TryParse(string.IsNullOrWhiteSpace(txtDichVu.Text) ? "0" : txtDichVu.Text, out dichVu);
 
             giamGia = tong * (phanTram / 100);
             thanhTien = tong - giamGia + dichVu;
@@ -280,7 +281,31 @@ namespace GUI_PolyCafe
         private void txtPhanTram_TextChanged(object sender, EventArgs e)
         {
             if (!isActive)
+            {
+                decimal value;
+                if (decimal.TryParse(txtPhanTram.Text, out value))
+                {
+                    if (value < 0 || value > 100)
+                    {
+                        MessageBox.Show("Phần trăm giảm giá phải từ 0 đến 100!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtPhanTram.Text = "0";
+                        return;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(txtPhanTram.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPhanTram.Text = "0";
+                    return;
+                }
+
                 TinhTongTien();
+            }
+        }
+
+        private void frmChiTietPhieu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

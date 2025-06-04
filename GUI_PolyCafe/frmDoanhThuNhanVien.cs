@@ -42,6 +42,8 @@ namespace GUI_PolyCafe
             // Lấy ngày đầu tháng hiện tại
             DateTime firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
 
+
+
             // Gán giá trị cho DateTimePicker
             dtpTuNgay.Value = firstDayOfMonth;
             LoadNhanVien();

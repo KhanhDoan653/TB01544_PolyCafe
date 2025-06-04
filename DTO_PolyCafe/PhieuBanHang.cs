@@ -12,7 +12,7 @@ namespace DTO_PolyCafe
         public string? MaThe { get; set; }
         public string? MaPhieu { get; set; }
         public string? ChuSoHuu { get; set; }
-
+        public decimal PhanTramGiam { get; set; }
         public string? MaNhanVien { get; set; }
         public string? HoTen { get; set; }
         public DateTime NgayTao { get; set; } = new DateTime();

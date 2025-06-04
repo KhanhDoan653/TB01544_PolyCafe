@@ -143,6 +143,7 @@
             dgvDanhSachKM.ThemeStyle.RowsStyle.Height = 25;
             dgvDanhSachKM.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvDanhSachKM.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvDanhSachKM.CellDoubleClick += dgvDanhSachKM_CellDoubleClick;
             // 
             // groupBox1
             // 
@@ -152,9 +153,9 @@
             groupBox1.Controls.Add(tableLayoutPanel2);
             groupBox1.Controls.Add(tableLayoutPanel1);
             groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(12, 53);
+            groupBox1.Location = new Point(12, 65);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1172, 221);
+            groupBox1.Size = new Size(1172, 209);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin";
@@ -196,6 +197,7 @@
             btLamMoi.Size = new Size(98, 36);
             btLamMoi.TabIndex = 12;
             btLamMoi.Text = "Làm mới";
+            btLamMoi.Click += btLamMoi_Click;
             // 
             // btThem
             // 
@@ -237,6 +239,7 @@
             btSua.Size = new Size(98, 36);
             btSua.TabIndex = 10;
             btSua.Text = "Sửa";
+            btSua.Click += btSua_Click;
             // 
             // btXoa
             // 
@@ -257,6 +260,7 @@
             btXoa.Size = new Size(98, 36);
             btXoa.TabIndex = 11;
             btXoa.Text = "Xóa";
+            btXoa.Click += btXoa_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -300,6 +304,7 @@
             btnTim.Size = new Size(98, 36);
             btnTim.TabIndex = 1;
             btnTim.Text = "Tìm";
+            btnTim.Click += btnTim_Click;
             // 
             // tableLayoutPanel2
             // 

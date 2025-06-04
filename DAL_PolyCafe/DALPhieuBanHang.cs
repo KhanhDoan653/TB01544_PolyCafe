@@ -130,5 +130,23 @@ namespace DAL_PolyCafe
 
             return SelectBySql(sql, param);
         }
+        public string UpdatePhanTramGiam(PhieuBanHang phieu)
+        {
+            try
+            {
+                string sql = "UPDATE PhieuBanHang SET PhanTramGiam = @1 WHERE MaPhieu = @0";
+                List<object> thamSo = new List<object>();
+                thamSo.Add(phieu.MaPhieu);
+                thamSo.Add(phieu.PhanTramGiam);
+                DBUNTIL.Update(sql, thamSo);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+
     }
 }

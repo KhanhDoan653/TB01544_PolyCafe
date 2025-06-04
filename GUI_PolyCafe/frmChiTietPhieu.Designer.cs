@@ -333,6 +333,7 @@
             Controls.Add(label2);
             Name = "frmChiTietPhieu";
             Text = "frmChiTietPhieu";
+            FormClosing += frmChiTietPhieu_FormClosing;
             Load += frmChiTietPhieu_Load;
             ((System.ComponentModel.ISupportInitialize)dgrSanPham).EndInit();
             groupBox1.ResumeLayout(false);

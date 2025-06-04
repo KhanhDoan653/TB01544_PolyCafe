@@ -103,6 +103,17 @@ namespace GUI_PolyCafe
 
         }
 
+
+        private void dgvDanhSachPhieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void rdDaThanhToan_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btThem_Click(object sender, EventArgs e)
         {
             string maThe = cboMaTheLuuDong.SelectedValue?.ToString();
@@ -260,6 +271,44 @@ namespace GUI_PolyCafe
             LoadDanhSachPhieu("");
         }
 
+        private void btTim_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTim.Text))
+            {
+                MessageBox.Show("Vui lòng nhập để tìm kiếm");
+                return;
+            }
+            try
+            {
+                string keyword = txtTim.Text.Trim().ToLower();
+
+                BLLPhieuBanHang bllPhieuBanHang = new BLLPhieuBanHang();
+                List<PhieuBanHang> danhSach = bllPhieuBanHang.GetListPhieuBanHang("");
+
+                var ketQua = danhSach.Where(p =>
+                    (!string.IsNullOrEmpty(p.MaPhieu) && p.MaPhieu.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(p.MaThe) && p.MaThe.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(p.MaNhanVien) && p.MaNhanVien.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(p.HoTen) && p.HoTen.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(p.ChuSoHuu) && p.ChuSoHuu.ToLower().Contains(keyword)) ||
+                    p.NgayTao.ToString("dd/MM/yyyy HH:mm:ss").ToLower().Contains(keyword) ||
+                    p.TrangThaiText.ToLower().Contains(keyword)
+                ).ToList();
+
+                if (ketQua.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy kết quả nào phù hợp với từ khóa '" + txtTim.Text + "'");
+                    return;
+                }
+
+                dgvDanhSachPhieu.DataSource = ketQua;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
         private void dgvDanhSachPhieu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string maPhieu = dgvDanhSachPhieu.Rows[e.RowIndex].Cells["MaPhieu"].Value.ToString();
@@ -325,54 +374,6 @@ namespace GUI_PolyCafe
                 btSua.Enabled = true;
                 btXoa.Enabled = true;
             }
-        }
-
-        private void btTim_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtTim.Text))
-            {
-                MessageBox.Show("Vui lòng nhập để tìm kiếm");
-                return;
-            }
-            try
-            {
-                string keyword = txtTim.Text.Trim().ToLower();
-
-                BLLPhieuBanHang bllPhieuBanHang = new BLLPhieuBanHang();
-                List<PhieuBanHang> danhSach = bllPhieuBanHang.GetListPhieuBanHang("");
-
-                var ketQua = danhSach.Where(p =>
-                    (!string.IsNullOrEmpty(p.MaPhieu) && p.MaPhieu.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(p.MaThe) && p.MaThe.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(p.MaNhanVien) && p.MaNhanVien.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(p.HoTen) && p.HoTen.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(p.ChuSoHuu) && p.ChuSoHuu.ToLower().Contains(keyword)) ||
-                    p.NgayTao.ToString("dd/MM/yyyy HH:mm:ss").ToLower().Contains(keyword) ||
-                    p.TrangThaiText.ToLower().Contains(keyword)
-                ).ToList();
-
-                if (ketQua.Count == 0)
-                {
-                    MessageBox.Show("Không tìm thấy kết quả nào phù hợp với từ khóa '" + txtTim.Text + "'");
-                    return;
-                }
-
-                dgvDanhSachPhieu.DataSource = ketQua;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-        }
-
-        private void dgvDanhSachPhieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void rdDaThanhToan_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

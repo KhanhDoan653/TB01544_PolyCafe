@@ -167,5 +167,10 @@ namespace GUI_PolyCafe
         {
             openChildForm(new frmKhuyenMai());
         }
+
+        private void loaiHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmDoanhThuTheoSanPham());
+        }
     }
 }

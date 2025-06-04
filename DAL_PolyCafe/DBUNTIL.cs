@@ -15,7 +15,7 @@ namespace DAL_PolyCafe
         public static string connString = @"Data Source=DESKTOP-A3S4JGC\SQLEXPRESS;Initial Catalog=PolyCafe;Integrated Security=True;Trust Server Certificate=True";
 
         public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
-        {
+        {.
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.CommandType = cmdType;

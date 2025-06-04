@@ -12,6 +12,7 @@ namespace DTO_PolyCafe
         public string MaPhieu { get; set; }
         public string MaSanPham { get; set; }
         public string TenSanPham { get; set; }
+        public decimal PhanTramGiam { get; set; } = 0;
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
         public decimal ThanhTien => DonGia * SoLuong;

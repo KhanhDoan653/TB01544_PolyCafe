@@ -28,18 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTheLuuDong));
             label7 = new Label();
             txtTim = new TextBox();
-            btTim = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
+            btTim = new Guna.UI2.WinForms.Guna2Button();
             groupBox2 = new GroupBox();
-            dgvDanhSachTheLuuDong = new DataGridView();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            btThem = new Button();
-            btSua = new Button();
-            btXoa = new Button();
-            btLamMoi = new Button();
+            dgvDanhSachTheLuuDong = new Guna.UI2.WinForms.Guna2DataGridView();
             groupBox1 = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             label3 = new Label();
@@ -49,14 +57,19 @@
             cbkHoatDong = new CheckBox();
             label1 = new Label();
             groupBox3 = new GroupBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btLamMoi = new Guna.UI2.WinForms.Guna2Button();
+            btThem = new Guna.UI2.WinForms.Guna2Button();
+            btSua = new Guna.UI2.WinForms.Guna2Button();
+            btXoa = new Guna.UI2.WinForms.Guna2Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel4.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachTheLuuDong).BeginInit();
-            tableLayoutPanel3.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             groupBox3.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,19 +94,6 @@
             txtTim.Size = new Size(426, 23);
             txtTim.TabIndex = 0;
             // 
-            // btTim
-            // 
-            btTim.Anchor = AnchorStyles.None;
-            btTim.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btTim.ForeColor = Color.Black;
-            btTim.Location = new Point(472, 3);
-            btTim.Name = "btTim";
-            btTim.Size = new Size(82, 36);
-            btTim.TabIndex = 1;
-            btTim.Text = "Tìm";
-            btTim.UseVisualStyleBackColor = true;
-            btTim.Click += btTim_Click;
-            // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.BackColor = Color.Transparent;
@@ -109,6 +109,26 @@
             tableLayoutPanel4.Size = new Size(582, 42);
             tableLayoutPanel4.TabIndex = 7;
             // 
+            // btTim
+            // 
+            btTim.BorderRadius = 10;
+            btTim.CustomizableEdges = customizableEdges1;
+            btTim.DisabledState.BorderColor = Color.DarkGray;
+            btTim.DisabledState.CustomBorderColor = Color.DarkGray;
+            btTim.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btTim.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btTim.FillColor = Color.White;
+            btTim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btTim.ForeColor = Color.Black;
+            btTim.Image = Properties.Resources.icons8_search_50;
+            btTim.Location = new Point(448, 3);
+            btTim.Name = "btTim";
+            btTim.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btTim.Size = new Size(108, 32);
+            btTim.TabIndex = 8;
+            btTim.Text = "Tìm";
+            btTim.Click += btTim_Click;
+            // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
@@ -123,84 +143,54 @@
             // 
             // dgvDanhSachTheLuuDong
             // 
-            dgvDanhSachTheLuuDong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDanhSachTheLuuDong.BackgroundColor = Color.White;
-            dgvDanhSachTheLuuDong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDanhSachTheLuuDong.Location = new Point(6, 22);
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvDanhSachTheLuuDong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvDanhSachTheLuuDong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvDanhSachTheLuuDong.ColumnHeadersHeight = 20;
+            dgvDanhSachTheLuuDong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvDanhSachTheLuuDong.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvDanhSachTheLuuDong.GridColor = Color.FromArgb(231, 229, 255);
+            dgvDanhSachTheLuuDong.Location = new Point(15, 26);
             dgvDanhSachTheLuuDong.Name = "dgvDanhSachTheLuuDong";
-            dgvDanhSachTheLuuDong.Size = new Size(576, 368);
-            dgvDanhSachTheLuuDong.TabIndex = 5;
+            dgvDanhSachTheLuuDong.RowHeadersVisible = false;
+            dgvDanhSachTheLuuDong.Size = new Size(567, 364);
+            dgvDanhSachTheLuuDong.TabIndex = 15;
+            dgvDanhSachTheLuuDong.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvDanhSachTheLuuDong.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvDanhSachTheLuuDong.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvDanhSachTheLuuDong.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvDanhSachTheLuuDong.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvDanhSachTheLuuDong.ThemeStyle.BackColor = Color.White;
+            dgvDanhSachTheLuuDong.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvDanhSachTheLuuDong.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvDanhSachTheLuuDong.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvDanhSachTheLuuDong.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvDanhSachTheLuuDong.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvDanhSachTheLuuDong.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvDanhSachTheLuuDong.ThemeStyle.HeaderStyle.Height = 20;
+            dgvDanhSachTheLuuDong.ThemeStyle.ReadOnly = false;
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.ForeColor = Color.Black;
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.Height = 25;
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvDanhSachTheLuuDong.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgvDanhSachTheLuuDong.CellDoubleClick += dgvDanhSachTheLuuDong_CellDoubleClick;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 4;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Controls.Add(btThem, 0, 0);
-            tableLayoutPanel3.Controls.Add(btSua, 1, 0);
-            tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
-            tableLayoutPanel3.Controls.Add(btLamMoi, 3, 0);
-            tableLayoutPanel3.Location = new Point(11, 25);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(514, 50);
-            tableLayoutPanel3.TabIndex = 12;
-            // 
-            // btThem
-            // 
-            btThem.Anchor = AnchorStyles.None;
-            btThem.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btThem.ForeColor = Color.Green;
-            btThem.Location = new Point(23, 9);
-            btThem.Name = "btThem";
-            btThem.Size = new Size(82, 32);
-            btThem.TabIndex = 0;
-            btThem.Text = "Thêm";
-            btThem.UseVisualStyleBackColor = true;
-            btThem.Click += btThem_Click;
-            // 
-            // btSua
-            // 
-            btSua.Anchor = AnchorStyles.None;
-            btSua.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btSua.ForeColor = Color.DarkOrange;
-            btSua.Location = new Point(151, 9);
-            btSua.Name = "btSua";
-            btSua.Size = new Size(82, 32);
-            btSua.TabIndex = 1;
-            btSua.Text = "Sửa";
-            btSua.UseVisualStyleBackColor = true;
-            btSua.Click += btSua_Click;
-            // 
-            // btXoa
-            // 
-            btXoa.Anchor = AnchorStyles.None;
-            btXoa.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btXoa.ForeColor = Color.Red;
-            btXoa.Location = new Point(279, 9);
-            btXoa.Name = "btXoa";
-            btXoa.Size = new Size(82, 32);
-            btXoa.TabIndex = 2;
-            btXoa.Text = "Xóa";
-            btXoa.UseVisualStyleBackColor = true;
-            btXoa.Click += btXoa_Click;
-            // 
-            // btLamMoi
-            // 
-            btLamMoi.Anchor = AnchorStyles.None;
-            btLamMoi.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btLamMoi.ForeColor = Color.DarkCyan;
-            btLamMoi.Location = new Point(408, 9);
-            btLamMoi.Name = "btLamMoi";
-            btLamMoi.Size = new Size(82, 32);
-            btLamMoi.TabIndex = 3;
-            btLamMoi.Text = "Làm Mới";
-            btLamMoi.UseVisualStyleBackColor = true;
-            btLamMoi.Click += btLamMoi_Click;
             // 
             // groupBox1
             // 
@@ -303,10 +293,112 @@
             groupBox3.Controls.Add(tableLayoutPanel3);
             groupBox3.Location = new Point(12, 404);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(531, 75);
+            groupBox3.Size = new Size(531, 92);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
             groupBox3.Text = "Chức năng";
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 4;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.Controls.Add(btLamMoi, 3, 0);
+            tableLayoutPanel3.Controls.Add(btThem, 0, 0);
+            tableLayoutPanel3.Controls.Add(btSua, 1, 0);
+            tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
+            tableLayoutPanel3.Location = new Point(8, 22);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(473, 61);
+            tableLayoutPanel3.TabIndex = 39;
+            // 
+            // btLamMoi
+            // 
+            btLamMoi.Anchor = AnchorStyles.None;
+            btLamMoi.BorderRadius = 5;
+            btLamMoi.CustomizableEdges = customizableEdges3;
+            btLamMoi.DisabledState.BorderColor = Color.DarkGray;
+            btLamMoi.DisabledState.CustomBorderColor = Color.DarkGray;
+            btLamMoi.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btLamMoi.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btLamMoi.FillColor = Color.White;
+            btLamMoi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btLamMoi.ForeColor = Color.DarkCyan;
+            btLamMoi.Image = Properties.Resources.icons8_refresh_50;
+            btLamMoi.Location = new Point(364, 12);
+            btLamMoi.Name = "btLamMoi";
+            btLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btLamMoi.Size = new Size(98, 36);
+            btLamMoi.TabIndex = 12;
+            btLamMoi.Text = "Làm mới";
+            btLamMoi.Click += btLamMoi_Click;
+            // 
+            // btThem
+            // 
+            btThem.Anchor = AnchorStyles.None;
+            btThem.BorderRadius = 5;
+            btThem.CustomizableEdges = customizableEdges5;
+            btThem.DisabledState.BorderColor = Color.DarkGray;
+            btThem.DisabledState.CustomBorderColor = Color.DarkGray;
+            btThem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btThem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btThem.FillColor = Color.White;
+            btThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btThem.ForeColor = Color.Green;
+            btThem.Image = Properties.Resources.icons8_add_24;
+            btThem.Location = new Point(10, 12);
+            btThem.Name = "btThem";
+            btThem.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btThem.Size = new Size(98, 36);
+            btThem.TabIndex = 9;
+            btThem.Text = "Thêm";
+            btThem.Click += btThem_Click;
+            // 
+            // btSua
+            // 
+            btSua.Anchor = AnchorStyles.None;
+            btSua.BorderRadius = 5;
+            btSua.CustomizableEdges = customizableEdges7;
+            btSua.DisabledState.BorderColor = Color.DarkGray;
+            btSua.DisabledState.CustomBorderColor = Color.DarkGray;
+            btSua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btSua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btSua.FillColor = Color.White;
+            btSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btSua.ForeColor = Color.DarkOrange;
+            btSua.Image = Properties.Resources.icons8_fix_50__1_;
+            btSua.Location = new Point(128, 12);
+            btSua.Name = "btSua";
+            btSua.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btSua.Size = new Size(98, 36);
+            btSua.TabIndex = 10;
+            btSua.Text = "Sửa";
+            btSua.Click += btSua_Click;
+            // 
+            // btXoa
+            // 
+            btXoa.Anchor = AnchorStyles.None;
+            btXoa.BorderRadius = 5;
+            btXoa.CustomizableEdges = customizableEdges9;
+            btXoa.DisabledState.BorderColor = Color.DarkGray;
+            btXoa.DisabledState.CustomBorderColor = Color.DarkGray;
+            btXoa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btXoa.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btXoa.FillColor = Color.White;
+            btXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btXoa.ForeColor = Color.Red;
+            btXoa.Image = Properties.Resources.icons8_remove_30;
+            btXoa.Location = new Point(246, 12);
+            btXoa.Name = "btXoa";
+            btXoa.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btXoa.Size = new Size(98, 36);
+            btXoa.TabIndex = 11;
+            btXoa.Text = "Xóa";
+            btXoa.Click += btXoa_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -340,11 +432,11 @@
             tableLayoutPanel4.PerformLayout();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachTheLuuDong).EndInit();
-            tableLayoutPanel3.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             groupBox3.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
@@ -354,10 +446,8 @@
 
         private Label label7;
         private TextBox txtTim;
-        private Button btTim;
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox2;
-        private DataGridView dgvDanhSachTheLuuDong;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label3;
@@ -366,12 +456,14 @@
         private TextBox txtMaThe;
         private TextBox txtChuSoHuu;
         private CheckBox cbkHoatDong;
-        private TableLayoutPanel tableLayoutPanel3;
-        private Button btThem;
-        private Button btSua;
-        private Button btXoa;
-        private Button btLamMoi;
         private GroupBox groupBox3;
         private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Guna.UI2.WinForms.Guna2Button btLamMoi;
+        private Guna.UI2.WinForms.Guna2Button btThem;
+        private Guna.UI2.WinForms.Guna2Button btSua;
+        private Guna.UI2.WinForms.Guna2Button btXoa;
+        private Guna.UI2.WinForms.Guna2Button btTim;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvDanhSachTheLuuDong;
     }
 }
