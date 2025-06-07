@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnXoaChiTiet = new Button();
             btnThemChiTiet = new Button();
             dgrSanPham = new DataGridView();
@@ -51,6 +53,7 @@
             label2 = new Label();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            btnXacNhan = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dgrSanPham).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrChiTiet).BeginInit();
@@ -314,11 +317,29 @@
             tableLayoutPanel1.Size = new Size(1107, 41);
             tableLayoutPanel1.TabIndex = 20;
             // 
+            // btnXacNhan
+            // 
+            btnXacNhan.CustomizableEdges = customizableEdges1;
+            btnXacNhan.DisabledState.BorderColor = Color.DarkGray;
+            btnXacNhan.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnXacNhan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnXacNhan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnXacNhan.Font = new Font("Segoe UI", 9F);
+            btnXacNhan.ForeColor = Color.White;
+            btnXacNhan.Location = new Point(47, 481);
+            btnXacNhan.Name = "btnXacNhan";
+            btnXacNhan.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnXacNhan.Size = new Size(180, 45);
+            btnXacNhan.TabIndex = 21;
+            btnXacNhan.Text = "Xác nhận";
+            btnXacNhan.Click += btnXacNhan_Click;
+            // 
             // frmChiTietPhieu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1196, 554);
+            Controls.Add(btnXacNhan);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(btnXoaChiTiet);
             Controls.Add(btnThemChiTiet);
@@ -333,7 +354,6 @@
             Controls.Add(label2);
             Name = "frmChiTietPhieu";
             Text = "frmChiTietPhieu";
-            FormClosing += frmChiTietPhieu_FormClosing;
             Load += frmChiTietPhieu_Load;
             ((System.ComponentModel.ISupportInitialize)dgrSanPham).EndInit();
             groupBox1.ResumeLayout(false);
@@ -370,5 +390,6 @@
         private Label label2;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnXacNhan;
     }
 }

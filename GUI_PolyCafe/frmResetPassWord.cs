@@ -22,6 +22,21 @@ namespace GUI_PolyCafe
 
         private void frmResetPassWord_Load(object sender, EventArgs e)
         {
+            if (AuthUtil.IsLogin())
+            {
+                txtCPMaNV.Text = AuthUtil.user.MaNhanVien;
+                txtCPTenNv.Text = AuthUtil.user.HoTen;
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa đăng nhập, vui lòng đăng nhập để thực hiện chức năng này!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+            }
+
+            // Thiết lập mặc định ẩn mật khẩu
+            txtMKCu.UseSystemPasswordChar = true;
+            txtMKMoi.UseSystemPasswordChar = true;
+            txtXacNhanMK.UseSystemPasswordChar = true;
 
         }
 
@@ -36,6 +51,10 @@ namespace GUI_PolyCafe
                 if (!txtMKMoi.Text.Equals(txtXacNhanMK.Text))
                 {
                     MessageBox.Show(this, "Xác nhận mật khẩu mới chưa trùng khớp!!!");
+                }
+                else if (txtMKMoi.Text.Equals(txtMKCu.Text))
+                {
+                    MessageBox.Show(this, "Mật khẩu mới không được trùng với mật khẩu cũ!!!");
                 }
                 else
                 {
@@ -74,6 +93,16 @@ namespace GUI_PolyCafe
         private void chkHienthiXacNhanMK_CheckedChanged(object sender, EventArgs e)
         {
             txtXacNhanMK.UseSystemPasswordChar = !chkHienthiXacNhanMK.Checked;
+        }
+
+        private void chkHienthiMKMoi_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKMoi.UseSystemPasswordChar = !chkHienthiMKMoi.Checked;
+        }
+
+        private void chkHienthiMKCU_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKCu.UseSystemPasswordChar = !chkHienthiMKCU.Checked;
         }
     }
 }

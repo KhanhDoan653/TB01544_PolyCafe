@@ -126,6 +126,7 @@
             chkHienthiMKMoi.TabIndex = 13;
             chkHienthiMKMoi.Text = "Hiển thị";
             chkHienthiMKMoi.UseVisualStyleBackColor = true;
+            chkHienthiMKMoi.CheckedChanged += chkHienthiMKMoi_CheckedChanged;
             // 
             // txtMKCu
             // 
@@ -222,6 +223,7 @@
             chkHienthiMKCU.TabIndex = 12;
             chkHienthiMKCU.Text = "Hiển thị";
             chkHienthiMKCU.UseVisualStyleBackColor = true;
+            chkHienthiMKCU.CheckedChanged += chkHienthiMKCU_CheckedChanged;
             // 
             // chkHienthiXacNhanMK
             // 

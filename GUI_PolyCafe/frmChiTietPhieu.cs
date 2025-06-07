@@ -303,7 +303,8 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void frmChiTietPhieu_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
         {
 
         }
