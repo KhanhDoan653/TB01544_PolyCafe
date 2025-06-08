@@ -41,7 +41,10 @@ namespace GUI_PolyCafe
             btThem.Enabled = true;
             btSua.Enabled = false;
             btXoa.Enabled = true;
+            BLLTheLuuDong bll = new BLLTheLuuDong();
+            txtMaThe.Text = bll.GenerateMaTheLuuDong();
             txtChuSoHuu.Clear();
+            txtTim.Clear();
             cbkHoatDong.Checked = true;
         }
 

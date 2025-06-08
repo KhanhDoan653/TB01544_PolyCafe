@@ -39,6 +39,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtGhiChuSP = new TextBox();
             groupBox1 = new GroupBox();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -58,13 +62,15 @@
             btnTimKiemThe = new Button();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btTim = new Button();
-            txtTim = new TextBox();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            txtTim = new Guna.UI2.WinForms.Guna2TextBox();
+            btTim = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrDanhSachLoaiSP).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // txtGhiChuSP
@@ -371,28 +377,61 @@
             tableLayoutPanel1.Size = new Size(1172, 46);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // btTim
+            // tableLayoutPanel4
             // 
-            btTim.Anchor = AnchorStyles.None;
-            btTim.Font = new Font("Microsoft Sans Serif", 12F);
-            btTim.ForeColor = Color.Black;
-            btTim.Location = new Point(1078, 77);
-            btTim.Name = "btTim";
-            btTim.Size = new Size(100, 36);
-            btTim.TabIndex = 13;
-            btTim.Text = "Tìm";
-            btTim.UseVisualStyleBackColor = true;
-            btTim.Click += btTim_Click;
+            tableLayoutPanel4.BackColor = Color.Transparent;
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.46048F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.5395184F));
+            tableLayoutPanel4.Controls.Add(txtTim, 0, 0);
+            tableLayoutPanel4.Controls.Add(btTim, 1, 0);
+            tableLayoutPanel4.Location = new Point(441, 71);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 1;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Size = new Size(743, 42);
+            tableLayoutPanel4.TabIndex = 12;
             // 
             // txtTim
             // 
             txtTim.Anchor = AnchorStyles.None;
-            txtTim.BackColor = Color.White;
-            txtTim.Font = new Font("Segoe UI", 11.25F);
-            txtTim.Location = new Point(435, 81);
+            txtTim.CustomizableEdges = customizableEdges9;
+            txtTim.DefaultText = "";
+            txtTim.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTim.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTim.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTim.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTim.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTim.Font = new Font("Segoe UI", 9F);
+            txtTim.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTim.Location = new Point(3, 5);
             txtTim.Name = "txtTim";
-            txtTim.Size = new Size(629, 27);
-            txtTim.TabIndex = 12;
+            txtTim.PlaceholderText = "";
+            txtTim.SelectedText = "";
+            txtTim.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtTim.Size = new Size(562, 32);
+            txtTim.TabIndex = 9;
+            // 
+            // btTim
+            // 
+            btTim.Anchor = AnchorStyles.None;
+            btTim.BorderRadius = 10;
+            btTim.CustomizableEdges = customizableEdges11;
+            btTim.DisabledState.BorderColor = Color.DarkGray;
+            btTim.DisabledState.CustomBorderColor = Color.DarkGray;
+            btTim.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btTim.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btTim.FillColor = Color.White;
+            btTim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btTim.ForeColor = Color.Black;
+            btTim.Image = Properties.Resources.icons8_search_50;
+            btTim.Location = new Point(604, 5);
+            btTim.Name = "btTim";
+            btTim.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btTim.Size = new Size(103, 32);
+            btTim.TabIndex = 8;
+            btTim.Text = "Tìm";
+            btTim.Click += btTim_Click;
             // 
             // frmLoaiSanPham
             // 
@@ -400,8 +439,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1196, 554);
-            Controls.Add(btTim);
-            Controls.Add(txtTim);
+            Controls.Add(tableLayoutPanel4);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -416,8 +454,8 @@
             ((System.ComponentModel.ISupportInitialize)dgrDanhSachLoaiSP).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -434,13 +472,14 @@
         private Button btnTimKiemThe;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button btTim;
-        private TextBox txtTim;
         private TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2Button btLamMoi;
         private Guna.UI2.WinForms.Guna2Button btThem;
         private Guna.UI2.WinForms.Guna2Button btSua;
         private Guna.UI2.WinForms.Guna2Button btXoa;
         private Guna.UI2.WinForms.Guna2DataGridView dgrDanhSachLoaiSP;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Guna.UI2.WinForms.Guna2Button btTim;
+        private Guna.UI2.WinForms.Guna2TextBox txtTim;
     }
 }

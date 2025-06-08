@@ -14,45 +14,36 @@ namespace BLL_PolyCafe
 
         public List<PhieuBanHang> GetListPhieuBanHang(string maThe)
         {
-            return dalPhieuBanHang.selectAll(maThe);
+            DALPhieuBanHang dal = new DALPhieuBanHang();
+            return dal.selectAll(maThe);
         }
 
-        public string InsertPhieuBanHang(PhieuBanHang pbh)
+        public string InsertPhieuBanHang(PhieuBanHang phieu)
         {
             try
             {
-                pbh.MaPhieu = dalPhieuBanHang.generateMaPhieu();
-                if (string.IsNullOrEmpty(pbh.MaPhieu))
-                {
-                    return "Mã phiếu bán hàng không hợp lệ.";
-                }
-
-                dalPhieuBanHang.insertPhieuBanHang(pbh);
+                DALPhieuBanHang dal = new DALPhieuBanHang();
+                phieu.MaPhieu = dal.generateMaPhieu(); // Tạo mã phiếu
+                dal.insertPhieuBanHang(phieu);
                 return string.Empty;
             }
             catch (Exception ex)
             {
-                //return "Thêm mới không thành công.";
-                return "Lỗi: " + ex.Message;
+                return ex.Message;
             }
         }
 
-        public string UpdatePhieuBanHang(PhieuBanHang pbh)
+        public string UpdatePhieuBanHang(PhieuBanHang phieu)
         {
             try
             {
-                if (string.IsNullOrEmpty(pbh.MaPhieu))
-                {
-                    return "Mã phiếu không hợp lệ.";
-                }
-
-                dalPhieuBanHang.updateNhanVien(pbh);
+                DALPhieuBanHang dal = new DALPhieuBanHang();
+                dal.updatePhieuBanHang(phieu);
                 return string.Empty;
             }
             catch (Exception ex)
             {
-                //return "Cập nhật không thành công.";
-                return "Lỗi: " + ex.Message;
+                return ex.Message;
             }
         }
 
@@ -86,6 +77,16 @@ namespace BLL_PolyCafe
             }
         }
 
-
+        public string GenerateMaPhieu()
+        {
+            try
+            {
+                return dalPhieuBanHang.generateMaPhieu();
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
     }
 }

@@ -35,7 +35,8 @@ namespace GUI_PolyCafe
             btThem.Enabled = true;
             btSua.Enabled = false;
             btXoa.Enabled = true;
-            txtMaPhieu.Clear();
+            BLLPhieuBanHang bll = new BLLPhieuBanHang();
+            txtMaPhieu.Text = bll.GenerateMaPhieu();
             cboNhanVien.Enabled = true;
             dtpNgayTao.Enabled = true;
             dtpNgayTao.Value = DateTime.Now;
@@ -43,6 +44,7 @@ namespace GUI_PolyCafe
             rdDaThanhToan.Enabled = true;
             dtpNgayTao.Value = DateTime.Now;
             rdChoXacNhan.Checked = true;
+            txtTim.Clear();
         }
 
         private void LoadNhanVien()
@@ -99,10 +101,10 @@ namespace GUI_PolyCafe
             dgvDanhSachPhieu.Columns["NgayTao"].HeaderText = "Ngày tạo";
             dgvDanhSachPhieu.Columns["NgayTao"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss";
             dgvDanhSachPhieu.Columns["TrangThaiText"].HeaderText = "Trạng thái";
+            dgvDanhSachPhieu.Columns["PhanTramGiam"].HeaderText = "Giảm giá (%)"; // Thêm cột Giảm giá
+            dgvDanhSachPhieu.Columns["PhanTramGiam"].DefaultCellStyle.Format = "N2"; // Định dạng số thập phân
             dgvDanhSachPhieu.Columns["TrangThai"].Visible = false;
-
         }
-
 
         private void dgvDanhSachPhieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -123,12 +125,20 @@ namespace GUI_PolyCafe
             bool trangThai;
             if (rdChoXacNhan.Checked)
             {
-                trangThai = false;
+                trangThai = false; // Trạng thái "chờ xác nhận"
             }
             else
             {
-                trangThai = true;
+                trangThai = true; // Trạng thái "đã thanh toán"
             }
+
+            decimal phanTramGiam;
+            if (!decimal.TryParse(txtPhanTramGiam.Text, out phanTramGiam) || phanTramGiam < 0 || phanTramGiam > 100)
+            {
+                MessageBox.Show("Vui lòng nhập phần trăm giảm giá hợp lệ (0-100)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (string.IsNullOrEmpty(maNhanVien) || string.IsNullOrEmpty(maThe))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin phiếu bán hàng.");
@@ -140,14 +150,16 @@ namespace GUI_PolyCafe
                 MaThe = maThe,
                 MaNhanVien = maNhanVien,
                 NgayTao = ngayTao,
-                TrangThai = trangThai
+                TrangThai = trangThai,
+                PhanTramGiam = phanTramGiam // Lấy giá trị từ txtPhanTramGiam
             };
+
             BLLPhieuBanHang bll = new BLLPhieuBanHang();
             string result = bll.InsertPhieuBanHang(theLuuDong);
 
             if (string.IsNullOrEmpty(result))
             {
-                MessageBox.Show("Cập nhật thông tin thành công");
+                MessageBox.Show("Thêm phiếu bán hàng thành công");
                 ClearForm(maThe);
                 LoadTheLuuDong();
                 LoadNhanVien();
@@ -156,7 +168,7 @@ namespace GUI_PolyCafe
             }
             else
             {
-                MessageBox.Show(result);
+                MessageBox.Show(result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -170,14 +182,21 @@ namespace GUI_PolyCafe
             bool trangThai;
             if (rdChoXacNhan.Checked)
             {
-                trangThai = false; // đang gán là trạng thái "chờ xác nhận"
+                trangThai = false; // Trạng thái "chờ xác nhận"
             }
             else
             {
-                trangThai = true; // đang gán là trạng thái "chưa thanh toán"
+                trangThai = true; // Trạng thái "đã thanh toán"
             }
 
-            if (string.IsNullOrEmpty(maNhanVien) || string.IsNullOrEmpty(maThe))
+            decimal phanTramGiam;
+            if (!decimal.TryParse(txtPhanTramGiam.Text, out phanTramGiam) || phanTramGiam < 0 || phanTramGiam > 100)
+            {
+                MessageBox.Show("Vui lòng nhập phần trăm giảm giá hợp lệ (0-100)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(maNhanVien) || string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(maPhieu))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin phiếu bán hàng.");
                 return;
@@ -189,14 +208,16 @@ namespace GUI_PolyCafe
                 MaThe = maThe,
                 MaNhanVien = maNhanVien,
                 NgayTao = ngayTao,
-                TrangThai = trangThai
+                TrangThai = trangThai,
+                PhanTramGiam = phanTramGiam // Lấy giá trị từ txtPhanTramGiam
             };
+
             BLLPhieuBanHang bll = new BLLPhieuBanHang();
             string result = bll.UpdatePhieuBanHang(theLuuDong);
 
             if (string.IsNullOrEmpty(result))
             {
-                MessageBox.Show("Cập nhật thông tin thành công");
+                MessageBox.Show("Cập nhật phiếu bán hàng thành công");
                 ClearForm(maThe);
                 LoadTheLuuDong();
                 LoadNhanVien();
@@ -205,7 +226,7 @@ namespace GUI_PolyCafe
             }
             else
             {
-                MessageBox.Show(result);
+                MessageBox.Show(result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -341,12 +362,15 @@ namespace GUI_PolyCafe
 
         private void dgvDanhSachPhieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return; // Bỏ qua nếu nhấp vào header
+
             isLoadingTheLuuDongData = true;
             DataGridViewRow row = dgvDanhSachPhieu.Rows[e.RowIndex];
             cboMaTheLuuDong.SelectedValue = row.Cells["MaThe"].Value.ToString();
             cboNhanVien.SelectedValue = row.Cells["MaNhanVien"].Value.ToString();
             dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
             txtMaPhieu.Text = row.Cells["MaPhieu"].Value.ToString();
+            txtPhanTramGiam.Text = row.Cells["PhanTramGiam"].Value.ToString(); // Hiển thị PhanTramGiam
 
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
             if (trangThai)
@@ -359,7 +383,6 @@ namespace GUI_PolyCafe
                 btThem.Enabled = false;
                 btSua.Enabled = false;
                 btXoa.Enabled = false;
-
             }
             else
             {

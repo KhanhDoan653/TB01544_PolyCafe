@@ -16,6 +16,15 @@ namespace BLL_PolyCafe
         {
             return dalChiTietPhieu.selectChiTietByMaPhieu(maPhieu);
         }
+        public class ChiTietPhieuService
+        {
+            public decimal TinhTongTien(List<ChiTietPhieu> chiTietList, decimal phanTram, decimal dichVu)
+            {
+                decimal tong = chiTietList.Sum(ct => ct.ThanhTien);
+                decimal giamGia = tong * (phanTram / 100);
+                return tong - giamGia + dichVu;
+            }
+        }
 
         public string InsertChiTietPhieu(ChiTietPhieu ct)
         {

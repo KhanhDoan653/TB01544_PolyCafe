@@ -99,5 +99,9 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+        public string GenerateMaNhanVien()
+        {
+            return dalNhanVien.generateMaNhanVien();
+        }
     }
 }

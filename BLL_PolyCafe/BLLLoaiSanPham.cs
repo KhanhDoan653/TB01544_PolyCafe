@@ -84,6 +84,9 @@ namespace BLL_PolyCafe
                 (lsp.GhiChu != null && lsp.GhiChu.ToLower().Contains(tuKhoa.ToLower()))
             ).ToList();
         }
-
+        public string generateMaLoaiSanPham()
+        {
+            return dalLoaiSanPham.generateMaLoaiSanPham();
+        }
     }
 }

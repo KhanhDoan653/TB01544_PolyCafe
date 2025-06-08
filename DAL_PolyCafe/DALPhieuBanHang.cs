@@ -31,44 +31,45 @@ namespace DAL_PolyCafe
         {
             try
             {
-                string sql = @"INSERT INTO PhieuBanHang (MaPhieu, MaThe, MaNhanVien, NgayTao, TrangThai) 
-                   VALUES (@0, @1, @2, @3, @4)";
+                string sql = @"INSERT INTO PhieuBanHang (MaPhieu, MaThe, MaNhanVien, NgayTao, TrangThai, PhanTramGiam) 
+                       VALUES (@0, @1, @2, @3, @4, @5)";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(pbh.MaPhieu);
                 thamSo.Add(pbh.MaThe);
                 thamSo.Add(pbh.MaNhanVien);
                 thamSo.Add(pbh.NgayTao);
                 thamSo.Add(pbh.TrangThai);
+                thamSo.Add(pbh.PhanTramGiam); // Thêm PhanTramGiam
                 DBUNTIL.Update(sql, thamSo);
             }
             catch (Exception e)
             {
                 throw;
             }
-
         }
 
-        public void updateNhanVien(PhieuBanHang pbh)
+        public void updatePhieuBanHang(PhieuBanHang pbh)
         {
             try
             {
                 string sql = @"UPDATE PhieuBanHang 
-                   SET MaThe = @1, MaNhanVien = @2, NgayTao = @3, TrangThai = @4 
-                   WHERE MaPhieu = @0";
+                       SET MaThe = @1, MaNhanVien = @2, NgayTao = @3, TrangThai = @4, PhanTramGiam = @5 
+                       WHERE MaPhieu = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(pbh.MaPhieu);
                 thamSo.Add(pbh.MaThe);
                 thamSo.Add(pbh.MaNhanVien);
                 thamSo.Add(pbh.NgayTao);
                 thamSo.Add(pbh.TrangThai);
+                thamSo.Add(pbh.PhanTramGiam); // Cập nhật PhanTramGiam
                 DBUNTIL.Update(sql, thamSo);
             }
             catch (Exception e)
             {
                 throw;
             }
-
         }
+
 
         public void deletePhieuBanHang(string maPhieu)
         {
@@ -102,8 +103,10 @@ namespace DAL_PolyCafe
                     entity.HoTen = reader.GetString("HoTen");
                     entity.NgayTao = reader.GetDateTime("NgayTao");
                     entity.TrangThai = reader.GetBoolean("TrangThai");
+                    entity.PhanTramGiam = reader.IsDBNull(reader.GetOrdinal("PhanTramGiam")) ? 0 : reader.GetDecimal("PhanTramGiam"); // Lấy PhanTramGiam
                     list.Add(entity);
                 }
+                reader.Close();
             }
             catch (Exception)
             {
@@ -114,17 +117,13 @@ namespace DAL_PolyCafe
 
         public List<PhieuBanHang> selectAll(string maThe)
         {
-            //String sql = "SELECT * FROM PhieuBanHang";
             List<object> param = new List<object>();
-            string sql = "SELECT phieu.MaPhieu, phieu.MaThe, the.ChuSoHuu, phieu.MaNhanVien, nv.HoTen, phieu.NgayTao, phieu.TrangThai " +
-                "FROM PhieuBanHang phieu INNER JOIN NhanVien nv ON phieu.MaNhanVien = nv.MaNhanVien " +
-                "INNER JOIN TheLuuDong the ON the.MaThe = phieu.MaThe";
+            string sql = "SELECT phieu.MaPhieu, phieu.MaThe, the.ChuSoHuu, phieu.MaNhanVien, nv.HoTen, phieu.NgayTao, phieu.TrangThai, phieu.PhanTramGiam " +
+                         "FROM PhieuBanHang phieu INNER JOIN NhanVien nv ON phieu.MaNhanVien = nv.MaNhanVien " +
+                         "INNER JOIN TheLuuDong the ON the.MaThe = phieu.MaThe";
             if (!string.IsNullOrEmpty(maThe))
             {
-                sql = "SELECT phieu.MaPhieu, phieu.MaThe, the.ChuSoHuu, phieu.MaNhanVien, nv.HoTen, phieu.NgayTao, phieu.TrangThai " +
-               "FROM PhieuBanHang phieu INNER JOIN NhanVien nv ON phieu.MaNhanVien = nv.MaNhanVien " +
-               "INNER JOIN TheLuuDong the ON the.MaThe = phieu.MaThe " +
-               "WHERE the.MaThe = @0";
+                sql += " WHERE the.MaThe = @0";
                 param.Add(maThe);
             }
 

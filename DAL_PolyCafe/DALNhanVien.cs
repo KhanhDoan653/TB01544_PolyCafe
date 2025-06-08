@@ -142,7 +142,5 @@ namespace DAL_PolyCafe
             object result = DBUNTIL.ScalarQuery(sql, thamSo);
             return Convert.ToInt32(result) > 0;
         }
-
-
     }
 }

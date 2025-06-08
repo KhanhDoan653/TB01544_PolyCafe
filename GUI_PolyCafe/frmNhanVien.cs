@@ -49,11 +49,13 @@ namespace GUI_PolyCafe
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btXoa.Enabled = true;
-            txtMaNhanVien.Clear();
+            BLLNhanVien bus = new BLLNhanVien();
+            txtMaNhanVien.Text = bus.GenerateMaNhanVien();
             txtHoTen.Clear();
             txtEmail.Clear();
             txtMatKhau.Clear();
             txtXacNhanMK.Clear();
+            txtTim.Clear();
             rbtNhanVien.Checked = true;
             rbtHoatDong.Checked = true;
         }
@@ -72,12 +74,12 @@ namespace GUI_PolyCafe
 
         private void rbtNgungHD_CheckedChanged(object sender, EventArgs e)
         {
-            txtXacNhanMK.UseSystemPasswordChar = !chkHienMK2.Checked;
+
         }
 
         private void chkHienMK2_CheckedChanged(object sender, EventArgs e)
         {
-            txtMatKhau.UseSystemPasswordChar = !chkHienMK2.Checked;
+            txtXacNhanMK.UseSystemPasswordChar = !chkHienMK2.Checked;
         }
 
         private void btnTim_Click(object sender, EventArgs e)

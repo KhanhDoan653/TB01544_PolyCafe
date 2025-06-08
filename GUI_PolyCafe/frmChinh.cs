@@ -39,7 +39,7 @@ namespace GUI_PolyCafe
 
         private void frmChinh_Load(object sender, EventArgs e)
         {
-
+            openChildForm(new frmPhieuBanHang());
         }
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,14 +163,34 @@ namespace GUI_PolyCafe
 
         }
 
-        private void KhuyenMaiToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new frmKhuyenMai());
-        }
 
         private void loaiHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frmDoanhThuTheoSanPham());
+        }
+
+        private void chiNhánhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmChiNhanh());
+        }
+
+        private void cơSởVậtChấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmCoSoVatChat());
+        }
+
+        private void pnMain_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void timerSystem_Tick(object sender, EventArgs e)
+        {
+            string s = "Hệ thống quản lý PolyCafe - "
+               + DateTime.Now.ToString("dd/MM/yyyy");
+            s = s + " - " + DateTime.Now.ToString("hh:mm:ss tt");
+            toolStripTimer.Text = s;
+            Text = Text.Substring(1, Text.Length - 1) +
+            Text.Substring(0, 1);
         }
     }
 }

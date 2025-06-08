@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace BLL_PolyCafe
 {
-    public class BLLSanPham
+    public class BLLChiNhanh
     {
-        DALSanPham dalSanPham = new DALSanPham();
+        DALChiNhanh dalChiNhanh = new DALChiNhanh();
 
-        public List<SanPham> GetSanPhamList(int trangThai = -1)
+        public List<ChiNhanh> GetChiNhanhs()
         {
-            return dalSanPham.selectAll(trangThai);
+            return dalChiNhanh.selectAll();
         }
 
 
-        public string InsertSanPham(SanPham sp)
+        public string InsertChiNhanh(ChiNhanh cn)
         {
             try
             {
-                sp.MaSanPham = dalSanPham.generateMaSanPham();
-                if (string.IsNullOrEmpty(sp.MaSanPham))
+                cn.MaChiNhanh = dalChiNhanh.generateMaChiNhanh();
+                if (string.IsNullOrEmpty(cn.MaChiNhanh))
                 {
-                    return "Mã sản phẩm không hợp lệ.";
+                    return "Mã chi nhánh không hợp lệ.";
                 }
 
-                dalSanPham.insertSanPham(sp);
+                dalChiNhanh.insertChiNhanh(cn);
                 return string.Empty;
             }
             catch (Exception ex)
@@ -38,21 +38,15 @@ namespace BLL_PolyCafe
             }
         }
 
-        public string UpdateSanPham(SanPham sp)
+        public string UpdateChiNhanh(ChiNhanh cn)
         {
             try
             {
-                if (string.IsNullOrEmpty(sp.MaSanPham))
+                if (string.IsNullOrEmpty(cn.MaChiNhanh))
                 {
-                    return "Mã sản phẩm không hợp lệ.";
+                    return "Mã chi nhánh không hợp lệ.";
                 }
-
-                if (sp.HinhAnh == null)
-                {
-                    sp.HinhAnh = "";
-                }
-
-                dalSanPham.updateSanPham(sp);
+                dalChiNhanh.updateChiNhanh(cn);
                 return string.Empty;
             }
             catch (Exception ex)
@@ -62,16 +56,16 @@ namespace BLL_PolyCafe
             }
         }
 
-        public string DeleteSanPham(string maSP)
+        public string DeleteChiNhanh(string maCN)
         {
             try
             {
-                if (string.IsNullOrEmpty(maSP))
+                if (string.IsNullOrEmpty(maCN))
                 {
-                    return "Mã sản phẩm không hợp lệ.";
+                    return "Mã chi nhánh không hợp lệ.";
                 }
 
-                dalSanPham.deleteSanPham(maSP);
+                dalChiNhanh.deleteChiNhanh(maCN);
                 return string.Empty;
             }
             catch (Exception ex)
@@ -80,9 +74,9 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string GenerateMaSanPham()
+        public string GenerateChiNhanh()
         {
-            return dalSanPham.generateMaSanPham();
+            return dalChiNhanh.generateMaChiNhanh();
         }
     }
 }

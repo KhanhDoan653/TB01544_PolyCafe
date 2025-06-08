@@ -319,6 +319,7 @@
             // 
             // btnXacNhan
             // 
+            btnXacNhan.BorderRadius = 10;
             btnXacNhan.CustomizableEdges = customizableEdges1;
             btnXacNhan.DisabledState.BorderColor = Color.DarkGray;
             btnXacNhan.DisabledState.CustomBorderColor = Color.DarkGray;

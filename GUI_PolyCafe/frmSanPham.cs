@@ -31,11 +31,17 @@ namespace GUI_PolyCafe
             btThem.Enabled = true;
             btSua.Enabled = false;
             btXoa.Enabled = true;
-            txtMaSanPham.Clear();
+
+            // Gọi GenerateMaSanPham để tạo mã sản phẩm mới
+            BLLSanPham bllSanPham = new BLLSanPham();
+            txtMaSanPham.Text = bllSanPham.GenerateMaSanPham(); // Hiển thị mã sản phẩm mới lên txtMaSanPham
+
             txtTenSanPham.Clear();
             txtDonGia.Clear();
             rdHoatDong.Checked = true;
             pbHinhAnh.Image = null;
+            txtHinhAnh.Clear(); // Xóa đường dẫn ảnh nếu có
+            txtTimKiemSP.Clear();
         }
 
         private void LoadLoaiSanPham()
@@ -250,6 +256,7 @@ namespace GUI_PolyCafe
         {
             try
             {
+                string maSP = txtMaSanPham.Text.Trim(); // Lấy mã sản phẩm từ txtMaSanPham
                 string tenSP = txtTenSanPham.Text.Trim();
                 string donGiaText = txtDonGia.Text.Trim();
                 string maLoai = cboLoaiSanPham.SelectedValue?.ToString();
@@ -257,7 +264,7 @@ namespace GUI_PolyCafe
                 string hinhAnhPath = txtHinhAnh.Text.Trim(); // Đường dẫn ảnh
 
                 // Kiểm tra dữ liệu nhập vào
-                if (string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai) || string.IsNullOrEmpty(hinhAnhPath))
+                if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai) || string.IsNullOrEmpty(hinhAnhPath))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -280,6 +287,7 @@ namespace GUI_PolyCafe
                 // Tạo đối tượng sản phẩm
                 SanPham sp = new SanPham
                 {
+                    MaSanPham = maSP, // Sử dụng mã sản phẩm từ txtMaSanPham
                     TenSanPham = tenSP,
                     DonGia = donGia,
                     MaLoai = maLoai,
@@ -293,7 +301,8 @@ namespace GUI_PolyCafe
 
                 MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Hiển thị sản phẩm trong DataGridView
+                // Làm mới form và tải lại danh sách sản phẩm
+                ClearForm();
                 LoadDanhSachSanPham();
             }
             catch (Exception ex)

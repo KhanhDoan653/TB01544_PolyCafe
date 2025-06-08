@@ -75,5 +75,16 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+        public string GenerateMaTheLuuDong()
+        {
+            try
+            {
+                return dalTheLuuDong.generateMaTheLuuDong();
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
     }
 }

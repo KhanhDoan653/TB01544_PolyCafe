@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BLL_PolyCafe.BLLChiTietPhieu;
 
 namespace GUI_PolyCafe
 {
@@ -46,6 +47,7 @@ namespace GUI_PolyCafe
             lbChuSoHuu.Text = $"{theLuuDong.MaThe} - {theLuuDong.ChuSoHuu}";
             lbMaPhieu.Text = phieuBanHang.MaPhieu;
             lbNgayLap.Text = phieuBanHang.NgayTao.ToString("dd/MM/yyyy");
+            txtPhanTram.Text = phieuBanHang.PhanTramGiam.ToString("N2"); // Hiển thị PhanTramGiam
         }
 
         private void frmChiTietPhieu_Load(object sender, EventArgs e)
@@ -256,13 +258,12 @@ namespace GUI_PolyCafe
         {
             decimal tong = lstChiTiet.Sum(ct => ct.ThanhTien);
             decimal giamGia = 0;
-            decimal phanTram = 0;
-            decimal dichVu = 0;
-            decimal thanhTien = 0;
+            ChiTietPhieuService service = new ChiTietPhieuService();
+            decimal phanTram = decimal.TryParse(txtPhanTram.Text, out var pt) ? pt : 0;
+            decimal dichVu = decimal.TryParse(txtDichVu.Text, out var dv) ? dv : 0;
 
-            // Gán 0 nếu text trống
-            decimal.TryParse(string.IsNullOrWhiteSpace(txtPhanTram.Text) ? "0" : txtPhanTram.Text, out phanTram);
-            decimal.TryParse(string.IsNullOrWhiteSpace(txtDichVu.Text) ? "0" : txtDichVu.Text, out dichVu);
+            decimal thanhTien = service.TinhTongTien(lstChiTiet, phanTram, dichVu);
+            txtThanhTien.Text = thanhTien.ToString("N0");
 
             giamGia = tong * (phanTram / 100);
             thanhTien = tong - giamGia + dichVu;
@@ -303,10 +304,32 @@ namespace GUI_PolyCafe
             }
         }
 
-
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            if (!isActive)
+            {
+                decimal phanTram;
+                if (!decimal.TryParse(txtPhanTram.Text, out phanTram) || phanTram < 0 || phanTram > 100)
+                {
+                    MessageBox.Show("Vui lòng nhập phần trăm giảm giá hợp lệ (0-100)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Cập nhật PhanTramGiam vào PhieuBanHang
+                phieuBanHang.PhanTramGiam = phanTram;
+                BLLPhieuBanHang bllPhieuBanHang = new BLLPhieuBanHang();
+                string result = bllPhieuBanHang.UpdatePhanTramGiam(phieuBanHang); // Sử dụng UpdatePhanTramGiam
+
+                if (string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("Cập nhật giảm giá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Đóng form sau khi lưu
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

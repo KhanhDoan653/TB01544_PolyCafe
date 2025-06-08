@@ -13,6 +13,10 @@ namespace DAL_PolyCafe
     public class DBUNTIL
     {
         public static string connString = @"Data Source=DESKTOP-A3S4JGC\SQLEXPRESS;Initial Catalog=PolyCafe;Integrated Security=True;Trust Server Certificate=True";
+        public static SqlConnection GetConnection()
+        {
+            return new SqlConnection(connString);
+        }
 
         public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
         {
