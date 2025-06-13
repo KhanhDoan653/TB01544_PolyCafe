@@ -89,6 +89,8 @@ namespace GUI_PolyCafe
             danhMucToolStripMenuItem.Visible = false;
             nhanVienToolStripMenuItem.Visible = false;
             doanhThuToolStripMenuItem.Visible = false;
+            chiNhánhToolStripMenuItem.Visible = false;
+            cơSởVậtChấtToolStripMenuItem.Visible = false;
         }
         private void CheckPermission()
         {
@@ -99,6 +101,7 @@ namespace GUI_PolyCafe
                 banHangToolStripMenuItem.Visible = true;
                 nhanVienToolStripMenuItem.Visible = true;
                 doanhThuToolStripMenuItem.Visible = true;
+
                 if (AuthUtil.user.VaiTro == false)
                 {
                     VaiTroNhanVien();
@@ -108,7 +111,6 @@ namespace GUI_PolyCafe
             {
                 heThongToolStripMenuItem.Visible = true; // Xác định xem điều khiển có hiển thị trên giao diện hay không.
                 dangXuatToolStripMenuItem.Enabled = false; // Xác định xem điều khiển có thể tương tác hay không.
-                thongTinTaiKhoanToolStripMenuItem.Enabled = false;
                 danhMucToolStripMenuItem.Visible = false;
                 banHangToolStripMenuItem.Visible = false;
                 nhanVienToolStripMenuItem.Visible = false;
@@ -191,6 +193,16 @@ namespace GUI_PolyCafe
             toolStripTimer.Text = s;
             Text = Text.Substring(1, Text.Length - 1) +
             Text.Substring(0, 1);
+        }
+
+        private void hdSuDungToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmHDSD());
+        }
+
+        private void gioiThieuPhanMemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmGioiThieu());
         }
     }
 }

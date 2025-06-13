@@ -40,7 +40,39 @@ namespace GUI_PolyCafe
 
         }
 
-        private void btDoiMK_Click(object sender, EventArgs e)
+        private void Clear()
+        {
+            txtMKCu.Clear();
+            txtMKMoi.Clear();
+            txtXacNhanMK.Clear();
+        }
+        private void chbHienthiMKCU_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKCu.UseSystemPasswordChar = !chkHienthiMKCU.Checked;
+        }
+
+        private void chbHienthiMKMoi_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKMoi.UseSystemPasswordChar = !chkHienthiMKMoi.Checked;
+        }
+
+
+        private void chkHienthiXacNhanMK_CheckedChanged(object sender, EventArgs e)
+        {
+            txtXacNhanMK.UseSystemPasswordChar = !chkHienthiXacNhanMK.Checked;
+        }
+
+        private void chkHienthiMKMoi_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKMoi.UseSystemPasswordChar = !chkHienthiMKMoi.Checked;
+        }
+
+        private void chkHienthiMKCU_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKCu.UseSystemPasswordChar = !chkHienthiMKCU.Checked;
+        }
+
+        private void btnDoiMK_Click(object sender, EventArgs e)
         {
             if (!AuthUtil.user.MatKhau.Equals(txtMKCu.Text))
             {
@@ -69,40 +101,9 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void Clear()
-        {
-            txtMKCu.Clear();
-            txtMKMoi.Clear();
-            txtXacNhanMK.Clear();
-        }
-        private void chbHienthiMKCU_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMKCu.UseSystemPasswordChar = !chkHienthiMKCU.Checked;
-        }
-
-        private void chbHienthiMKMoi_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMKMoi.UseSystemPasswordChar = !chkHienthiMKMoi.Checked;
-        }
-
-        private void btThoat_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void chkHienthiXacNhanMK_CheckedChanged(object sender, EventArgs e)
-        {
-            txtXacNhanMK.UseSystemPasswordChar = !chkHienthiXacNhanMK.Checked;
-        }
-
-        private void chkHienthiMKMoi_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMKMoi.UseSystemPasswordChar = !chkHienthiMKMoi.Checked;
-        }
-
-        private void chkHienthiMKCU_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMKCu.UseSystemPasswordChar = !chkHienthiMKCU.Checked;
         }
     }
 }

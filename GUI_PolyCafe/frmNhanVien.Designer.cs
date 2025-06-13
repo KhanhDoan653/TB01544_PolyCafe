@@ -41,6 +41,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             tableLayoutPanel3 = new TableLayoutPanel();
             btLamMoi = new Guna.UI2.WinForms.Guna2Button();
             btnThem = new Guna.UI2.WinForms.Guna2Button();
@@ -97,11 +98,11 @@
             tableLayoutPanel3.Controls.Add(btnThem, 0, 0);
             tableLayoutPanel3.Controls.Add(btnSua, 1, 0);
             tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
-            tableLayoutPanel3.Location = new Point(734, 67);
+            tableLayoutPanel3.Location = new Point(712, 70);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(416, 140);
+            tableLayoutPanel3.Size = new Size(438, 161);
             tableLayoutPanel3.TabIndex = 6;
             // 
             // btLamMoi
@@ -117,7 +118,7 @@
             btLamMoi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btLamMoi.ForeColor = Color.DarkCyan;
             btLamMoi.Image = Properties.Resources.icons8_refresh_50;
-            btLamMoi.Location = new Point(315, 52);
+            btLamMoi.Location = new Point(333, 62);
             btLamMoi.Name = "btLamMoi";
             btLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btLamMoi.Size = new Size(98, 36);
@@ -138,7 +139,7 @@
             btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnThem.ForeColor = Color.Green;
             btnThem.Image = Properties.Resources.icons8_add_24;
-            btnThem.Location = new Point(3, 52);
+            btnThem.Location = new Point(5, 62);
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnThem.Size = new Size(98, 36);
@@ -159,7 +160,7 @@
             btnSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSua.ForeColor = Color.DarkOrange;
             btnSua.Image = Properties.Resources.icons8_fix_50__1_;
-            btnSua.Location = new Point(107, 52);
+            btnSua.Location = new Point(114, 62);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSua.Size = new Size(98, 36);
@@ -180,7 +181,7 @@
             btXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btXoa.ForeColor = Color.Red;
             btXoa.Image = Properties.Resources.icons8_remove_30;
-            btXoa.Location = new Point(211, 52);
+            btXoa.Location = new Point(223, 62);
             btXoa.Name = "btXoa";
             btXoa.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btXoa.Size = new Size(98, 36);
@@ -195,11 +196,11 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel4.Controls.Add(txtTim, 0, 0);
             tableLayoutPanel4.Controls.Add(btnTim, 1, 0);
-            tableLayoutPanel4.Location = new Point(734, 22);
+            tableLayoutPanel4.Location = new Point(712, 22);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(416, 42);
+            tableLayoutPanel4.Size = new Size(438, 42);
             tableLayoutPanel4.TabIndex = 7;
             // 
             // txtTim
@@ -207,7 +208,7 @@
             txtTim.Anchor = AnchorStyles.None;
             txtTim.BackColor = Color.White;
             txtTim.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTim.Location = new Point(3, 8);
+            txtTim.Location = new Point(11, 8);
             txtTim.Name = "txtTim";
             txtTim.Size = new Size(306, 25);
             txtTim.TabIndex = 0;
@@ -224,7 +225,7 @@
             btnTim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTim.ForeColor = Color.Black;
             btnTim.Image = Properties.Resources._209393_200;
-            btnTim.Location = new Point(315, 3);
+            btnTim.Location = new Point(331, 3);
             btnTim.Name = "btnTim";
             btnTim.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnTim.Size = new Size(98, 36);
@@ -237,7 +238,7 @@
             panel1.Controls.Add(label8);
             panel1.Controls.Add(rbtHoatDong);
             panel1.Controls.Add(rbtNgungHD);
-            panel1.Location = new Point(21, 184);
+            panel1.Location = new Point(21, 188);
             panel1.Name = "panel1";
             panel1.Size = new Size(649, 28);
             panel1.TabIndex = 10;
@@ -245,22 +246,22 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label8.ForeColor = Color.Goldenrod;
+            label8.Font = new Font("Fira Sans", 11.25F);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
             label8.Location = new Point(0, 6);
             label8.Name = "label8";
-            label8.Size = new Size(74, 17);
+            label8.Size = new Size(79, 18);
             label8.TabIndex = 7;
             label8.Text = "Trạng Thái";
             // 
             // rbtHoatDong
             // 
             rbtHoatDong.AutoSize = true;
-            rbtHoatDong.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            rbtHoatDong.ForeColor = Color.Goldenrod;
+            rbtHoatDong.Font = new Font("Fira Sans", 11.25F);
+            rbtHoatDong.ForeColor = SystemColors.ActiveCaptionText;
             rbtHoatDong.Location = new Point(218, 2);
             rbtHoatDong.Name = "rbtHoatDong";
-            rbtHoatDong.Size = new Size(92, 21);
+            rbtHoatDong.Size = new Size(97, 22);
             rbtHoatDong.TabIndex = 9;
             rbtHoatDong.TabStop = true;
             rbtHoatDong.Text = "Hoạt động";
@@ -269,11 +270,11 @@
             // rbtNgungHD
             // 
             rbtNgungHD.AutoSize = true;
-            rbtNgungHD.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            rbtNgungHD.ForeColor = Color.Goldenrod;
+            rbtNgungHD.Font = new Font("Fira Sans", 11.25F);
+            rbtNgungHD.ForeColor = SystemColors.ActiveCaptionText;
             rbtNgungHD.Location = new Point(458, 4);
             rbtNgungHD.Name = "rbtNgungHD";
-            rbtNgungHD.Size = new Size(137, 21);
+            rbtNgungHD.Size = new Size(144, 22);
             rbtNgungHD.TabIndex = 8;
             rbtNgungHD.TabStop = true;
             rbtNgungHD.Text = "Ngừng hoạt động";
@@ -282,19 +283,20 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.NavajoWhite;
+            groupBox1.BackColor = Color.AntiqueWhite;
             groupBox1.Controls.Add(tableLayoutPanel3);
             groupBox1.Controls.Add(tableLayoutPanel4);
             groupBox1.Controls.Add(panel1);
             groupBox1.Controls.Add(tableLayoutPanel2);
             groupBox1.Controls.Add(tableLayoutPanel1);
-            groupBox1.ForeColor = Color.Black;
+            groupBox1.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = SystemColors.HotTrack;
             groupBox1.Location = new Point(12, 48);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1172, 221);
+            groupBox1.Size = new Size(1172, 237);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Thông Tin";
+            groupBox1.Text = "Thông Tin Nhân Viên";
             // 
             // tableLayoutPanel2
             // 
@@ -305,7 +307,7 @@
             tableLayoutPanel2.Controls.Add(label6, 0, 0);
             tableLayoutPanel2.Controls.Add(rbtNhanVien, 2, 0);
             tableLayoutPanel2.Controls.Add(rbtQuanLy, 1, 0);
-            tableLayoutPanel2.Location = new Point(21, 154);
+            tableLayoutPanel2.Location = new Point(21, 157);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 48.2142868F));
@@ -315,22 +317,22 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label6.ForeColor = Color.Goldenrod;
+            label6.Font = new Font("Fira Sans", 11.25F);
+            label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.Location = new Point(3, 0);
             label6.Name = "label6";
-            label6.Size = new Size(49, 17);
+            label6.Size = new Size(51, 18);
             label6.TabIndex = 1;
             label6.Text = "Vai trò";
             // 
             // rbtNhanVien
             // 
             rbtNhanVien.AutoSize = true;
-            rbtNhanVien.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            rbtNhanVien.ForeColor = Color.Goldenrod;
+            rbtNhanVien.Font = new Font("Fira Sans", 11.25F);
+            rbtNhanVien.ForeColor = SystemColors.ActiveCaptionText;
             rbtNhanVien.Location = new Point(458, 3);
             rbtNhanVien.Name = "rbtNhanVien";
-            rbtNhanVien.Size = new Size(89, 21);
+            rbtNhanVien.Size = new Size(94, 22);
             rbtNhanVien.TabIndex = 2;
             rbtNhanVien.TabStop = true;
             rbtNhanVien.Text = "Nhân viên";
@@ -339,11 +341,11 @@
             // rbtQuanLy
             // 
             rbtQuanLy.AutoSize = true;
-            rbtQuanLy.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            rbtQuanLy.ForeColor = Color.Goldenrod;
+            rbtQuanLy.Font = new Font("Fira Sans", 11.25F);
+            rbtQuanLy.ForeColor = SystemColors.ActiveCaptionText;
             rbtQuanLy.Location = new Point(218, 3);
             rbtQuanLy.Name = "rbtQuanLy";
-            rbtQuanLy.Size = new Size(74, 21);
+            rbtQuanLy.Size = new Size(77, 22);
             rbtQuanLy.TabIndex = 3;
             rbtQuanLy.TabStop = true;
             rbtQuanLy.Text = "Quản lý";
@@ -381,55 +383,55 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label5.ForeColor = Color.Goldenrod;
+            label5.Font = new Font("Fira Sans", 11.25F);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
             label5.Location = new Point(3, 104);
             label5.Name = "label5";
-            label5.Size = new Size(130, 17);
+            label5.Size = new Size(139, 18);
             label5.TabIndex = 4;
             label5.Text = "Xác Nhận Mật Khẩu";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label3.ForeColor = Color.Goldenrod;
+            label3.Font = new Font("Fira Sans", 11.25F);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
             label3.Location = new Point(3, 52);
             label3.Name = "label3";
-            label3.Size = new Size(42, 17);
+            label3.Size = new Size(45, 18);
             label3.TabIndex = 2;
             label3.Text = "Email";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label2.ForeColor = Color.Goldenrod;
+            label2.Font = new Font("Fira Sans", 11.25F);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(3, 26);
             label2.Name = "label2";
-            label2.Size = new Size(71, 17);
+            label2.Size = new Size(74, 18);
             label2.TabIndex = 1;
             label2.Text = "Họ Và Tên";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label1.ForeColor = Color.Goldenrod;
+            label1.Font = new Font("Fira Sans", 11.25F);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(96, 17);
+            label1.Size = new Size(101, 18);
             label1.TabIndex = 0;
             label1.Text = "Mã Nhân Viên";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label4.ForeColor = Color.Goldenrod;
+            label4.Font = new Font("Fira Sans", 11.25F);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
             label4.Location = new Point(3, 78);
             label4.Name = "label4";
-            label4.Size = new Size(67, 17);
+            label4.Size = new Size(72, 18);
             label4.TabIndex = 3;
             label4.Text = "Mật Khẩu";
             // 
@@ -437,37 +439,41 @@
             // 
             txtMaNhanVien.Anchor = AnchorStyles.Left;
             txtMaNhanVien.BackColor = Color.White;
+            txtMaNhanVien.Font = new Font("Fira Sans", 9F);
             txtMaNhanVien.Location = new Point(218, 3);
             txtMaNhanVien.Name = "txtMaNhanVien";
             txtMaNhanVien.ReadOnly = true;
-            txtMaNhanVien.Size = new Size(234, 23);
+            txtMaNhanVien.Size = new Size(234, 22);
             txtMaNhanVien.TabIndex = 5;
             // 
             // txtHoTen
             // 
             txtHoTen.Anchor = AnchorStyles.Left;
             txtHoTen.BackColor = Color.White;
+            txtHoTen.Font = new Font("Fira Sans", 9F);
             txtHoTen.Location = new Point(218, 29);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(234, 23);
+            txtHoTen.Size = new Size(234, 22);
             txtHoTen.TabIndex = 6;
             // 
             // txtEmail
             // 
             txtEmail.Anchor = AnchorStyles.Left;
             txtEmail.BackColor = Color.White;
+            txtEmail.Font = new Font("Fira Sans", 9F);
             txtEmail.Location = new Point(218, 55);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(234, 23);
+            txtEmail.Size = new Size(234, 22);
             txtEmail.TabIndex = 7;
             // 
             // txtXacNhanMK
             // 
             txtXacNhanMK.Anchor = AnchorStyles.Left;
             txtXacNhanMK.BackColor = Color.White;
-            txtXacNhanMK.Location = new Point(218, 107);
+            txtXacNhanMK.Font = new Font("Fira Sans", 9F);
+            txtXacNhanMK.Location = new Point(218, 108);
             txtXacNhanMK.Name = "txtXacNhanMK";
-            txtXacNhanMK.Size = new Size(234, 23);
+            txtXacNhanMK.Size = new Size(234, 22);
             txtXacNhanMK.TabIndex = 8;
             txtXacNhanMK.UseSystemPasswordChar = true;
             // 
@@ -475,20 +481,21 @@
             // 
             txtMatKhau.Anchor = AnchorStyles.Left;
             txtMatKhau.BackColor = Color.White;
+            txtMatKhau.Font = new Font("Fira Sans", 9F);
             txtMatKhau.Location = new Point(218, 81);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(234, 23);
+            txtMatKhau.Size = new Size(234, 22);
             txtMatKhau.TabIndex = 9;
             txtMatKhau.UseSystemPasswordChar = true;
             // 
             // chkHienMK
             // 
             chkHienMK.AutoSize = true;
-            chkHienMK.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            chkHienMK.ForeColor = Color.Goldenrod;
+            chkHienMK.Font = new Font("Fira Sans", 11.25F);
+            chkHienMK.ForeColor = SystemColors.ActiveCaptionText;
             chkHienMK.Location = new Point(458, 81);
             chkHienMK.Name = "chkHienMK";
-            chkHienMK.Size = new Size(119, 20);
+            chkHienMK.Size = new Size(126, 20);
             chkHienMK.TabIndex = 10;
             chkHienMK.Text = "Hiện Mật Khẩu";
             chkHienMK.UseVisualStyleBackColor = true;
@@ -497,11 +504,11 @@
             // chkHienMK2
             // 
             chkHienMK2.AutoSize = true;
-            chkHienMK2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            chkHienMK2.ForeColor = Color.Goldenrod;
+            chkHienMK2.Font = new Font("Fira Sans", 11.25F);
+            chkHienMK2.ForeColor = SystemColors.ActiveCaptionText;
             chkHienMK2.Location = new Point(458, 107);
             chkHienMK2.Name = "chkHienMK2";
-            chkHienMK2.Size = new Size(119, 21);
+            chkHienMK2.Size = new Size(126, 22);
             chkHienMK2.TabIndex = 11;
             chkHienMK2.Text = "Hiện Mật Khẩu";
             chkHienMK2.UseVisualStyleBackColor = true;
@@ -514,11 +521,11 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.Controls.Add(label7, 0, 0);
             tableLayoutPanel5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel5.Location = new Point(12, 9);
+            tableLayoutPanel5.Location = new Point(12, 2);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Size = new Size(1172, 33);
+            tableLayoutPanel5.Size = new Size(1172, 48);
             tableLayoutPanel5.TabIndex = 10;
             // 
             // label7
@@ -526,22 +533,23 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Gold;
-            label7.Location = new Point(502, 0);
+            label7.Font = new Font("Fira Sans", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.HotTrack;
+            label7.Location = new Point(508, 6);
             label7.Name = "label7";
-            label7.Size = new Size(168, 33);
+            label7.Size = new Size(155, 35);
             label7.TabIndex = 12;
             label7.Text = "NHÂN VIÊN";
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = Color.NavajoWhite;
+            groupBox2.BackColor = Color.AntiqueWhite;
             groupBox2.Controls.Add(dgvDanhSachNV);
-            groupBox2.ForeColor = Color.Black;
-            groupBox2.Location = new Point(12, 275);
+            groupBox2.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = SystemColors.HotTrack;
+            groupBox2.Location = new Point(12, 291);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1172, 267);
+            groupBox2.Size = new Size(1172, 261);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách";
@@ -552,7 +560,7 @@
             dgvDanhSachNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -562,14 +570,14 @@
             dgvDanhSachNV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.HotTrack;
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvDanhSachNV.DefaultCellStyle = dataGridViewCellStyle3;
             dgvDanhSachNV.GridColor = Color.FromArgb(231, 229, 255);
-            dgvDanhSachNV.Location = new Point(21, 22);
+            dgvDanhSachNV.Location = new Point(21, 20);
             dgvDanhSachNV.Name = "dgvDanhSachNV";
             dgvDanhSachNV.RowHeadersVisible = false;
             dgvDanhSachNV.Size = new Size(1129, 231);
@@ -601,6 +609,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AntiqueWhite;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1196, 554);
             Controls.Add(groupBox2);
             Controls.Add(tableLayoutPanel5);

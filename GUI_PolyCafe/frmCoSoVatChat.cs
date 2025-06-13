@@ -282,42 +282,14 @@ namespace GUI_PolyCafe
             }
         }
 
-
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string maChiNhanh = cboChiNhanh.SelectedValue?.ToString();
-                int soLuongMin = 0;
-                int.TryParse(txtSoLuong.Text, out soLuongMin);
-
-                BLLCoSoVatChat bll = new BLLCoSoVatChat();
-                List<CoSoVatChat> danhSach = bll.GetCoSoVatChats();
-
-                // Lọc nâng cao
-                var ketQua = danhSach.Where(cs =>
-                    (string.IsNullOrEmpty(maChiNhanh) || cs.MaChiNhanh == maChiNhanh) &&
-                    cs.SoLuong >= soLuongMin
-                ).ToList();
-
-                BLLChiNhanh bllChiNhanh = new BLLChiNhanh();
-                dgrDanhSach.AutoGenerateColumns = true;
-                dgrDanhSach.DataSource = ketQua.Select(cs => new
-                {
-                    MaCoSo = cs.MaCoSo,
-                    TenCoSo = cs.TenCoSo,
-                    SoLuong = cs.SoLuong,
-                    TenChiNhanh = bllChiNhanh.GetChiNhanhs().FirstOrDefault(cn => cn.MaChiNhanh == cs.MaChiNhanh)?.TenChiNhanh ?? "Không xác định"
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-        }
-
         private void btTim_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtTim.Text))
+            {
+                MessageBox.Show("Vui lòng nhập cơ sở muốn tìm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 string input = txtTim.Text.Trim().ToLower();

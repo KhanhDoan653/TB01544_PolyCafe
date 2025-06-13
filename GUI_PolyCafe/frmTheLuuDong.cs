@@ -48,9 +48,54 @@ namespace GUI_PolyCafe
             cbkHoatDong.Checked = true;
         }
 
+        private void btTim_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTim.Text))
+            {
+                MessageBox.Show("Vui lòng nhập để tìm kiếm");
+                return;
+            }
+            try
+            {
+                string keyword = txtTim.Text.Trim().ToLower();
+                BLLTheLuuDong bus = new BLLTheLuuDong();
+                List<TheLuuDong> ketQua = bus.GetTheLuuDongList()
+                    .Where(t => t.MaThe.ToLower().Contains(keyword) || t.ChuSoHuu.ToLower().Contains(keyword))
+                    .ToList();
 
+                if (ketQua.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên nào phù hợp với từ khóa: " + keyword);
+                    return;
+                }
 
-        private void btThem_Click(object sender, EventArgs e)
+                dgvDanhSachTheLuuDong.DataSource = ketQua;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void dgvDanhSachTheLuuDong_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvDanhSachTheLuuDong.Rows[e.RowIndex];
+            // Đổ dữ liệu vào các ô nhập liệu trên form
+            txtMaThe.Text = row.Cells["MaThe"].Value.ToString();
+            txtChuSoHuu.Text = row.Cells["ChuSoHuu"].Value.ToString();
+
+            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+            cbkHoatDong.Checked = trangThai;
+
+            // Bật nút "Sửa"
+            btThem.Enabled = false;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
+            // Tắt chỉnh sửa mã thẻ
+            txtMaThe.Enabled = false;
+        }
+
+        private void btThem_Click_1(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
             string chuSoHuu = txtChuSoHuu.Text.Trim();
@@ -92,7 +137,7 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void btSua_Click(object sender, EventArgs e)
+        private void btSua_Click_1(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
             string chuSoHuu = txtChuSoHuu.Text.Trim();
@@ -133,7 +178,7 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void btXoa_Click(object sender, EventArgs e)
+        private void btXoa_Click_1(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
             string chuSoHuu = txtChuSoHuu.Text.Trim();
@@ -185,53 +230,6 @@ namespace GUI_PolyCafe
         {
             ClearForm();
             LoadDanhSachThe();
-        }
-
-        private void dgvDanhSachTheLuuDong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvDanhSachTheLuuDong.Rows[e.RowIndex];
-            // Đổ dữ liệu vào các ô nhập liệu trên form
-            txtMaThe.Text = row.Cells["MaThe"].Value.ToString();
-            txtChuSoHuu.Text = row.Cells["ChuSoHuu"].Value.ToString();
-
-            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-            cbkHoatDong.Checked = trangThai;
-
-            // Bật nút "Sửa"
-            btThem.Enabled = false;
-            btSua.Enabled = true;
-            btXoa.Enabled = true;
-            // Tắt chỉnh sửa mã thẻ
-            txtMaThe.Enabled = false;
-        }
-
-        private void btTim_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtTim.Text))
-            {
-                MessageBox.Show("Vui lòng nhập để tìm kiếm");
-                return;
-            }
-            try
-            {
-                string keyword = txtTim.Text.Trim().ToLower();
-                BLLTheLuuDong bus = new BLLTheLuuDong();
-                List<TheLuuDong> ketQua = bus.GetTheLuuDongList()
-                    .Where(t => t.MaThe.ToLower().Contains(keyword) || t.ChuSoHuu.ToLower().Contains(keyword))
-                    .ToList();
-
-                if (ketQua.Count == 0)
-                {
-                    MessageBox.Show("Không tìm thấy nhân viên nào phù hợp với từ khóa: " + keyword);
-                    return;
-                }
-
-                dgvDanhSachTheLuuDong.DataSource = ketQua;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
         }
     }
 }

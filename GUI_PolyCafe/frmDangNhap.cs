@@ -21,6 +21,31 @@ namespace GUI_PolyCafe
             InitializeComponent();
         }
 
+        private void chkHienMK_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMK.UseSystemPasswordChar = !chkHienMK.Checked;
+        }
+
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
         private void btDangNhap_Click(object sender, EventArgs e)
         {
             string username = txtEmail.Text;
@@ -45,27 +70,6 @@ namespace GUI_PolyCafe
                 main.Show();
                 this.Hide();
             }
-        }
-
-        private void chkHienMK_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMK.UseSystemPasswordChar = !chkHienMK.Checked;
-        }
-
-
-
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
         }
     }
 }

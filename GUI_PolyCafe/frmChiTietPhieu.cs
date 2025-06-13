@@ -39,6 +39,7 @@ namespace GUI_PolyCafe
                 btnThemChiTiet.Enabled = false;
                 btnXoaChiTiet.Enabled = false;
                 txtPhanTram.Enabled = false;
+                btnXacNhan.Enabled = false;
             }
         }
 
@@ -330,6 +331,11 @@ namespace GUI_PolyCafe
                     MessageBox.Show("Lỗi: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

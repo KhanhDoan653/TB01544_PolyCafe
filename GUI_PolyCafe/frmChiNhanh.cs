@@ -65,6 +65,88 @@ namespace GUI_PolyCafe
             dgrDanhSachChiNhanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        private void dgrDanhSachChiNhanh_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = dgrDanhSachChiNhanh.Rows[e.RowIndex];
+            txtMaCN.Text = row.Cells["MaChiNhanh"].Value.ToString();
+            txtTenCN.Text = row.Cells["TenChiNhanh"].Value.ToString();
+            txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+            txtSDT.Text = row.Cells["SoDienThoai"].Value.ToString();
+            bool trangThai = row.Cells["TrangThai"].Value?.ToString().Trim().ToLower() == "hoạt động";
+            if (trangThai)
+            {
+                rdHoatDong.Checked = true;
+            }
+            else
+            {
+                rdNgungBan.Checked = true;
+            }
+            // Bật nút "Sửa"
+            btThem.Enabled = false;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
+        }
+
+        private void btTim_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = txtTim.Text.Trim().ToLower();
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LoadDanhSach(); // Tải lại danh sách gốc nếu từ khóa rỗng
+                    return;
+                }
+
+                BLLChiNhanh bll = new BLLChiNhanh();
+                List<ChiNhanh> lst = bll.GetChiNhanhs();
+
+                // Lọc danh sách theo từ khóa
+                var ketQua = lst.Where(cn =>
+                    (!string.IsNullOrEmpty(cn.MaChiNhanh) && cn.MaChiNhanh.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(cn.TenChiNhanh) && cn.TenChiNhanh.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(cn.DiaChi) && cn.DiaChi.ToLower().Contains(keyword)) ||
+                    (!string.IsNullOrEmpty(cn.SoDienThoai) && cn.SoDienThoai.ToLower().Contains(keyword)) ||
+                    (cn.TrangThai ? "hoạt động" : "ngừng hoạt động").ToLower().Contains(keyword)
+                ).Select(cn => new
+                {
+                    cn.MaChiNhanh,
+                    cn.TenChiNhanh,
+                    cn.DiaChi,
+                    cn.SoDienThoai,
+                    TrangThai = cn.TrangThai ? "Hoạt động" : "Ngừng hoạt động"
+                }).ToList();
+
+                // Cập nhật DataGridView
+                dgrDanhSachChiNhanh.DataSource = null;
+                dgrDanhSachChiNhanh.Columns.Clear();
+                dgrDanhSachChiNhanh.DataSource = ketQua;
+
+                // Định dạng lại các cột
+                if (ketQua.Count > 0)
+                {
+                    dgrDanhSachChiNhanh.Columns["MaChiNhanh"].HeaderText = "Mã Chi Nhánh";
+                    dgrDanhSachChiNhanh.Columns["TenChiNhanh"].HeaderText = "Tên Chi Nhánh";
+                    dgrDanhSachChiNhanh.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+                    dgrDanhSachChiNhanh.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
+                    dgrDanhSachChiNhanh.Columns["TrangThai"].HeaderText = "Trạng Thái";
+                    dgrDanhSachChiNhanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+
+                // Hiển thị thông báo nếu không tìm thấy
+                if (ketQua.Count == 0)
+                {
+                    MessageBox.Show($"Không tìm thấy chi nhánh nào phù hợp với từ khóa '{keyword}'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btThem_Click(object sender, EventArgs e)
         {
             try
@@ -205,88 +287,6 @@ namespace GUI_PolyCafe
         {
             ClearForm();
             LoadDanhSach();
-        }
-
-        private void dgrDanhSachChiNhanh_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-            DataGridViewRow row = dgrDanhSachChiNhanh.Rows[e.RowIndex];
-            txtMaCN.Text = row.Cells["MaChiNhanh"].Value.ToString();
-            txtTenCN.Text = row.Cells["TenChiNhanh"].Value.ToString();
-            txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
-            txtSDT.Text = row.Cells["SoDienThoai"].Value.ToString();
-            bool trangThai = row.Cells["TrangThai"].Value?.ToString().Trim().ToLower() == "hoạt động";
-            if (trangThai)
-            {
-                rdHoatDong.Checked = true;
-            }
-            else
-            {
-                rdNgungBan.Checked = true;
-            }
-            // Bật nút "Sửa"
-            btThem.Enabled = false;
-            btSua.Enabled = true;
-            btXoa.Enabled = true;
-        }
-
-        private void btTim_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string keyword = txtTim.Text.Trim().ToLower();
-                if (string.IsNullOrEmpty(keyword))
-                {
-                    MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    LoadDanhSach(); // Tải lại danh sách gốc nếu từ khóa rỗng
-                    return;
-                }
-
-                BLLChiNhanh bll = new BLLChiNhanh();
-                List<ChiNhanh> lst = bll.GetChiNhanhs();
-
-                // Lọc danh sách theo từ khóa
-                var ketQua = lst.Where(cn =>
-                    (!string.IsNullOrEmpty(cn.MaChiNhanh) && cn.MaChiNhanh.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(cn.TenChiNhanh) && cn.TenChiNhanh.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(cn.DiaChi) && cn.DiaChi.ToLower().Contains(keyword)) ||
-                    (!string.IsNullOrEmpty(cn.SoDienThoai) && cn.SoDienThoai.ToLower().Contains(keyword)) ||
-                    (cn.TrangThai ? "hoạt động" : "ngừng hoạt động").ToLower().Contains(keyword)
-                ).Select(cn => new
-                {
-                    cn.MaChiNhanh,
-                    cn.TenChiNhanh,
-                    cn.DiaChi,
-                    cn.SoDienThoai,
-                    TrangThai = cn.TrangThai ? "Hoạt động" : "Ngừng hoạt động"
-                }).ToList();
-
-                // Cập nhật DataGridView
-                dgrDanhSachChiNhanh.DataSource = null;
-                dgrDanhSachChiNhanh.Columns.Clear();
-                dgrDanhSachChiNhanh.DataSource = ketQua;
-
-                // Định dạng lại các cột
-                if (ketQua.Count > 0)
-                {
-                    dgrDanhSachChiNhanh.Columns["MaChiNhanh"].HeaderText = "Mã Chi Nhánh";
-                    dgrDanhSachChiNhanh.Columns["TenChiNhanh"].HeaderText = "Tên Chi Nhánh";
-                    dgrDanhSachChiNhanh.Columns["DiaChi"].HeaderText = "Địa Chỉ";
-                    dgrDanhSachChiNhanh.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
-                    dgrDanhSachChiNhanh.Columns["TrangThai"].HeaderText = "Trạng Thái";
-                    dgrDanhSachChiNhanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                }
-
-                // Hiển thị thông báo nếu không tìm thấy
-                if (ketQua.Count == 0)
-                {
-                    MessageBox.Show($"Không tìm thấy chi nhánh nào phù hợp với từ khóa '{keyword}'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

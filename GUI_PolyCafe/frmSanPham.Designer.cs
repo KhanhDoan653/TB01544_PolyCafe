@@ -95,11 +95,11 @@
             groupBox1.Controls.Add(txtMaSanPham);
             groupBox1.Controls.Add(pbHinhAnh);
             groupBox1.Controls.Add(btUpAnh);
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox1.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.HotTrack;
-            groupBox1.Location = new Point(12, 50);
+            groupBox1.Location = new Point(12, 75);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(451, 499);
+            groupBox1.Size = new Size(451, 474);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Sản Phẩm";
@@ -115,12 +115,12 @@
             tableLayoutPanel3.Controls.Add(btThem, 0, 0);
             tableLayoutPanel3.Controls.Add(btSua, 1, 0);
             tableLayoutPanel3.Controls.Add(btXoa, 2, 0);
-            tableLayoutPanel3.Location = new Point(6, 431);
+            tableLayoutPanel3.Location = new Point(6, 407);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Size = new Size(428, 61);
-            tableLayoutPanel3.TabIndex = 38;
+            tableLayoutPanel3.TabIndex = 53;
             // 
             // btLamMoi
             // 
@@ -162,7 +162,7 @@
             btThem.Size = new Size(98, 36);
             btThem.TabIndex = 9;
             btThem.Text = "Thêm";
-            btThem.Click += btThem_Click_1;
+            btThem.Click += btThem_Click;
             // 
             // btSua
             // 
@@ -208,43 +208,43 @@
             // 
             // txtHinhAnh
             // 
-            txtHinhAnh.Location = new Point(30, 387);
+            txtHinhAnh.Location = new Point(37, 380);
             txtHinhAnh.Name = "txtHinhAnh";
-            txtHinhAnh.Size = new Size(212, 23);
-            txtHinhAnh.TabIndex = 37;
+            txtHinhAnh.Size = new Size(212, 22);
+            txtHinhAnh.TabIndex = 52;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label8.Font = new Font("Fira Sans", 9.749999F);
             label8.ForeColor = Color.Maroon;
-            label8.Location = new Point(37, 173);
+            label8.Location = new Point(37, 165);
             label8.Name = "label8";
-            label8.Size = new Size(78, 18);
-            label8.TabIndex = 32;
+            label8.Size = new Size(70, 15);
+            label8.TabIndex = 47;
             label8.Text = "Trạng Thái";
             // 
             // rdNgungBan
             // 
             rdNgungBan.AutoSize = true;
-            rdNgungBan.Font = new Font("Microsoft Sans Serif", 11.25F);
+            rdNgungBan.Font = new Font("Fira Sans", 9.749999F);
             rdNgungBan.ForeColor = Color.Maroon;
-            rdNgungBan.Location = new Point(288, 176);
+            rdNgungBan.Location = new Point(299, 165);
             rdNgungBan.Name = "rdNgungBan";
-            rdNgungBan.Size = new Size(99, 22);
-            rdNgungBan.TabIndex = 35;
+            rdNgungBan.Size = new Size(90, 19);
+            rdNgungBan.TabIndex = 50;
             rdNgungBan.Text = "Ngừng Bán";
             rdNgungBan.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label2.Font = new Font("Fira Sans", 9.749999F);
             label2.ForeColor = Color.Maroon;
-            label2.Location = new Point(37, 33);
+            label2.Location = new Point(37, 25);
             label2.Name = "label2";
-            label2.Size = new Size(102, 18);
-            label2.TabIndex = 26;
+            label2.Size = new Size(86, 15);
+            label2.TabIndex = 41;
             label2.Text = "Mã Sản Phẩm";
             // 
             // rdHoatDong
@@ -252,12 +252,12 @@
             rdHoatDong.AutoSize = true;
             rdHoatDong.BackColor = Color.Transparent;
             rdHoatDong.Checked = true;
-            rdHoatDong.Font = new Font("Microsoft Sans Serif", 11.25F);
+            rdHoatDong.Font = new Font("Fira Sans", 9.749999F);
             rdHoatDong.ForeColor = Color.Maroon;
-            rdHoatDong.Location = new Point(144, 176);
+            rdHoatDong.Location = new Point(155, 165);
             rdHoatDong.Name = "rdHoatDong";
-            rdHoatDong.Size = new Size(98, 22);
-            rdHoatDong.TabIndex = 34;
+            rdHoatDong.Size = new Size(89, 19);
+            rdHoatDong.TabIndex = 49;
             rdHoatDong.TabStop = true;
             rdHoatDong.Text = "Hoạt Động";
             rdHoatDong.UseVisualStyleBackColor = false;
@@ -265,88 +265,88 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label3.Font = new Font("Fira Sans", 9.749999F);
             label3.ForeColor = Color.Maroon;
-            label3.Location = new Point(37, 68);
+            label3.Location = new Point(37, 60);
             label3.Name = "label3";
-            label3.Size = new Size(106, 18);
-            label3.TabIndex = 27;
+            label3.Size = new Size(90, 15);
+            label3.TabIndex = 42;
             label3.Text = "Tên Sản Phẩm";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label4.Font = new Font("Fira Sans", 9.749999F);
             label4.ForeColor = Color.Maroon;
-            label4.Location = new Point(37, 103);
+            label4.Location = new Point(37, 95);
             label4.Name = "label4";
-            label4.Size = new Size(59, 18);
-            label4.TabIndex = 28;
+            label4.Size = new Size(53, 15);
+            label4.TabIndex = 43;
             label4.Text = "Đơn giá";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label5.Font = new Font("Fira Sans", 9.749999F);
             label5.ForeColor = Color.Maroon;
-            label5.Location = new Point(37, 138);
+            label5.Location = new Point(37, 130);
             label5.Name = "label5";
-            label5.Size = new Size(109, 18);
-            label5.TabIndex = 29;
+            label5.Size = new Size(94, 15);
+            label5.TabIndex = 44;
             label5.Text = "Loại Sản Phẩm";
             // 
             // txtTenSanPham
             // 
-            txtTenSanPham.Font = new Font("Microsoft Sans Serif", 11.25F);
-            txtTenSanPham.Location = new Point(155, 68);
+            txtTenSanPham.Font = new Font("Fira Sans", 9.749999F);
+            txtTenSanPham.Location = new Point(155, 60);
             txtTenSanPham.Name = "txtTenSanPham";
-            txtTenSanPham.Size = new Size(279, 24);
-            txtTenSanPham.TabIndex = 30;
+            txtTenSanPham.Size = new Size(279, 23);
+            txtTenSanPham.TabIndex = 45;
             // 
             // txtDonGia
             // 
-            txtDonGia.Font = new Font("Microsoft Sans Serif", 11.25F);
-            txtDonGia.Location = new Point(155, 103);
+            txtDonGia.Font = new Font("Fira Sans", 9.749999F);
+            txtDonGia.Location = new Point(155, 95);
             txtDonGia.Name = "txtDonGia";
-            txtDonGia.Size = new Size(279, 24);
-            txtDonGia.TabIndex = 33;
+            txtDonGia.Size = new Size(279, 23);
+            txtDonGia.TabIndex = 48;
             // 
             // cboLoaiSanPham
             // 
-            cboLoaiSanPham.Font = new Font("Microsoft Sans Serif", 11.25F);
+            cboLoaiSanPham.Font = new Font("Fira Sans", 9.749999F);
             cboLoaiSanPham.FormattingEnabled = true;
-            cboLoaiSanPham.Location = new Point(155, 138);
+            cboLoaiSanPham.Location = new Point(155, 130);
             cboLoaiSanPham.Name = "cboLoaiSanPham";
-            cboLoaiSanPham.Size = new Size(279, 26);
-            cboLoaiSanPham.TabIndex = 36;
+            cboLoaiSanPham.Size = new Size(279, 23);
+            cboLoaiSanPham.TabIndex = 51;
             // 
             // txtMaSanPham
             // 
-            txtMaSanPham.Font = new Font("Microsoft Sans Serif", 11.25F);
-            txtMaSanPham.Location = new Point(155, 33);
+            txtMaSanPham.Font = new Font("Fira Sans", 9.749999F);
+            txtMaSanPham.Location = new Point(155, 25);
             txtMaSanPham.Name = "txtMaSanPham";
             txtMaSanPham.ReadOnly = true;
-            txtMaSanPham.Size = new Size(279, 24);
-            txtMaSanPham.TabIndex = 31;
+            txtMaSanPham.Size = new Size(279, 23);
+            txtMaSanPham.TabIndex = 46;
             // 
             // pbHinhAnh
             // 
             pbHinhAnh.BorderStyle = BorderStyle.FixedSingle;
-            pbHinhAnh.Location = new Point(30, 202);
+            pbHinhAnh.Location = new Point(37, 195);
             pbHinhAnh.Name = "pbHinhAnh";
             pbHinhAnh.Size = new Size(212, 179);
             pbHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbHinhAnh.TabIndex = 24;
+            pbHinhAnh.TabIndex = 40;
             pbHinhAnh.TabStop = false;
             // 
             // btUpAnh
             // 
             btUpAnh.BackColor = SystemColors.Window;
-            btUpAnh.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btUpAnh.Location = new Point(248, 383);
+            btUpAnh.Font = new Font("Fira Sans", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btUpAnh.Location = new Point(255, 376);
             btUpAnh.Name = "btUpAnh";
             btUpAnh.Size = new Size(97, 27);
-            btUpAnh.TabIndex = 23;
+            btUpAnh.TabIndex = 39;
             btUpAnh.Text = "Chọn ảnh";
             btUpAnh.TextImageRelation = TextImageRelation.ImageBeforeText;
             btUpAnh.UseVisualStyleBackColor = false;
@@ -359,11 +359,11 @@
             groupBox2.Controls.Add(dgvDanhSachSP);
             groupBox2.Controls.Add(btTim);
             groupBox2.Controls.Add(txtTimKiemSP);
-            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox2.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.HotTrack;
-            groupBox2.Location = new Point(469, 50);
+            groupBox2.Location = new Point(469, 75);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(715, 499);
+            groupBox2.Size = new Size(715, 474);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh Sách Sản phẩm";
@@ -392,11 +392,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvDanhSachSP.DefaultCellStyle = dataGridViewCellStyle3;
             dgvDanhSachSP.GridColor = Color.FromArgb(231, 229, 255);
-            dgvDanhSachSP.Location = new Point(6, 65);
+            dgvDanhSachSP.Location = new Point(6, 56);
             dgvDanhSachSP.Name = "dgvDanhSachSP";
             dgvDanhSachSP.RowHeadersVisible = false;
-            dgvDanhSachSP.Size = new Size(703, 427);
-            dgvDanhSachSP.TabIndex = 8;
+            dgvDanhSachSP.Size = new Size(703, 412);
+            dgvDanhSachSP.TabIndex = 11;
             dgvDanhSachSP.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvDanhSachSP.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgvDanhSachSP.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -432,21 +432,21 @@
             btTim.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btTim.ForeColor = Color.Black;
             btTim.Image = Properties.Resources.icons8_search_50;
-            btTim.Location = new Point(614, 19);
+            btTim.Location = new Point(614, 21);
             btTim.Name = "btTim";
             btTim.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btTim.Size = new Size(95, 32);
-            btTim.TabIndex = 7;
+            btTim.TabIndex = 10;
             btTim.Text = "Tìm";
             btTim.Click += btTim_Click;
             // 
             // txtTimKiemSP
             // 
             txtTimKiemSP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtTimKiemSP.Location = new Point(6, 25);
+            txtTimKiemSP.Location = new Point(6, 27);
             txtTimKiemSP.Name = "txtTimKiemSP";
-            txtTimKiemSP.Size = new Size(591, 23);
-            txtTimKiemSP.TabIndex = 6;
+            txtTimKiemSP.Size = new Size(591, 22);
+            txtTimKiemSP.TabIndex = 9;
             // 
             // label1
             // 
@@ -502,7 +502,14 @@
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox txtTimKiemSP;
+        private Label label1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Guna.UI2.WinForms.Guna2Button btLamMoi;
+        private Guna.UI2.WinForms.Guna2Button btThem;
+        private Guna.UI2.WinForms.Guna2Button btSua;
+        private Guna.UI2.WinForms.Guna2Button btXoa;
+        private TextBox txtHinhAnh;
         private Label label8;
         private RadioButton rdNgungBan;
         private Label label2;
@@ -516,15 +523,8 @@
         private TextBox txtMaSanPham;
         private PictureBox pbHinhAnh;
         private Button btUpAnh;
-        private Label label1;
-        private TextBox txtHinhAnh;
-        private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel3;
-        private Guna.UI2.WinForms.Guna2Button btLamMoi;
-        private Guna.UI2.WinForms.Guna2Button btThem;
-        private Guna.UI2.WinForms.Guna2Button btSua;
-        private Guna.UI2.WinForms.Guna2Button btXoa;
-        private Guna.UI2.WinForms.Guna2Button btTim;
         private Guna.UI2.WinForms.Guna2DataGridView dgvDanhSachSP;
+        private Guna.UI2.WinForms.Guna2Button btTim;
+        private TextBox txtTimKiemSP;
     }
 }

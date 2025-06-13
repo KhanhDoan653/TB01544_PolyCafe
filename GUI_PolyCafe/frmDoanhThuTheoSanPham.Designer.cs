@@ -87,10 +87,11 @@
             // 
             guna2HtmlLabel1.Anchor = AnchorStyles.Left;
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 11.25F);
+            guna2HtmlLabel1.Font = new Font("Fira Sans", 11.25F);
+            guna2HtmlLabel1.ForeColor = Color.Maroon;
             guna2HtmlLabel1.Location = new Point(3, 21);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(100, 20);
+            guna2HtmlLabel1.Size = new Size(102, 20);
             guna2HtmlLabel1.TabIndex = 2;
             guna2HtmlLabel1.Text = "Loại sản phẩm";
             // 
@@ -111,7 +112,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.HotTrack;
             label1.Location = new Point(308, 15);
             label1.Name = "label1";
@@ -138,7 +139,8 @@
             // 
             label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label2.Font = new Font("Fira Sans", 11.25F);
+            label2.ForeColor = Color.Maroon;
             label2.Location = new Point(3, 22);
             label2.Name = "label2";
             label2.Size = new Size(60, 18);
@@ -201,10 +203,11 @@
             // 
             label3.Anchor = AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label3.Font = new Font("Fira Sans", 11.25F);
+            label3.ForeColor = Color.Maroon;
             label3.Location = new Point(3, 22);
             label3.Name = "label3";
-            label3.Size = new Size(70, 18);
+            label3.Size = new Size(71, 18);
             label3.TabIndex = 0;
             label3.Text = "Đến ngày";
             // 

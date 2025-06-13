@@ -22,6 +22,11 @@ namespace GUI_PolyCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            if (dtpDenNgay.Value.Date < dtpTuNgay.Value.Date)
+            {
+                MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string maNV = cbxNhanVien.SelectedValue.ToString();
             DateTime bd = dtpTuNgay.Value.Date;
             DateTime kt = dtpDenNgay.Value.Date;

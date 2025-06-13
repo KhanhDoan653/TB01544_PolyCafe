@@ -10,7 +10,8 @@
 
             // Khởi tạo progressBar nếu chưa có
             progressBarwelcome.Style = ProgressBarStyle.Marquee;
-            progressBarwelcome.MarqueeAnimationSpeed = 30; // Tốc độ chạy của ProgressBar
+            // Tốc độ chạy của ProgressBar
+            progressBarwelcome.Text = "Đang tải dữ liệu...";
             Task.Delay(3000).ContinueWith(t =>
             {
                 Invoke(new Action(() =>

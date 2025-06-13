@@ -108,6 +108,54 @@ namespace GUI_PolyCafe
             return new Bitmap(1, 1);
         }
 
+
+        private void dgvDanhSachSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDanhSachSP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvDanhSachSP.Rows[e.RowIndex];
+            txtMaSanPham.Text = row.Cells["MaSanPham"].Value.ToString();
+            txtTenSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
+            txtDonGia.Text = row.Cells["DonGia"].Value.ToString();
+            txtHinhAnh.Text = row.Cells["HinhAnh"].Value.ToString();
+            cboLoaiSanPham.SelectedValue = row.Cells["MaLoai"].Value.ToString();
+            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+            if (trangThai)
+            {
+                rdHoatDong.Checked = true;
+            }
+            else
+            {
+                rdNgungBan.Checked = true;
+            }
+
+            // Kiểm tra nếu dữ liệu hình ảnh là Bitmap
+            if (row.Cells["HinhAnh"].Value is Bitmap)
+            {
+                pbHinhAnh.Image = (Bitmap)row.Cells["HinhAnh"].Value;
+            }
+            else
+            {
+                string imagePath = row.Cells["HinhAnh"].Value.ToString();
+                if (File.Exists(imagePath))
+                {
+                    pbHinhAnh.Image = Image.FromFile(imagePath);
+                }
+                else
+                {
+                    pbHinhAnh.Image = null; // Nếu không tìm thấy ảnh, có thể hiển thị ảnh mặc định
+                }
+            }
+
+            // Bật nút "Sửa"
+            btThem.Enabled = false;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
+        }
+
         private void btUpAnh_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -136,6 +184,64 @@ namespace GUI_PolyCafe
             }
         }
 
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maSP = txtMaSanPham.Text.Trim(); // Lấy mã sản phẩm từ txtMaSanPham
+                string tenSP = txtTenSanPham.Text.Trim();
+                string donGiaText = txtDonGia.Text.Trim();
+                string maLoai = cboLoaiSanPham.SelectedValue?.ToString();
+                bool trangThai = rdHoatDong.Checked;
+                string hinhAnhPath = txtHinhAnh.Text.Trim(); // Đường dẫn ảnh
+
+                // Kiểm tra dữ liệu nhập vào
+                if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai) || string.IsNullOrEmpty(hinhAnhPath))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Chuyển đổi đơn giá
+                if (!decimal.TryParse(donGiaText, out decimal donGia))
+                {
+                    MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Kiểm tra tệp hình ảnh có tồn tại hay không
+                if (!System.IO.File.Exists(hinhAnhPath))
+                {
+                    MessageBox.Show("Hình ảnh không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Tạo đối tượng sản phẩm
+                SanPham sp = new SanPham
+                {
+                    MaSanPham = maSP, // Sử dụng mã sản phẩm từ txtMaSanPham
+                    TenSanPham = tenSP,
+                    DonGia = donGia,
+                    MaLoai = maLoai,
+                    TrangThai = trangThai,
+                    HinhAnh = hinhAnhPath
+                };
+
+                // Thêm sản phẩm vào cơ sở dữ liệu
+                BLLSanPham bUSSanPham = new BLLSanPham();
+                bUSSanPham.InsertSanPham(sp);
+
+                MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Làm mới form và tải lại danh sách sản phẩm
+                ClearForm();
+                LoadDanhSachSanPham();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void btSua_Click(object sender, EventArgs e)
         {
@@ -252,65 +358,6 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void btThem_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                string maSP = txtMaSanPham.Text.Trim(); // Lấy mã sản phẩm từ txtMaSanPham
-                string tenSP = txtTenSanPham.Text.Trim();
-                string donGiaText = txtDonGia.Text.Trim();
-                string maLoai = cboLoaiSanPham.SelectedValue?.ToString();
-                bool trangThai = rdHoatDong.Checked;
-                string hinhAnhPath = txtHinhAnh.Text.Trim(); // Đường dẫn ảnh
-
-                // Kiểm tra dữ liệu nhập vào
-                if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai) || string.IsNullOrEmpty(hinhAnhPath))
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Chuyển đổi đơn giá
-                if (!decimal.TryParse(donGiaText, out decimal donGia))
-                {
-                    MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Kiểm tra tệp hình ảnh có tồn tại hay không
-                if (!System.IO.File.Exists(hinhAnhPath))
-                {
-                    MessageBox.Show("Hình ảnh không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Tạo đối tượng sản phẩm
-                SanPham sp = new SanPham
-                {
-                    MaSanPham = maSP, // Sử dụng mã sản phẩm từ txtMaSanPham
-                    TenSanPham = tenSP,
-                    DonGia = donGia,
-                    MaLoai = maLoai,
-                    TrangThai = trangThai,
-                    HinhAnh = hinhAnhPath
-                };
-
-                // Thêm sản phẩm vào cơ sở dữ liệu
-                BLLSanPham bUSSanPham = new BLLSanPham();
-                bUSSanPham.InsertSanPham(sp);
-
-                MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Làm mới form và tải lại danh sách sản phẩm
-                ClearForm();
-                LoadDanhSachSanPham();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btLamMoi_Click(object sender, EventArgs e)
         {
             ClearForm();
@@ -358,53 +405,6 @@ namespace GUI_PolyCafe
                 MessageBox.Show("Lỗi: " + ex.Message);
 
             }
-        }
-
-        private void dgvDanhSachSP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvDanhSachSP.Rows[e.RowIndex];
-            txtMaSanPham.Text = row.Cells["MaSanPham"].Value.ToString();
-            txtTenSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
-            txtDonGia.Text = row.Cells["DonGia"].Value.ToString();
-            txtHinhAnh.Text = row.Cells["HinhAnh"].Value.ToString();
-            cboLoaiSanPham.SelectedValue = row.Cells["MaLoai"].Value.ToString();
-            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-            if (trangThai)
-            {
-                rdHoatDong.Checked = true;
-            }
-            else
-            {
-                rdNgungBan.Checked = true;
-            }
-
-            // Kiểm tra nếu dữ liệu hình ảnh là Bitmap
-            if (row.Cells["HinhAnh"].Value is Bitmap)
-            {
-                pbHinhAnh.Image = (Bitmap)row.Cells["HinhAnh"].Value;
-            }
-            else
-            {
-                string imagePath = row.Cells["HinhAnh"].Value.ToString();
-                if (File.Exists(imagePath))
-                {
-                    pbHinhAnh.Image = Image.FromFile(imagePath);
-                }
-                else
-                {
-                    pbHinhAnh.Image = null; // Nếu không tìm thấy ảnh, có thể hiển thị ảnh mặc định
-                }
-            }
-
-            // Bật nút "Sửa"
-            btThem.Enabled = false;
-            btSua.Enabled = true;
-            btXoa.Enabled = true;
-        }
-
-        private void dgvDanhSachSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

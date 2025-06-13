@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHinhCho));
-            progressBarwelcome = new ProgressBar();
+            progressBarwelcome = new Guna.UI2.WinForms.Guna2ProgressBar();
             SuspendLayout();
             // 
             // progressBarwelcome
             // 
-            progressBarwelcome.Location = new Point(12, 427);
+            progressBarwelcome.BackColor = Color.Transparent;
+            progressBarwelcome.CustomizableEdges = customizableEdges1;
+            progressBarwelcome.Location = new Point(12, 440);
             progressBarwelcome.Name = "progressBarwelcome";
-            progressBarwelcome.Size = new Size(936, 34);
+            progressBarwelcome.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            progressBarwelcome.Size = new Size(936, 21);
             progressBarwelcome.TabIndex = 0;
+            progressBarwelcome.Text = "guna2ProgressBar1";
+            progressBarwelcome.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            progressBarwelcome.UseTransparentBackground = true;
             // 
             // frmHinhCho
             // 
@@ -45,6 +53,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 473);
+            ControlBox = false;
             Controls.Add(progressBarwelcome);
             Name = "frmHinhCho";
             StartPosition = FormStartPosition.CenterScreen;
@@ -56,6 +65,6 @@
 
         #endregion
 
-        private ProgressBar progressBarwelcome;
+        private Guna.UI2.WinForms.Guna2ProgressBar progressBarwelcome;
     }
 }

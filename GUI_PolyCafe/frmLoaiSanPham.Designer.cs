@@ -85,7 +85,7 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            groupBox1.BackColor = Color.Transparent;
+            groupBox1.BackColor = Color.AntiqueWhite;
             groupBox1.Controls.Add(tableLayoutPanel3);
             groupBox1.Controls.Add(txtGhiChuSP);
             groupBox1.Controls.Add(label4);
@@ -93,11 +93,11 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtMaLoaiSP);
             groupBox1.Controls.Add(label2);
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox1.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.HotTrack;
             groupBox1.Location = new Point(12, 119);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(396, 423);
+            groupBox1.Size = new Size(411, 423);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Loại ";
@@ -117,7 +117,7 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(384, 61);
+            tableLayoutPanel3.Size = new Size(399, 61);
             tableLayoutPanel3.TabIndex = 39;
             // 
             // btLamMoi
@@ -133,7 +133,7 @@
             btLamMoi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btLamMoi.ForeColor = Color.DarkCyan;
             btLamMoi.Image = Properties.Resources.icons8_refresh_50;
-            btLamMoi.Location = new Point(291, 12);
+            btLamMoi.Location = new Point(303, 12);
             btLamMoi.Name = "btLamMoi";
             btLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btLamMoi.Size = new Size(90, 36);
@@ -154,7 +154,7 @@
             btThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btThem.ForeColor = Color.Green;
             btThem.Image = Properties.Resources.icons8_add_24;
-            btThem.Location = new Point(3, 12);
+            btThem.Location = new Point(4, 12);
             btThem.Name = "btThem";
             btThem.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btThem.Size = new Size(90, 36);
@@ -175,7 +175,7 @@
             btSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btSua.ForeColor = Color.DarkOrange;
             btSua.Image = Properties.Resources.icons8_fix_50__1_;
-            btSua.Location = new Point(99, 12);
+            btSua.Location = new Point(103, 12);
             btSua.Name = "btSua";
             btSua.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btSua.Size = new Size(90, 36);
@@ -196,7 +196,7 @@
             btXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btXoa.ForeColor = Color.Red;
             btXoa.Image = Properties.Resources.icons8_remove_30;
-            btXoa.Location = new Point(195, 12);
+            btXoa.Location = new Point(202, 12);
             btXoa.Name = "btXoa";
             btXoa.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btXoa.Size = new Size(90, 36);
@@ -207,11 +207,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label4.Font = new Font("Fira Sans", 11.25F);
             label4.ForeColor = Color.Maroon;
             label4.Location = new Point(7, 158);
             label4.Name = "label4";
-            label4.Size = new Size(62, 18);
+            label4.Size = new Size(60, 18);
             label4.TabIndex = 0;
             label4.Text = "Ghi Chú";
             // 
@@ -226,11 +226,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label3.Font = new Font("Fira Sans", 11.25F);
             label3.ForeColor = Color.Maroon;
             label3.Location = new Point(7, 105);
             label3.Name = "label3";
-            label3.Size = new Size(65, 18);
+            label3.Size = new Size(64, 18);
             label3.TabIndex = 0;
             label3.Text = "Tên Loại";
             // 
@@ -246,11 +246,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F);
+            label2.Font = new Font("Fira Sans", 11.25F);
             label2.ForeColor = Color.Maroon;
             label2.Location = new Point(7, 51);
             label2.Name = "label2";
-            label2.Size = new Size(61, 18);
+            label2.Size = new Size(60, 18);
             label2.TabIndex = 0;
             label2.Text = "Mã Loại";
             // 
@@ -259,7 +259,7 @@
             txtTimKiemLoaiSP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txtTimKiemLoaiSP.Location = new Point(1068, 21);
             txtTimKiemLoaiSP.Name = "txtTimKiemLoaiSP";
-            txtTimKiemLoaiSP.Size = new Size(213, 23);
+            txtTimKiemLoaiSP.Size = new Size(213, 22);
             txtTimKiemLoaiSP.TabIndex = 3;
             // 
             // btnTimKiemLoaiSP
@@ -275,12 +275,12 @@
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox2.BackColor = Color.Transparent;
+            groupBox2.BackColor = Color.AntiqueWhite;
             groupBox2.Controls.Add(dgrDanhSachLoaiSP);
             groupBox2.Controls.Add(btnTimKiemLoaiSP);
             groupBox2.Controls.Add(btnTimKiemThe);
             groupBox2.Controls.Add(txtTimKiemLoaiSP);
-            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox2.Font = new Font("Fira Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.HotTrack;
             groupBox2.Location = new Point(429, 119);
             groupBox2.Name = "groupBox2";
@@ -355,26 +355,27 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Fira Sans", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(448, 0);
+            label1.Location = new Point(477, 9);
             label1.Name = "label1";
-            label1.Size = new Size(275, 45);
+            label1.Size = new Size(217, 35);
             label1.TabIndex = 9;
             label1.Text = "LOẠI SẢN PHẨM";
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.Anchor = AnchorStyles.None;
+            tableLayoutPanel1.BackColor = Color.Transparent;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Location = new Point(12, 12);
+            tableLayoutPanel1.Location = new Point(12, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1172, 46);
+            tableLayoutPanel1.Size = new Size(1172, 54);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
